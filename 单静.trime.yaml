@@ -1,0 +1,865 @@
+# Trime default style settings
+# encoding: utf-8
+
+config_version: '2.0'
+name: 单静 #方案名称
+author: &xingaqr '单单 <xingaqr@gmail.com>' #作者资讯
+
+android_keys:
+  __include: trime:/android_keys
+
+style:
+  color_scheme: default #默认配色方案
+  horizontal: true #水平模式。改变方向键的功能 （true：方向键适配横排候选；false：方向键适配竖排候选）
+  reset_ascii_mode: false #显示键盘时重置为中文状态
+  speech_opencc_config: s2t.json #语音输入简繁转换
+  auto_caps: false #自动句首大写:true|false|ascii
+  latin_locale: en_US #西文语言
+  locale: zh_TW #预设语言 zh_TW,zh_CN,zh_HK,""
+  background_dim_amount: 0.5 #备用参数，无功能
+  keyboards: #键盘配置：自动键盘、字母、数字、符号
+    __include: xingaqr:/keyboards
+    __append:
+      - default
+      - qwertys
+      - qwerty_
+      - letter
+      - number
+      - func
+      - edit
+
+  # 候选区
+  ## 候选
+  candidate_use_cursor: true #高亮候选项
+  candidate_view_height: 30 #候选区高度
+  candidate_padding: 5 #候选项内边距
+  candidate_spacing: 0.5 #候选间距
+  candidate_font: han.ttf #候选字型
+  candidate_text_size: 20 #候选字号
+  ## 编码
+  comment_on_top: false #编码提示在上方或右侧
+  comment_height: 12 #编码提示区高度
+  comment_font: comment.ttf #编码提示字型
+  comment_text_size: 12 #编码提示字号
+
+  # 按键区
+  proximity_correction: true #按键纠错
+  vertical_correction: -5 #按键偏移（上偏为正）
+  horizontal_gap: 0 #键水平间距
+  vertical_gap: 0 #键盘行距
+  ## 主按键
+  key_height: 44 #键高
+  key_width: 10.0 #键宽，占屏幕宽的百分比
+  round_corner: 0 #按键圆角半径
+  shadow_radius: 0.0 #按键阴影半径
+  key_font: symbol.ttf #键盘字型
+  latin_font: latin.ttf #西文字型
+  hanb_font: hanb.ttf #扩充字型
+  key_text_size: 20 #键字号
+  key_long_text_size: 16 #长标签字号
+  symbol_font: symbol.ttf #符号字型
+  symbol_text_size: 10 #符号字号
+  ## 按键提示
+  preview_height: 44 #按键提示高度
+  preview_offset: -10 #按键提示纵向偏移（下偏为正）
+  preview_font: latin.ttf #按键提示字型
+  preview_text_size: 36 #按键提示字号
+
+  # 悬浮窗口
+  label_font: label.ttf #标签字型
+  label_text_size: 19 #标签字号
+  #text_height: 22 #编码区高度
+  text_font: latin.ttf #编码字型
+  text_size: 16 #编码区字号
+
+  window: #悬浮窗口组件
+    #- {start: "", move: 'ㄓ ', end: ""}
+    - { start: ' ', composition: '%s', end: ' ', letter_spacing: 0 } #letter_spacing需要>=Android5.0。TODO: 不为0时，会导致不换行的问题
+    - {
+        start: "\n",
+        label: '%s.',
+        candidate: '%s',
+        comment: ' %s',
+        end: '',
+        sep: ' '
+      }
+  layout: #悬浮窗口设置
+    # 整体样式
+    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    movable: false #是否可移动窗口，或仅移动一次 true|false|once
+    spacing: -1 #与预编辑或边缘的距离
+    margin_x: 5 #水平边距
+    margin_y: 1 #竖直边距
+    border: 0 #边框宽度
+    round_corner: 2 #窗口圆角
+    elevation: 0 #阴影(>=Android5.0)
+    alpha: 0xff #透明度(0-255)
+    #background: background.png #颜色或者backgrounds目录下的图片文件名
+    # 样式
+    all_phrases: false #所有满足条件的词语都显示在窗口
+    min_length: 8 #最小词长
+    max_length: 15 #超过字数则换行
+    sticky_lines: 0 #固顶行数
+    max_entries: 2 #最大词条数
+    max_width: 330 #最大宽度，超过则自动换行
+    max_height: 400 #最大高度
+    min_width: 32 #最小宽度
+    min_height: 0 #最小高度
+    line_spacing: 0 #候选词的行间距(px)
+    line_spacing_multiplier: 1.1 #候选词的行间距(倍数)
+
+fallback_colors:
+  __include: trime:/fallback_colors
+
+  preview_back_color: hilited_key_back_color #按键提示背景
+  preview_text_color: hilited_key_text_color #按键提示文字
+
+  # 主键盘
+  main_back_color: key_back_color #按键背景 ※
+  hilited_main_back_color: hilited_key_back_color #高亮按键背景 ※
+  space_back_color: main_back_color #空格背景 ※
+  hilited_space_back_color: hilited_main_back_color #高亮空格背景 ※
+  enter_back_color: off_key_back_color #回车背景 ※
+  hilited_enter_back_color: hilited_off_key_back_color #高亮回车背景 ※
+  enter_text_color: off_key_text_color #回车文字 高亮回车文字※
+  enter_symbol_color: off_key_symbol_color #回车符号 高亮回车符号※
+  off_key_symbol_color: key_symbol_color #功能键符号 高亮功能键符号※
+
+  # 副键盘
+  enter_sym_back_color: off_sym_back_color # enter背景 ※
+  hilited_enter_sym_back_color: hilited_off_sym_back_color #高亮enter背景 ※
+  enter_sym_text_color: enter_text_color #回车文字 高亮回车文字※
+  menu_back_color: back_color #菜单背景 ※
+  hilited_menu_back_color: keyboard_back_color #高亮菜单背景 ※
+  menu_text_color: candidate_text_color #菜单文字 ※
+  hilited_menu_text_color: hilited_candidate_text_color #高亮菜单文字 ※
+
+colors:
+  - &透明 0x00
+  - &白 0xDDDDDD
+  - &白偏灰 0xBBBBBB
+  - &背景灰 0xD7D9DD
+  - &按键灰 0xC1C4CD
+  - &高亮灰 0xB0B2BC
+  - &黑 0x393939
+  - &粉 0xFF6699
+  - &蓝 0x2090FF
+  - &更蓝 0x047BD8
+  # 谷歌黑
+  - &gg_black_kb 0x263238
+  - &gg_black_key 0x404A50
+  - &gg_black_hilited_key 0x596367
+  - &gg_black_off_key 0x313C42
+  - &gg_black_on_key 0x6EACA8
+  - &gg_black_hilited_on_key 0x26A69A
+  # 谷歌白
+  - &gg_white_key_sym_text 0x627178
+  - &gg_white_kb 0xECEFF1
+  - &gg_white_key 0xFBFBFC
+  - &gg_white_hilited_key 0xD9DBDD
+  - &gg_white_off_key 0xDFE2E4
+  - &gg_white_hilited_off_key 0xD3D6D8
+  - &gg_white_on_key 0x5CB5AB
+  - &gg_white_hilited_on_key 0x00A39C
+
+colors_uni_conf:
+  hilited_back_color: *透明 #高亮编码背景
+  hilited_candidate_back_color: *透明 #高亮候选背景
+  candidate_separator_color: *透明 #候选分割线
+
+preset_color_schemes:
+  default:
+    name: 默认 #方案名称
+    author: *xingaqr #作者资讯
+    __include: colors_uni_conf
+
+    # 悬浮窗
+    text_back_color: *背景灰 #0xaaFFFFFF #编码区背景
+    text_color: *粉 #编码
+    hilited_text_color: *黑 #高亮编码
+    label_color: *黑 #标签（候选序号）
+    # border_color: gray #悬浮窗边框
+
+    # 候选
+    back_color: *背景灰 #候选区背景
+    candidate_text_color: *黑 #候选文字
+    hilited_candidate_text_color: *粉 #高亮候选文字
+    comment_text_color: gray #提示
+    hilited_comment_text_color: *粉 #高亮提示
+
+    # 键盘通用
+    keyboard_back_color: *背景灰 #键盘背景
+    key_text_color: *黑 #按键文字
+    hilited_key_text_color: *蓝 #高亮按键文字
+    key_symbol_color: gray #按键符号
+    hilited_key_symbol_color: gray #高亮按键符号
+    off_key_text_color: *黑 #功能键文字
+    hilited_off_key_text_color: *黑 #高亮功能键文字
+    # shadow_color: 0x000000 #按键文字阴影
+    # key_border_color: 0xeceff1 #按键边框
+    # preview_back_color: 0xaa99CCFF #按键提示背景
+    # preview_text_color: *黑 #按键提示文字
+
+    # 主键盘
+    main_back_color: xingaqr.default/key.png #按键背景 ※
+    hilited_main_back_color: xingaqr.default/hilited_key.png #高亮按键背景 ※
+    space_back_color: xingaqr.default/space.png #空格背景 ※
+    hilited_space_back_color: xingaqr.default/hilited_space.png #高亮空格背景 ※
+    enter_back_color: xingaqr.default/enter.png #回车背景 ※
+    hilited_enter_back_color: xingaqr.default/hilited_enter.png #高亮回车背景 ※
+    enter_text_color: *透明 #回车文字 高亮回车文字※
+    enter_symbol_color: white #回车符号 高亮回车符号※
+    off_key_back_color: xingaqr.default/off_key.png #功能键背景
+    hilited_off_key_back_color: xingaqr.default/hilited_off_key.png #高亮功能键背景
+    off_key_symbol_color: *黑 #功能键符号 高亮功能键符号※
+    on_key_back_color: xingaqr.default/shift.png #功能键锁定时背景
+    hilited_on_key_back_color: xingaqr.default/hilited_shift.png #高亮功能键锁定时背景
+    on_key_text_color: white #功能键锁定时文字
+    hilited_on_key_text_color: white #高亮功能键锁定时文字
+
+    # 附键盘
+    key_back_color: white #按键背景
+    hilited_key_back_color: *按键灰 #高亮按键背景
+    off_sym_back_color: *按键灰 #功能键背景 ※
+    hilited_off_sym_back_color: *高亮灰 #高亮功能键背景 ※
+    enter_sym_back_color: *蓝 # enter背景 ※
+    hilited_enter_sym_back_color: *更蓝 #高亮enter背景 ※
+    enter_sym_text_color: white #回车文字 高亮回车文字※
+    menu_back_color: *背景灰 #菜单背景 ※
+    hilited_menu_back_color: white #高亮菜单背景 ※
+    menu_text_color: *黑 #菜单文字 ※
+    hilited_menu_text_color: *蓝 #高亮菜单文字 ※
+
+  google_black:
+    name: 谷歌黑 #方案名称
+    author: *xingaqr #作者资讯
+    __include: colors_uni_conf
+
+    # 悬浮窗
+    text_back_color: *gg_black_kb #编码区背景
+    hilited_back_color: *透明 #高亮编码背景
+    text_color: *gg_black_on_key #编码
+    hilited_text_color: *白 #高亮编码
+    label_color: *白 #标签（候选序号）
+
+    # 候选
+    back_color: *gg_black_kb #候选区背景
+    hilited_candidate_back_color: *透明 #高亮候选背景
+    candidate_separator_color: *透明 #候选分割线
+    candidate_text_color: *白 #候选文字
+    hilited_candidate_text_color: *gg_black_on_key #高亮候选文字
+    comment_text_color: *白偏灰 #提示
+    hilited_comment_text_color: *gg_black_on_key #高亮提示
+
+    # 键盘通用
+    keyboard_back_color: *gg_black_kb #键盘背景
+    key_text_color: *白 #按键文字
+    hilited_key_text_color: white #高亮按键文字
+    key_symbol_color: *白偏灰 #按键符号
+    hilited_key_symbol_color: *白偏灰 #高亮按键符号
+    off_key_text_color: *白 #功能键文字
+    hilited_off_key_text_color: white #高亮功能键文字
+
+    # 主键盘
+    main_back_color: xingaqr.google_black/key.png #按键背景 ※
+    hilited_main_back_color: xingaqr.google_black/hilited_key.png #高亮按键背景 ※
+    space_back_color: xingaqr.google_black/space.png #空格背景 ※
+    hilited_space_back_color: xingaqr.google_black/hilited_space.png #高亮空格背景 ※
+    enter_back_color: xingaqr.google_black/enter.png #回车背景 ※
+    hilited_enter_back_color: xingaqr.google_black/hilited_enter.png #高亮回车背景 ※
+    enter_text_color: *白 #回车文字 高亮回车文字※
+    enter_symbol_color: *白 #回车符号 高亮回车符号※
+    off_key_back_color: xingaqr.google_black/off_key.png #功能键背景
+    hilited_off_key_back_color: xingaqr.google_black/hilited_off_key.png #高亮功能键背景
+    off_key_symbol_color: *白 #功能键符号 高亮功能键符号※
+    on_key_back_color: xingaqr.google_black/enter.png #功能键锁定时背景
+    hilited_on_key_back_color: xingaqr.google_black/hilited_enter.png #高亮功能键锁定时背景
+    on_key_text_color: white #功能键锁定时文字
+    hilited_on_key_text_color: white #高亮功能键锁定时文字
+
+    # 附键盘
+    key_back_color: *gg_black_key #按键背景
+    hilited_key_back_color: *gg_black_hilited_key #高亮按键背景
+    off_sym_back_color: *gg_black_off_key #功能键背景 ※
+    hilited_off_sym_back_color: *gg_black_hilited_key #高亮功能键背景 ※
+    enter_sym_back_color: *gg_black_on_key # enter背景 ※
+    hilited_enter_sym_back_color: *gg_black_hilited_on_key #高亮enter背景 ※
+    menu_back_color: *gg_black_kb #菜单背景 ※
+    hilited_menu_back_color: *gg_black_key #高亮菜单背景 ※
+    menu_text_color: *白 #菜单文字 ※
+    hilited_menu_text_color: white #高亮菜单文字 ※
+
+  google_white:
+    name: 谷歌白
+    author: *xingaqr
+    __include: colors_uni_conf
+
+    # 悬浮窗
+    text_back_color: *gg_white_kb #编码区背景
+    text_color: *gg_white_on_key #编码
+    hilited_text_color: *gg_white_key_sym_text #高亮编码
+    label_color: *gg_white_key_sym_text #标签（候选序号）
+
+    # 候选
+    back_color: *gg_white_kb #候选区背景
+    candidate_text_color: *gg_white_key_sym_text #候选文字
+    hilited_candidate_text_color: *gg_white_on_key #高亮候选文字
+    comment_text_color: gray #提示
+    hilited_comment_text_color: *gg_white_on_key #高亮提示
+
+    # 键盘通用
+    keyboard_back_color: *gg_white_kb #键盘背景
+    key_text_color: *黑 #按键文字
+    hilited_key_text_color: *gg_white_on_key #高亮按键文字
+    key_symbol_color: *gg_white_key_sym_text #按键符号
+    hilited_key_symbol_color: *gg_white_key_sym_text #高亮按键符号
+    off_key_text_color: *gg_white_key_sym_text #功能键文字
+    hilited_off_key_text_color: *gg_white_key_sym_text #高亮功能键文字
+
+    # 主键盘
+    main_back_color: xingaqr.google_white/key.png #按键背景 ※
+    hilited_main_back_color: xingaqr.google_white/hilited_key.png #高亮按键背景 ※
+    space_back_color: xingaqr.google_white/space.png #空格背景 ※
+    hilited_space_back_color: xingaqr.google_white/hilited_space.png #高亮空格背景 ※
+    enter_back_color: xingaqr.google_white/enter.png #回车背景 ※
+    hilited_enter_back_color: xingaqr.google_white/hilited_enter.png #高亮回车背景 ※
+    enter_text_color: white #回车文字 高亮回车文字※
+    enter_symbol_color: white #回车符号 高亮回车符号※
+    off_key_back_color: xingaqr.google_white/off_key.png #功能键背景
+    hilited_off_key_back_color: xingaqr.google_white/hilited_off_key.png #高亮功能键背景
+    off_key_symbol_color: *gg_white_key_sym_text #功能键符号 高亮功能键符号※
+    on_key_back_color: xingaqr.google_white/enter.png #功能键锁定时背景
+    hilited_on_key_back_color: xingaqr.google_white/hilited_enter.png #高亮功能键锁定时背景
+    on_key_text_color: white #功能键锁定时文字
+    hilited_on_key_text_color: white #高亮功能键锁定时文字
+
+    # 附键盘
+    key_back_color: *gg_white_key #按键背景
+    hilited_key_back_color: *gg_white_hilited_key #高亮按键背景
+    off_sym_back_color: *gg_white_off_key #功能键背景 ※
+    hilited_off_sym_back_color: *gg_white_hilited_off_key #高亮功能键背景 ※
+    enter_sym_back_color: *gg_white_on_key # enter背景 ※
+    hilited_enter_sym_back_color: *gg_white_hilited_on_key #高亮enter背景 ※
+    enter_sym_text_color: white #回车文字 高亮回车文字※
+    menu_back_color: *gg_white_kb #菜单背景 ※
+    hilited_menu_back_color: *gg_white_key #高亮菜单背景 ※
+    menu_text_color: *gg_white_key_sym_text #菜单文字 ※
+    hilited_menu_text_color: *gg_white_on_key #高亮菜单文字 ※
+
+vars:
+  # 主键盘
+  - &key_height 52 #按键高度
+  - &key_height_last 50 # 第4行 按键高度
+  - &height_bottom 6 #底部抬高
+  - &key_horizontal_gap 3 #按键水平间距
+  - &key_vertical_gap 5 #按键行距
+  - &off_key_symbol_offset_x 0 #功能键符号偏移
+  - &number_height 60 #数字键盘按键高度
+
+vars_map:
+  styl_key:
+    key_back_color: main_back_color
+    hilited_key_back_color: hilited_main_back_color
+  styl_off_num:
+    key_back_color: off_sym_back_color
+    hilited_key_back_color: hilited_off_sym_back_color
+  styl_off_func:
+    key_back_color: back_color
+    hilited_key_back_color: off_sym_back_color
+
+preset_keyboards:
+  __include: xingaqr:/kbs
+
+  default:
+    name: 默认26键
+    author: *xingaqr
+    ascii_mode: 0
+    label_transform: uppercase
+    lock: true
+    width: 10
+    height: *key_height
+    horizontal_gap: *key_horizontal_gap #键水平间距
+    vertical_gap: *key_vertical_gap #键盘行距
+    key_symbol_offset_x: 3
+    key_hint_offset_y: -1
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys:
+      # 第 1 行
+      - {
+          click: 'q',
+          long_click: '{',
+          swipe_down: 1,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'w',
+          long_click: '@',
+          swipe_down: 2,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'e',
+          long_click: '#',
+          swipe_down: 3,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'r',
+          long_click: '$',
+          swipe_down: 4,
+          hint: 4,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 't',
+          long_click: '%',
+          swipe_down: 5,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'y',
+          long_click: '^',
+          swipe_down: 6,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'u',
+          long_click: '&',
+          swipe_down: 7,
+          hint: 7,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'i',
+          long_click: '*',
+          swipe_down: 8,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'o',
+          long_click: '(){Left}',
+          swipe_left: '(',
+          swipe_right: ')',
+          swipe_down: 9,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'p',
+          long_click: '}',
+          swipe_down: 0,
+          __include: vars_map/styl_key
+        }
+      # 第 2 行
+      - { width: 5 }
+      - { click: 'a', long_click: select_all, __include: vars_map/styl_key }
+      - { click: 's', long_click: '-', __include: vars_map/styl_key }
+      - { click: 'd', long_click: '_', __include: vars_map/styl_key }
+      - {
+          click: 'f',
+          long_click: '+',
+          swipe_down: '|',
+          hint: '|',
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'g',
+          long_click: '=',
+          swipe_down: kb_edit,
+          hint: '<ɪ>',
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'h',
+          long_click: '[',
+          swipe_down: '<',
+          hint: '<',
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'j',
+          long_click: ']',
+          swipe_down: '>',
+          hint: '>',
+          __include: vars_map/styl_key
+        }
+      - { click: 'k', long_click: ':', __include: vars_map/styl_key }
+      - { click: 'l', long_click: ';', __include: vars_map/styl_key }
+      # 第 3 行
+      - { click: Shift_L, composing: split_word, width: 15 }
+      - {
+          click: 'z',
+          long_click: '`',
+          swipe_down: '~',
+          hint: '~',
+          __include: vars_map/styl_key
+        }
+      - { click: 'x', long_click: cut, __include: vars_map/styl_key }
+      - { click: 'c', long_click: copy, __include: vars_map/styl_key }
+      - { click: 'v', long_click: paste, __include: vars_map/styl_key }
+      - {
+          click: 'b',
+          long_click: '/',
+          swipe_down: '\',
+          hint: '\',
+          __include: vars_map/styl_key
+        }
+      - {
+          click: 'n',
+          long_click: '"',
+          hint: '✜',
+          swipe_up: Up,
+          swipe_down: Down,
+          swipe_left: Left,
+          swipe_right: Right,
+          __include: vars_map/styl_key
+        }
+      - { click: 'm', long_click: "'", __include: vars_map/styl_key }
+      - { click: BS, swipe_up: Escape, width: 15 }
+      # 第 4 行
+      - {
+          click: Keyboard_number,
+          long_click: Menu,
+          composing: Page_Up,
+          width: 12,
+          height: *key_height_last,
+          key_symbol_color: off_key_symbol_color,
+          hilited_key_symbol_color: off_key_symbol_color,
+          key_symbol_offset_x: *off_key_symbol_offset_x
+        }
+      - {
+          click: Keyboard_symbols,
+          long_click: Color_switch,
+          composing: Page_Down,
+          width: 12,
+          key_symbol_color: off_key_symbol_color,
+          hilited_key_symbol_color: off_key_symbol_color,
+          key_symbol_offset_x: *off_key_symbol_offset_x
+        }
+      - { click: ',', long_click: '!', width: 12, __include: vars_map/styl_key }
+      - {
+          click: space,
+          long_click: Keyboard_letter,
+          width: 37,
+          key_back_color: space_back_color,
+          hilited_key_back_color: hilited_space_back_color
+        }
+      - {
+          click: '.',
+          long_click: '?',
+          composing: select_second,
+          width: 12,
+          __include: vars_map/styl_key
+        }
+      - {
+          click: Return,
+          long_click: kb_func,
+          width: 15,
+          key_back_color: enter_back_color,
+          hilited_key_back_color: hilited_enter_back_color,
+          key_text_color: enter_text_color,
+          hilited_key_text_color: enter_text_color,
+          key_symbol_color: enter_symbol_color,
+          hilited_key_symbol_color: enter_symbol_color,
+          key_symbol_offset_x: *off_key_symbol_offset_x
+        }
+      - { width: 100, height: *height_bottom }
+
+  letter:
+    __include: /preset_keyboards/default
+    __patch:
+      ascii_mode: 1
+      lock: false
+      'keys/@32/long_click': Keyboard_default
+
+  xklbs:
+    __include: /preset_keyboards/default
+    __patch:
+      'keys/@20/composing': select_second
+      'keys/@33/composing': '.'
+
+  xklbsdz:
+    __include: /preset_keyboards/xklbs
+
+  qwertys:
+    name: 默认27键
+    __include: /preset_keyboards/default
+    __patch:
+      'keys/@10/width': 0
+      'keys/@16/hint': ' '
+      'keys/@17/hint': ' '
+      'keys/@18/long_click': '<'
+      'keys/@19/long_click': '>'
+      'keys/@after 19/':
+        click: ';'
+        long_click: ':'
+        width: 10
+        __include: vars_map/styl_key
+
+  qwerty_:
+    name: 默认30键
+    __include: /preset_keyboards/qwertys
+    __patch:
+      'keys/@14/hint': ' '
+      'keys/@21/': { width: 0 }
+      'keys/@26/hint': ' '
+      'keys/@26/long_click': '|'
+      'keys/@29/':
+        click: ','
+        long_click: '!'
+        __include: vars_map/styl_key
+      'keys/@after 29/':
+        click: '.'
+        long_click: '?'
+        __include: vars_map/styl_key
+      'keys/@after 30/':
+        click: '/'
+        long_click: '\'
+        __include: vars_map/styl_key
+      'keys/@after 31/':
+        click: Shift_L
+        composing: split_word
+        height: *key_height_last
+        width: 12
+      'keys/@32/': { width: 0 }
+      'keys/@34/':
+        click: BS
+        swipe_up: Escape
+        width: 12
+
+  number:
+    name: 数字
+    author: *xingaqr
+    ascii_mode: 1
+    width: 16.6
+    height: *number_height
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys:
+      # 第一行
+      - { click: '{}{Left}', long_click: '^' }
+      - { click: '+', long_click: '%' }
+      - { click: 1 }
+      - { click: 2 }
+      - { click: 3 }
+      - { click: Back, __include: vars_map/styl_off_num }
+      # 第二行
+      - { click: '[]{Left}', long_click: '_' }
+      - { click: '-', long_click: '±' }
+      - { click: 4 }
+      - { click: 5 }
+      - { click: 6 }
+      - { click: Delete, __include: vars_map/styl_off_num }
+      # 第三行
+      - { click: '(){Left}', long_click: '!' }
+      - { click: '*', long_click: '×' }
+      - { click: 7 }
+      - { click: 8 }
+      - { click: 9 }
+      - { click: BackSpace, __include: vars_map/styl_off_num }
+      # 第四行
+      - { click: '=', long_click: '≠' }
+      - { click: '/', long_click: '÷' }
+      - { click: space }
+      - { click: 0 }
+      - { click: '.' }
+      - {
+          click: Return,
+          key_back_color: enter_sym_back_color,
+          hilited_key_back_color: hilited_enter_sym_back_color,
+          key_text_color: enter_sym_text_color,
+          hilited_key_text_color: enter_sym_text_color
+        }
+
+  func:
+    name: 功能
+    author: *xingaqr
+    ascii_mode: 0
+    width: 25
+    height: *number_height
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys:
+      - { click: Candidate_switch, __include: vars_map/styl_off_func }
+      - { click: Comment_switch, __include: vars_map/styl_off_func }
+      - { click: Hint_switch, __include: vars_map/styl_off_func }
+      - { click: Back, __include: vars_map/styl_off_func }
+      - { click: Deploy, __include: vars_map/styl_off_func }
+      - { click: Schema_settings, __include: vars_map/styl_off_func }
+      - { click: Theme_settings, __include: vars_map/styl_off_func }
+      - { click: Settings, __include: vars_map/styl_off_func }
+      - { click: kb_qwerty, __include: vars_map/styl_off_func }
+      - { click: kb_qwertys, __include: vars_map/styl_off_func }
+      - { click: kb_qwerty_, __include: vars_map/styl_off_func }
+      - { click: kb_edit, __include: vars_map/styl_off_func }
+      - { click: Zdic, __include: vars_map/styl_off_func }
+      - { click: MoeDict, __include: vars_map/styl_off_func }
+      - { click: VOICE_ASSIST, __include: vars_map/styl_off_func }
+      - { click: '', __include: vars_map/styl_off_func }
+
+  edit:
+    name: 编辑
+    author: *xingaqr
+    ascii_mode: 0
+    width: 25
+    height: *number_height
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys:
+      - { click: Home, __include: vars_map/styl_off_func }
+      - { click: Up, __include: vars_map/styl_off_func }
+      - { click: cut, __include: vars_map/styl_off_func }
+      - { click: Back, __include: vars_map/styl_off_func }
+      - { click: Left, __include: vars_map/styl_off_func }
+      - { click: Shift_L, label: 选择, __include: vars_map/styl_off_func }
+      - { click: Right, __include: vars_map/styl_off_func }
+      - { click: Del, __include: vars_map/styl_off_func }
+      - { click: End, __include: vars_map/styl_off_func }
+      - { click: Down, __include: vars_map/styl_off_func }
+      - { click: Tab, __include: vars_map/styl_off_func }
+      - { click: BackSpace, __include: vars_map/styl_off_func }
+      - { click: select_all, __include: vars_map/styl_off_func }
+      - { click: copy, __include: vars_map/styl_off_func }
+      - { click: paste, __include: vars_map/styl_off_func }
+      - { click: Return, __include: vars_map/styl_off_func }
+
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: { label: 亮度-, send: BRIGHTNESS_DOWN }
+  BRIGHTNESS_UP: { label: 亮度+, send: BRIGHTNESS_UP }
+  CALCULATOR: { label: 计算机, send: CALCULATOR }
+  CALENDAR: { label: 日历, send: CALENDAR }
+  CONTACTS: { label: 电话簿, send: CONTACTS }
+  ENVELOPE: { label: 信箱, send: ENVELOPE }
+  EXPLORER: { label: 浏览器, send: EXPLORER }
+  MUSIC: { label: 音乐, send: MUSIC }
+  POWER: { label: 电源, send: POWER }
+  SEARCH: { label: 搜寻, send: Find }
+  SLEEP: { label: 休眠, send: SLEEP }
+  VOICE_ASSIST: { label: 语音, send: VOICE_ASSIST }
+  VOLUME_DOWN: { label: 音量-, send: VOLUME_DOWN }
+  VOLUME_UP: { label: 音量+, send: VOLUME_UP }
+  VOLUME_MUTE: { label: 静音, send: VOLUME_MUTE }
+  # trime命令
+  Date: { label: 日期, command: date, option: 'yyyy-MM-dd' }
+  ChineseDate: { label: 农历, command: date, option: 'zh_CN@calendar=chinese' } #农历等日期(>=Android 7.0)：date 语言@calendar=历法 格式。具体参见https://developer.android.com/reference/android/icu/util/Calendar.html
+  Time: { label: 时间, command: date, option: 'HH:mm:ss' } #时间： date 格式
+  TrimeApp: { label: 同文, command: run, option: 'com.osfans.trime' } #运行程序: run 包名
+  TrimeCmp: { label: 同文组件, command: run, option: 'com.osfans.trime/.Pref' } #运行程序指定组件: run 包名/组件名
+  Homepage: {
+      label: 同文主页,
+      command: run,
+      option: 'https://github.com/osfans/trime'
+    } #查看网页: run 网址
+  CommitHomepage: { label: 同文网址, commit: https://github.com/osfans/trime } #直接上屏
+  Wiki: {
+      label: 维基,
+      command: run,
+      option: 'https://zh.wikipedia.org/wiki/%s'
+    } #搜索网页: %s或者%1$s为当前字符
+  Google: {
+      label: 谷歌,
+      command: run,
+      option: 'https://www.google.com/search?q=%s'
+    } #搜索网页: %s或者%1$s为当前字符
+  MoeDict: { label: 萌典, command: run, option: 'https://www.moedict.tw/%3$s' } #搜索网页: %3$s为光标前字符
+  Baidu: {
+      label: 百度搜索,
+      command: run,
+      option: 'https://www.baidu.com/s?wd=%4$s'
+    } #搜索网页: %4s为光标前所有字符
+  Zdic: {
+      label: 汉典,
+      command: run,
+      option: 'http://www.zdic.net/sousuo/?q=%1$s'
+    } #搜索网页: %s或者%1$s为当前字符
+  Zdic2: {
+      label: 汉典,
+      command: run,
+      option: 'http://www.zdic.net/sousuo/?q=%2$s'
+    } #搜索网页: %2$s为当前输入的编码
+  WebSearch: { label: 搜索网页, command: web_search, option: '%4$s' } #搜索，其他view、dial、edit、search等intent，参考安卓的intent文档：https://developer.android.com/reference/android/content/Intent.html
+  Search: { label: 搜索, command: search, option: '%1$s' } #搜索短信、字典等
+  Share: { label: 分享, command: send, option: '%s' } #分享指定文本: %s或者%1$s为当前字符
+  Deploy: { label: 部署, command: broadcast, option: 'com.osfans.trime.deploy' }
+  Sync: { label: 同步, command: broadcast, option: 'com.osfans.trime.sync' }
+  # 编辑
+  Shift_L: { label: Shift, send: Shift_L, shift_lock: ascii_long }
+  Return: { label: Enter, send: Return }
+  Hide: { label: '▼', send: BACK }
+  BackSpace: { label: 退格, repeatable: true, send: BackSpace }
+  BS: { label: '⌫', repeatable: true, send: BackSpace }
+  space: { label: ' ', repeatable: false, functional: false, send: space }
+  Escape: { label: Esc, send: Escape }
+  Tab: { label: Tab, send: Tab }
+  Home: { label: Home, send: Home }
+  Insert: { label: Ins, send: Insert }
+  Delete: { label: Del, send: Delete }
+  End: { label: End, send: End }
+  Page_Up: { label: '⇐', send: Page_Up }
+  Page_Down: { label: '⇒', send: Page_Down }
+  Left: { label: '←', send: Left }
+  Down: { label: '↓', send: Down }
+  Up: { label: '↑', send: Up }
+  Right: { label: '→', send: Right }
+  select_all: { label: '☑', send: Control+a }
+  Clear: { label: 清除, text: '{Control+a}{BackSpace}' } #全选并删除
+  cut: { label: '✂', send: Control+x }
+  cut_all: { label: 全挪, text: '{Control+a}{Control+x}' } #全选并剪切
+  copy: { label: '❐', send: Control+c }
+  copy_all: { label: 全誊, text: '{Control+a}{Control+c}' } #全选并复制
+  paste: { label: '▣', send: Control+v }
+  paste_text: { label: 贴上文本, send: Control+Shift+Alt+v } #>=Android 6.0
+  share_text: { label: 分享文本, send: Control+Alt+s } #>=Android 6.0
+  redo: { label: 重做, send: Control+y } #>=Android 6.0
+  undo: { label: 撤销, send: Control+z } #>=Android 6.0
+  # rime组合键
+  F4: { label: 方案选单, send: F4 }
+  BackToPreviousSyllable: { label: 删音节, send: Control+BackSpace }
+  CommitRawInput: { label: 编码, send: Control+Return }
+  CommitScriptText: { label: 编码, send: Shift+Return }
+  CommitComment: { label: 编码, send: Control+Shift+Return }
+  DeleteCandidate: { label: 删词, send: Control+Delete }
+  # rime状态
+  Mode_switch: { toggle: ascii_mode, send: Mode_switch, states: [中文, 英文] }
+  Zenkaku_Hankaku:
+    { toggle: full_shape, send: Mode_switch, states: [半角, 全角] }
+  Henkan: { toggle: simplification, send: Mode_switch, states: [汉字, 汉字] }
+  Charset_switch:
+    { toggle: extended_charset, send: Mode_switch, states: [常用, 增广] }
+  Punct_switch: { toggle: ascii_punct, send: Mode_switch, states: [。，, ．，] }
+  Candidate_switch:
+    { toggle: _hide_candidate, send: Mode_switch, states: [关闭候选, 开启候选] }
+  Comment_switch:
+    { toggle: _hide_comment, send: Mode_switch, states: [关闭注释, 开启注释] }
+  Hint_switch:
+    { toggle: _hide_key_hint, send: Mode_switch, states: [关闭助记, 开启助记] }
+  # trime设定
+  IME_switch: { label: 选择输入法, send: LANGUAGE_SWITCH } #弹出对话框选择输入法
+  IME_last: { label: 上一输入法, send: LANGUAGE_SWITCH, select: .last } #直接切换到上一输入法
+  IME_next: { label: 下一输入法, send: LANGUAGE_SWITCH, select: .next } #直接切换到下一输入法
+  Schema_switch: { label: 下一方案, send: Control+Shift+1 }
+  Color_switch: { label: '✿', send: PROG_RED }
+  Help: { label: 说明, send: Help }
+  Info: { label: 关于, send: INFO }
+  Menu: { label: '◉', send: Menu }
+  Settings: { label: 设置, send: SETTINGS }
+  Color_settings: { label: 配色, send: SETTINGS, option: 'color' }
+  Theme_settings: { label: 主题, send: SETTINGS, option: 'theme' }
+  Schema_settings: { label: 方案, send: SETTINGS, option: 'schema' }
+  # trime键盘
+  Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
+  Back: { label: 返回, send: Eisu_toggle, select: .default }
+  Keyboard_default: { label: ' ', send: Eisu_toggle, select: .default }
+  Keyboard_symbols: { label: '۞', send: Eisu_toggle, select: symbols }
+  Keyboard_number: { label: '123', send: Eisu_toggle, select: number }
+  Keyboard_letter: { label: ' ', send: Eisu_toggle, select: letter }
+  # custom
+  select_second: { label: '②', send: 2 }
+  split_word: { label: "'分词", send: apostrophe }
+  kb_qwerty: { label: '26键', send: Eisu_toggle, select: default }
+  kb_qwertys: { label: '27键', send: Eisu_toggle, select: qwertys }
+  kb_qwerty_: { label: '30键', send: Eisu_toggle, select: qwerty_ }
+  kb_func: { label: '❖', send: Eisu_toggle, select: func }
+  kb_edit: { label: '编辑', send: Eisu_toggle, select: edit }
+  __include: xingaqr:/keys
