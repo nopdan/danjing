@@ -1,3 +1,22 @@
+# symbols keyboards settings
+# encoding: utf-8
+# version: 1.1
+
+vars:
+  # 不要修改宽度
+  - &xingaqr '单单 <xingaqr@gmail.com>'
+  #- &sym_height 50 #按键高度 移至主文件
+  - &menu_height 41 #菜单高度
+  - &sym_bottom_switch 0 #底部空白开关
+  - &sym_bottom 1 #底部空白
+  - &sym_width 12 #按键宽度
+  - &off_sym_width 16 #功能键宽度
+  - &menu_width 12.5 #菜单宽度
+  - &sym_long_text_size 20 #长标签字号
+  - &yanwz_width 28 #颜文字键盘按键宽度
+  - &yanwz_double_width 56 #颜文字键盘2按键宽度
+  - &yanwz_menu_width 16 #颜文字键盘菜单宽度
+
 keyboards:
   - .default
   - symbols
@@ -172,24 +191,10 @@ keys:
   kb_yanwz6u: { label: '▲', send: Eisu_toggle, select: yanwz61 }
   kb_yanwz6d: { label: '▼', send: Eisu_toggle, select: yanwz62 }
 
-vars:
-  # 不要修改宽度
-  - &xingaqr '单单 <xingaqr@gmail.com>'
-  - &sym_height 50 #按键高度
-  - &sym_width 12 #按键宽度
-  - &off_sym_width 16 #功能键宽度
-  - &menu_height 41 #菜单高度
-  - &menu_width 12.5 #菜单宽度
-  - &sym_long_text_size 20 #长标签字号
-  - &yanwz_width 28 #颜文字键盘按键宽度
-  - &yanwz_double_width 56 #颜文字键盘2按键宽度
-  - &yanwz_menu_width 16 #颜文字键盘菜单宽度
-
 vars_map:
   symbols_config:
     author: *xingaqr
     ascii_mode: 1
-    height: *sym_height
     width: *sym_width
     key_press_offset_x: 2
     key_press_offset_y: 2
@@ -269,6 +274,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym112:
     __include: vars_map/symbols_config
@@ -314,6 +320,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym121:
     __include: vars_map/symbols_config
@@ -359,6 +366,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym122:
     __include: vars_map/symbols_config
@@ -404,6 +412,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym151:
     __include: vars_map/symbols_config
@@ -449,6 +458,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym152:
     __include: vars_map/symbols_config
@@ -494,6 +504,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym153:
     __include: vars_map/symbols_config
@@ -539,6 +550,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym154:
     __include: vars_map/symbols_config
@@ -584,6 +596,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym155:
     __include: vars_map/symbols_config
@@ -629,6 +642,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym161:
     __include: vars_map/symbols_config
@@ -674,6 +688,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym162:
     __include: vars_map/symbols_config
@@ -719,6 +734,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym163:
     __include: vars_map/symbols_config
@@ -764,6 +780,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym164:
     __include: vars_map/symbols_config
@@ -809,6 +826,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym171:
     __include: vars_map/symbols_config
@@ -854,6 +872,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym172:
     __include: vars_map/symbols_config
@@ -899,6 +918,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_hilited_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym211:
     __include: vars_map/symbols_config
@@ -944,6 +964,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym212:
     __include: vars_map/symbols_config
@@ -989,6 +1010,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym213:
     __include: vars_map/symbols_config
@@ -1034,6 +1056,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym221:
     __include: vars_map/symbols_config
@@ -1079,6 +1102,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym222:
     __include: vars_map/symbols_config
@@ -1124,6 +1148,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym223:
     __include: vars_map/symbols_config
@@ -1169,6 +1194,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym224:
     __include: vars_map/symbols_config
@@ -1214,6 +1240,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym225:
     __include: vars_map/symbols_config
@@ -1259,6 +1286,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym226:
     __include: vars_map/symbols_config
@@ -1304,6 +1332,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym227:
     __include: vars_map/symbols_config
@@ -1349,6 +1378,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym231:
     __include: vars_map/symbols_config
@@ -1394,6 +1424,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym232:
     __include: vars_map/symbols_config
@@ -1439,6 +1470,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym241:
     __include: vars_map/symbols_config
@@ -1484,6 +1516,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym242:
     __include: vars_map/symbols_config
@@ -1529,6 +1562,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym243:
     __include: vars_map/symbols_config
@@ -1574,6 +1608,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym244:
     __include: vars_map/symbols_config
@@ -1619,6 +1654,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym245:
     __include: vars_map/symbols_config
@@ -1664,6 +1700,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym251:
     __include: vars_map/symbols_config
@@ -1709,6 +1746,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym252:
     __include: vars_map/symbols_config
@@ -1754,6 +1792,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym253:
     __include: vars_map/symbols_config
@@ -1799,6 +1838,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym261:
     __include: vars_map/symbols_config
@@ -1844,6 +1884,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_hilited_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym262:
     __include: vars_map/symbols_config
@@ -1889,6 +1930,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_hilited_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym263:
     __include: vars_map/symbols_config
@@ -1934,6 +1976,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_hilited_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   sym264:
     __include: vars_map/symbols_config
@@ -1979,6 +2022,7 @@ kbs:
       - { click: kb_sym26, __include: vars_map/styl_hilited_menu }
       - { click: '', __include: vars_map/styl_menu }
       - { click: kb_sym1, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji1:
     __include: vars_map/symbols_config
@@ -2024,6 +2068,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji2:
     __include: vars_map/symbols_config
@@ -2069,6 +2114,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji3:
     __include: vars_map/symbols_config
@@ -2114,6 +2160,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji4:
     __include: vars_map/symbols_config
@@ -2159,6 +2206,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji5:
     __include: vars_map/symbols_config
@@ -2204,6 +2252,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   emoji6:
     __include: vars_map/symbols_config
@@ -2249,6 +2298,7 @@ kbs:
       - { click: kb_sym16, __include: vars_map/styl_menu }
       - { click: kb_sym17, __include: vars_map/styl_menu }
       - { click: kb_sym2, __include: vars_map/styl_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz11:
     __include: vars_map/symbols_config
@@ -2277,6 +2327,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz12:
     __include: vars_map/symbols_config
@@ -2304,6 +2355,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz21:
     __include: vars_map/symbols_config
@@ -2332,6 +2384,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz22:
     __include: vars_map/symbols_config
@@ -2360,6 +2413,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz31:
     __include: vars_map/symbols_config
@@ -2388,6 +2442,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz32:
     __include: vars_map/symbols_config
@@ -2416,6 +2471,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz41:
     __include: vars_map/symbols_config
@@ -2444,6 +2500,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_hilited_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz42:
     __include: vars_map/symbols_config
@@ -2472,6 +2529,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_hilited_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz51:
     __include: vars_map/symbols_config
@@ -2500,6 +2558,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_hilited_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz52:
     __include: vars_map/symbols_config
@@ -2526,6 +2585,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_hilited_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz61:
     __include: vars_map/symbols_config
@@ -2554,6 +2614,7 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_hilited_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz62:
     __include: vars_map/symbols_config
@@ -2582,3 +2643,4 @@ kbs:
       - { click: kb_yanwz4, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz5, __include: vars_map/styl_yanwz_menu }
       - { click: kb_yanwz6, __include: vars_map/styl_yanwz_hilited_menu }
+      - { width: *sym_bottom_switch, height: *sym_bottom }
