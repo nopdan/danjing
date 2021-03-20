@@ -22,14 +22,14 @@
 
 ```yaml
 preset_keyboards:
-  __include: xingaqr:/kbs
+  __include: danjing:/kbs
 ```
 
 像下面这样添加一段代码
 
 ```yaml
 preset_keyboards:
-  __include: xingaqr:/kbs
+  __include: danjing:/kbs
   <你的方案id>:
     __include: /preset_keyboards/<布局id>
 ```
@@ -49,7 +49,7 @@ preset_keyboards:
 > 为了确保不同布局高度一致，请按照修改顺序进行修改
 
 键盘高度的定义在 `单静.trime.yaml` 里的第 8 行  
-符号键盘菜单高度定义在 `xingaqr.yaml` 里的第 9 行  
+符号键盘菜单高度定义在 `danjing.yaml` 里的第 9 行  
 修改顺序：
 
 - `number_height` #数字键盘按键高度
@@ -58,11 +58,11 @@ preset_keyboards:
 - `key_height` #按键高度
 - `key_height_last` # 第 4 行 按键高度 #微调
 
-#### 2.2 怎么修改 `单静h` 键盘高度？
+#### 2.2 怎么修改 `单静+` 键盘高度？
 
-> 主键盘的参数都在 `单静.trime.yaml` 里设置，下面的在 `单静h` 里设置
+> 主键盘的参数都在 `单静.trime.yaml` 里设置，下面的在 `单静+` 里设置
 
 修改顺序：
-- 修改 `number_height` 和 `sym_height` 高度
-- 使数字键盘和符号键盘高度一致
+- 修改 `number_height` 和 `sym_height` 高度  
+  使数字键盘和符号键盘高度一致
 - 修改 `num_height` 进行微调
