@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 config_version: '2.1'
-name: 单静h #方案名称
-author: &xingaqr '单单 <xingaqr@gmail.com>' #作者资讯
+name: 单静+ #方案名称
+author: '单单 <cxprcn@gmail.com>' #作者资讯
 
 vars:
   # 其他在 单静.yaml修改
@@ -13,7 +13,7 @@ vars:
   - &number_height 71 #按键高度
   # 符号、颜文字键盘
   - &sym_height 61 #按键高度
-  #- &menu_height 41 #菜单高度 见附文件 xingaqr.yaml
+  #- &menu_height 41 #菜单高度 见附文件 danjing.yaml
   #- &sym_bottom 0 #底部空白 见附文件
 
 style:
@@ -41,7 +41,7 @@ patch_num:
   'keys/@after 8/': { click: num0, height: *num_height }
 
 preset_keyboards:
-  __include: xingaqr:/kbs
+  __include: danjing:/kbs
 
   default:
     __include: 单静.trime:/preset_keyboards/default

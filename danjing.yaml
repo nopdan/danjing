@@ -4,7 +4,7 @@
 
 vars:
   # 不要修改宽度
-  - &xingaqr '单单 <xingaqr@gmail.com>'
+  - '单单 <cxprcn@gmail.com>'
   #- &sym_height 50 #按键高度 移至主文件
   - &menu_height 41 #菜单高度
   - &sym_bottom_switch 0 #底部空白开关
@@ -193,7 +193,7 @@ keys:
 
 vars_map:
   symbols_config:
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 1
     width: *sym_width
     key_press_offset_x: 2

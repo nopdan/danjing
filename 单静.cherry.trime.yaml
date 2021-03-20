@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 config_version: '2.1'
-name: 单静·cherry #方案名称
-author: &xingaqr '单单 <xingaqr@gmail.com>' #作者资讯
+name: 单静.cherry #方案名称
+author: '单单 <cxprcn@gmail.com>' #作者资讯
 
 style:
   __include: 单静.trime:/style
@@ -15,7 +15,7 @@ fallback_colors:
 preset_color_schemes:
   cherry:
     name: cherry
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     colors:
       # 谷歌黑
       - &cherry_key_text 0xDDDDDD #白
@@ -47,21 +47,21 @@ preset_color_schemes:
     hilited_key_symbol_color: *cherry_key_symbol #高亮按键符号
 
     # 主键盘
-    main_back_color: xingaqr.cherry/key.png #按键背景 ※
-    hilited_main_back_color: xingaqr.cherry/hilited_key.png #高亮按键背景 ※
-    space_back_color: xingaqr.cherry/space.png #空格背景 ※
-    hilited_space_back_color: xingaqr.cherry/hilited_space.png #高亮空格背景 ※
-    off_key_back_color: xingaqr.cherry/key.png #功能键背景
-    hilited_off_key_back_color: xingaqr.cherry/hilited_key.png #高亮功能键背景
+    main_back_color: danjing.cherry/key.png #按键背景 ※
+    hilited_main_back_color: danjing.cherry/hilited_key.png #高亮按键背景 ※
+    space_back_color: danjing.cherry/space.png #空格背景 ※
+    hilited_space_back_color: danjing.cherry/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: danjing.cherry/key.png #功能键背景
+    hilited_off_key_back_color: danjing.cherry/hilited_key.png #高亮功能键背景
     off_key_text_color: *cherry_key_text #功能键文字
     hilited_off_key_text_color: *cherry_key_text #高亮功能键文字
     # off_key_symbol_color: *cherry_key_text #功能键符号 高亮功能键符号※
-    on_key_back_color: xingaqr.cherry/shift.png #shift锁定时背景
-    hilited_on_key_back_color: xingaqr.cherry/hilited_shift.png #高亮shift锁定时背景
+    on_key_back_color: danjing.cherry/shift.png #shift锁定时背景
+    hilited_on_key_back_color: danjing.cherry/hilited_shift.png #高亮shift锁定时背景
     on_key_text_color: white #shift锁定时文字
     # hilited_on_key_text_color: white #高亮shift锁定时文字
-    # enter_back_color: xingaqr.cherry/enter.png #enter背景 ※
-    # hilited_enter_back_color: xingaqr.cherry/hilited_enter.png #高亮回车背景 ※
+    # enter_back_color: danjing.cherry/enter.png #enter背景 ※
+    # hilited_enter_back_color: danjing.cherry/hilited_enter.png #高亮回车背景 ※
     enter_text_color: *cherry_key_text #enter文字 高亮enter文字※
     # enter_symbol_color: *cherry_key_text #enter符号 高亮enter符号※
 
@@ -88,7 +88,7 @@ patch_offset:
   key_press_offset_y: 21
 
 preset_keyboards:
-  __include: xingaqr:/kbs
+  __include: danjing:/kbs
 
   default:
     __include: 单静.trime:/preset_keyboards/default

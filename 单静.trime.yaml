@@ -3,7 +3,7 @@
 
 config_version: '2.1'
 name: 单静 #方案名称
-author: &xingaqr '单单 <xingaqr@gmail.com>' #作者资讯
+author: '单单 <cxprcn@gmail.com>' #作者资讯
 
 vars:
   # 主键盘
@@ -20,7 +20,7 @@ vars:
   - &number_bottom 1 #底部空白
   # 符号、颜文字键盘
   - &sym_height 50 #按键高度
-  #- &menu_height 41 #菜单高度 见附文件 xingaqr.yaml
+  #- &menu_height 41 #菜单高度 见附文件 danjing.yaml
   #- &sym_bottom 0 #底部空白 见附文件
 
 style:
@@ -33,7 +33,7 @@ style:
   locale: zh_TW #预设语言 zh_TW,zh_CN,zh_HK,""
   background_dim_amount: 0.5 #备用参数，无功能
   keyboards: #键盘配置：自动键盘、字母、数字、符号
-    __include: xingaqr:/keyboards
+    __include: danjing:/keyboards
     __append:
       - default
       - letter
@@ -188,7 +188,7 @@ fallback_colors:
 preset_color_schemes:
   default:
     name: 默认 #方案名称
-    author: *xingaqr #作者资讯
+    author: '单单 <cxprcn@gmail.com>' #作者资讯
     colors:
       # - &高亮灰 0xB0B2BC
       - &default_back 0xD7D9DD #背景灰
@@ -226,21 +226,21 @@ preset_color_schemes:
     hilited_key_symbol_color: gray #高亮按键符号
 
     # 主键盘
-    main_back_color: xingaqr.default/key.png #按键背景 ※
-    hilited_main_back_color: xingaqr.default/hilited_key.png #高亮按键背景 ※
-    space_back_color: xingaqr.default/space.png #空格背景 ※
-    hilited_space_back_color: xingaqr.default/hilited_space.png #高亮空格背景 ※
-    off_key_back_color: xingaqr.default/off_key.png #功能键背景
-    hilited_off_key_back_color: xingaqr.default/hilited_off_key.png #高亮功能键背景
+    main_back_color: danjing.default/key.png #按键背景 ※
+    hilited_main_back_color: danjing.default/hilited_key.png #高亮按键背景 ※
+    space_back_color: danjing.default/space.png #空格背景 ※
+    hilited_space_back_color: danjing.default/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: danjing.default/off_key.png #功能键背景
+    hilited_off_key_back_color: danjing.default/hilited_off_key.png #高亮功能键背景
     off_key_text_color: *default_hilited_text #功能键文字
     hilited_off_key_text_color: *default_hilited_text #高亮功能键文字
     off_key_symbol_color: *default_hilited_text #功能键符号 高亮功能键符号※
-    on_key_back_color: xingaqr.default/shift.png #shift锁定时背景
-    hilited_on_key_back_color: xingaqr.default/hilited_shift.png #高亮shift锁定时背景
+    on_key_back_color: danjing.default/shift.png #shift锁定时背景
+    hilited_on_key_back_color: danjing.default/hilited_shift.png #高亮shift锁定时背景
     on_key_text_color: white #shift锁定时文字
     hilited_on_key_text_color: white #高亮shift锁定时文字
-    enter_back_color: xingaqr.default/enter.png #enter背景 ※
-    hilited_enter_back_color: xingaqr.default/hilited_enter.png #高亮enter背景 ※
+    enter_back_color: danjing.default/enter.png #enter背景 ※
+    hilited_enter_back_color: danjing.default/hilited_enter.png #高亮enter背景 ※
     enter_text_color: 0x00 #enter文字 高亮enter文字※
     enter_symbol_color: white #enter符号 高亮enter符号※
 
@@ -262,7 +262,7 @@ preset_color_schemes:
 
   google_black:
     name: 谷歌黑 #方案名称
-    author: *xingaqr #作者资讯
+    author: '单单 <cxprcn@gmail.com>' #作者资讯
     colors:
       # 谷歌黑
       - &ggb_key_text 0xDDDDDD #白
@@ -294,21 +294,21 @@ preset_color_schemes:
     hilited_key_symbol_color: *ggb_key_symbol #高亮按键符号
 
     # 主键盘
-    main_back_color: xingaqr.google_black/key.png #按键背景 ※
-    hilited_main_back_color: xingaqr.google_black/hilited_key.png #高亮按键背景 ※
-    space_back_color: xingaqr.google_black/space.png #空格背景 ※
-    hilited_space_back_color: xingaqr.google_black/hilited_space.png #高亮空格背景 ※
-    off_key_back_color: xingaqr.google_black/off_key.png #功能键背景
-    hilited_off_key_back_color: xingaqr.google_black/hilited_off_key.png #高亮功能键背景
+    main_back_color: danjing.google_black/key.png #按键背景 ※
+    hilited_main_back_color: danjing.google_black/hilited_key.png #高亮按键背景 ※
+    space_back_color: danjing.google_black/space.png #空格背景 ※
+    hilited_space_back_color: danjing.google_black/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: danjing.google_black/off_key.png #功能键背景
+    hilited_off_key_back_color: danjing.google_black/hilited_off_key.png #高亮功能键背景
     off_key_text_color: *ggb_key_text #功能键文字
     hilited_off_key_text_color: white #高亮功能键文字
     # off_key_symbol_color: *ggb_key_text #功能键符号 高亮功能键符号※
-    on_key_back_color: xingaqr.google_black/shift.png #shift锁定时背景
-    hilited_on_key_back_color: xingaqr.google_black/hilited_shift.png #高亮shift锁定时背景
+    on_key_back_color: danjing.google_black/shift.png #shift锁定时背景
+    hilited_on_key_back_color: danjing.google_black/hilited_shift.png #高亮shift锁定时背景
     on_key_text_color: white #shift锁定时文字
     # hilited_on_key_text_color: white #高亮shift锁定时文字
-    # enter_back_color: xingaqr.google_black/enter.png #enter背景 ※
-    # hilited_enter_back_color: xingaqr.google_black/hilited_enter.png #高亮回车背景 ※
+    # enter_back_color: danjing.google_black/enter.png #enter背景 ※
+    # hilited_enter_back_color: danjing.google_black/hilited_enter.png #高亮回车背景 ※
     enter_text_color: *ggb_key_text #enter文字 高亮enter文字※
     # enter_symbol_color: *ggb_key_text #enter符号 高亮enter符号※
 
@@ -329,7 +329,7 @@ preset_color_schemes:
 
   google_white:
     name: 谷歌白
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     colors:
       - &ggw_key_text 0x333333
       - &ggw_text 0x627178
@@ -362,21 +362,21 @@ preset_color_schemes:
     hilited_key_symbol_color: *ggw_text #高亮按键符号
 
     # 主键盘
-    main_back_color: xingaqr.google_white/key.png #按键背景 ※
-    hilited_main_back_color: xingaqr.google_white/hilited_key.png #高亮按键背景 ※
-    space_back_color: xingaqr.google_white/space.png #空格背景 ※
-    hilited_space_back_color: xingaqr.google_white/hilited_space.png #高亮空格背景 ※
-    off_key_back_color: xingaqr.google_white/off_key.png #功能键背景
-    hilited_off_key_back_color: xingaqr.google_white/hilited_off_key.png #高亮功能键背景
+    main_back_color: danjing.google_white/key.png #按键背景 ※
+    hilited_main_back_color: danjing.google_white/hilited_key.png #高亮按键背景 ※
+    space_back_color: danjing.google_white/space.png #空格背景 ※
+    hilited_space_back_color: danjing.google_white/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: danjing.google_white/off_key.png #功能键背景
+    hilited_off_key_back_color: danjing.google_white/hilited_off_key.png #高亮功能键背景
     off_key_text_color: *ggw_text #功能键文字
     hilited_off_key_text_color: *ggw_text #高亮功能键文字
     off_key_symbol_color: *ggw_text #功能键符号 高亮功能键符号※
-    on_key_back_color: xingaqr.google_white/shift.png #shift锁定时背景
-    hilited_on_key_back_color: xingaqr.google_white/hilited_shift.png #高亮shift锁定时背景
+    on_key_back_color: danjing.google_white/shift.png #shift锁定时背景
+    hilited_on_key_back_color: danjing.google_white/hilited_shift.png #高亮shift锁定时背景
     on_key_text_color: white #shift锁定时文字
     hilited_on_key_text_color: white #高亮shift锁定时文字
-    # enter_back_color: xingaqr.google_white/enter.png #enter背景 ※
-    # hilited_enter_back_color: xingaqr.google_white/hilited_enter.png #高亮enter背景 ※
+    # enter_back_color: danjing.google_white/enter.png #enter背景 ※
+    # hilited_enter_back_color: danjing.google_white/hilited_enter.png #高亮enter背景 ※
     enter_text_color: white #enter文字 高亮enter文字※
     # enter_symbol_color: white #enter符号 高亮enter符号※
 
@@ -407,7 +407,7 @@ vars_map:
     hilited_key_text_color: hilited_off_sym_text_color
 
 preset_keyboards:
-  __include: xingaqr:/kbs
+  __include: danjing:/kbs
 
   xklbs:
     __include: preset_keyboards/default
@@ -420,7 +420,7 @@ preset_keyboards:
 
   default:
     name: 默认26键
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     label_transform: uppercase
     lock: true
@@ -669,7 +669,7 @@ preset_keyboards:
 
   number:
     name: 数字
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 1
     width: 16.6
     height: *number_height
@@ -714,7 +714,7 @@ preset_keyboards:
 
   edit:
     name: 编辑
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     width: 25
     height: *number_height
@@ -746,7 +746,7 @@ preset_keyboards:
 
   func:
     name: 功能
-    author: *xingaqr
+    author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     width: 25
     height: *number_height
@@ -913,4 +913,4 @@ preset_keys:
   BS: { label: '⌫', repeatable: true, send: BackSpace }
   select_second: { label: '②', send: 2 }
   split_word: { label: "'分词", send: apostrophe }
-  __include: xingaqr:/keys
+  __include: danjing:/keys
