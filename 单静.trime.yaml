@@ -221,7 +221,7 @@ preset_color_schemes:
     # preview_back_color: 0xaa99CCFF #按键提示背景
     # preview_text_color: *default_hilited_text #按键提示文字
     key_text_color: *default_hilited_text #按键文字
-    hilited_key_text_color: *default_enter #高亮按键文字
+    hilited_key_text_color: *default_hilited_text #高亮按键文字
     key_symbol_color: gray #按键符号
     hilited_key_symbol_color: gray #高亮按键符号
 
