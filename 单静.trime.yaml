@@ -802,7 +802,7 @@ preset_keys:
       command: run,
       option: 'https://github.com/osfans/trime',
     } #查看网页: run 网址
-  CommitHomepage: { label: 同文网址, commit: https://github.com/osfans/trime } #直接上屏
+  CommitHomepage: { label: 同文网址, commit: 'https://github.com/osfans/trime' } #直接上屏
   Wiki: {
       label: 维基,
       command: run,
