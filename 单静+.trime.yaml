@@ -29,7 +29,7 @@ preset_color_schemes:
 patch_num:
   'keys/@4/hint': ' '
   'keys/@7/hint': ' '
-  'keys/@before 0/': { click: num1, height: *num_height }
+  'keys/@0/': { click: num1, height: *num_height }
   'keys/@after 0/': { click: num2, height: *num_height }
   'keys/@after 1/': { click: num3, height: *num_height }
   'keys/@after 2/': { click: num4, height: *num_height }
