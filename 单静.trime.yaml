@@ -534,6 +534,7 @@ preset_keyboards:
         }
       - { click: 'k', long_click: ':', __include: vars_map/styl_key }
       - { click: 'l', long_click: ';', __include: vars_map/styl_key }
+      - { width: 0 } #备用
       # 第 3 行
       - { click: Shift_L, composing: split_word, width: 15 }
       - {
@@ -619,7 +620,7 @@ preset_keyboards:
     __patch:
       ascii_mode: 1
       lock: false
-      'keys/@33/long_click': Keyboard_default
+      'keys/@34/long_click': Keyboard_default
 
   qwertys:
     name: 默认27键
@@ -630,7 +631,7 @@ preset_keyboards:
       'keys/@18/hint': ' '
       'keys/@19/long_click': '<'
       'keys/@20/long_click': '>'
-      'keys/@after 20/':
+      'keys/@21/':
         click: ';'
         long_click: ':'
         width: 10
@@ -644,7 +645,7 @@ preset_keyboards:
       'keys/@22/': { width: 0 }
       'keys/@27/hint': ' '
       'keys/@27/long_click': '|'
-      'keys/@30/':
+      'keys/@after 29/':
         click: ','
         long_click: '!'
         __include: vars_map/styl_key
@@ -656,7 +657,7 @@ preset_keyboards:
         click: '/'
         long_click: '\'
         __include: vars_map/styl_key
-      'keys/@after 32/':
+      'keys/@30/':
         click: Shift_L
         composing: split_word
         height: *key_height_last

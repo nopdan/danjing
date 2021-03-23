@@ -3,18 +3,17 @@
 # version: 1.1
 
 vars:
-  # 不要修改宽度
-  - '单单 <cxprcn@gmail.com>'
-  #- &sym_height 50 #按键高度 移至主文件
+  # ！不要修改宽度
+  #- &sym_height 50 #按键高度 移至 单静.trime.ymal
   - &menu_height 41 #菜单高度
   - &sym_bottom_switch 0 #底部空白开关
   - &sym_bottom 1 #底部空白
+  - &sym_long_text_size 20 #长标签字号
   - &sym_width 12 #按键宽度
   - &off_sym_width 16 #功能键宽度
   - &menu_width 12.5 #菜单宽度
-  - &sym_long_text_size 20 #长标签字号
   - &yanwz_width 28 #颜文字键盘按键宽度
-  - &yanwz_double_width 56 #颜文字键盘2按键宽度
+  - &yanwz_double_width 56 #颜文字键盘2键宽度
   - &yanwz_menu_width 16 #颜文字键盘菜单宽度
 
 keyboards:
@@ -192,22 +191,26 @@ keys:
   kb_yanwz6d: { label: '▼', send: Eisu_toggle, select: yanwz62 }
 
 vars_map:
+  # 符号键盘配置
   symbols_config:
     author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 1
     width: *sym_width
     key_press_offset_x: 2
     key_press_offset_y: 2
+  # 功能键
   styl_off_sym:
     width: *off_sym_width
     key_back_color: off_sym_back_color
     hilited_key_back_color: hilited_off_sym_back_color
+  # 不可用的功能键（右边点不动的箭头）
   styl_unavl_off_sym:
     width: *off_sym_width
     key_back_color: off_sym_back_color
     hilited_key_back_color: hilited_off_sym_back_color
     key_text_color: hilited_off_sym_back_color
     hilited_key_text_color: hilited_off_sym_back_color
+  # 底部的菜单
   styl_menu:
     height: *menu_height
     width: *menu_width
@@ -215,6 +218,7 @@ vars_map:
     hilited_key_back_color: hilited_menu_back_color
     key_text_color: menu_text_color
     hilited_key_text_color: hilited_menu_text_color
+  # 高亮的底部菜单
   styl_hilited_menu:
     height: *menu_height
     width: *menu_width
@@ -222,9 +226,18 @@ vars_map:
     hilited_key_back_color: hilited_menu_back_color
     key_text_color: hilited_menu_text_color
     hilited_key_text_color: hilited_menu_text_color
+  # 颜文字键盘
+  yanwz_config:
+    author: '单单 <cxprcn@gmail.com>'
+    ascii_mode: 1
+    width: *yanwz_width
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+  # 底部的菜单
   styl_yanwz_menu:
     __include: vars_map/styl_menu
     width: *yanwz_menu_width
+  # 高亮的底部菜单
   styl_yanwz_hilited_menu:
     __include: vars_map/styl_hilited_menu
     width: *yanwz_menu_width
@@ -2301,8 +2314,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz11:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 开心1
     keys:
       - { click: "^_^" }
@@ -2330,8 +2342,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz12:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 开心2
     keys:
       - { click: "Y(^_^)Y" }
@@ -2358,8 +2369,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz21:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 喜欢1
     keys:
       - { click: "QwQ" }
@@ -2387,8 +2397,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz22:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 喜欢2
     keys:
       - { click: "( σ'ω')σ" }
@@ -2416,8 +2425,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz31:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 伤心1
     keys:
       - { click: "(＞﹏＜)" }
@@ -2445,8 +2453,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz32:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 伤心2
     keys:
       - { click: "●﹏●" }
@@ -2474,8 +2481,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz41:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 生气1
     keys:
       - { click: "╰（‵□′）╯" }
@@ -2503,8 +2509,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz42:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 生气2
     keys:
       - { click: "<(｀^´)>" }
@@ -2532,8 +2537,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz51:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 惊讶1
     keys:
       - { click: "⊙_⊙" }
@@ -2561,8 +2565,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz52:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 惊讶2
     keys:
       - { click: "(⊙x⊙;)" }
@@ -2588,8 +2591,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz61:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 无奈1
     keys:
       - { click: "=_=" }
@@ -2617,8 +2619,7 @@ kbs:
       - { width: *sym_bottom_switch, height: *sym_bottom }
 
   yanwz62:
-    __include: vars_map/symbols_config
-    width: *yanwz_width
+    __include: vars_map/yanwz_config
     name: 无奈2
     keys:
       - { click: "o_O" }

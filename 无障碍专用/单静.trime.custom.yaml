@@ -1,0 +1,21 @@
+# custom
+
+
+vars:
+  # 主键盘
+  - &key_height 59 #按键高度
+  - &key_height_last 57 # 第4行 按键高度
+
+patch:
+  'preset_keyboards/default/height': *key_height
+  'preset_keyboards/default/keys/@31/height': *key_height_last
+  
+  'preset_keyboards/letter/height': *key_height
+  'preset_keyboards/letter/keys/@31/height': *key_height_last
+
+  'preset_keyboards/qwertys/height': *key_height
+  'preset_keyboards/qwertys/keys/@31/height': *key_height_last
+
+  'preset_keyboards/qwerty_/height': *key_height
+  'preset_keyboards/qwerty_/keys/@33/height': *key_height_last
+
