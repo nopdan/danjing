@@ -207,7 +207,7 @@ vars_map:
   styl_unavl_off_sym:
     width: *off_sym_width
     key_back_color: off_sym_back_color
-    hilited_key_back_color: hilited_off_sym_back_color
+    hilited_key_back_color: off_sym_back_color
     key_text_color: hilited_off_sym_back_color
     hilited_key_text_color: hilited_off_sym_back_color
   # 底部的菜单
