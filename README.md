@@ -5,7 +5,7 @@
 
 ## 预览
 
-<img src="./preview/default.png" width = "400" alt="图片名称" align=center />
+<img src="./preview/default_without_hint.png" width = "400" alt="图片名称" align=center />
 
 更多图片在 `preview` 文件夹下查看
 
