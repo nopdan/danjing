@@ -5,24 +5,6 @@ config_version: '2.1'
 name: 单静 #方案名称
 author: '单单 <cxprcn@gmail.com>' #作者资讯
 
-vars:
-  # 主键盘
-  - &key_height 52 #按键高度
-  - &key_height_last 50 # 第4行 按键高度
-  - &height_bottom_switch 100 #底部空白开关，0为关，1~100开
-  - &height_bottom 6 #底部空白
-  - &key_horizontal_gap 3 #按键水平间距
-  - &key_vertical_gap 5 #按键行距
-  - &off_key_symbol_offset_x 0 #功能键符号偏移
-  # 数字、编辑、功能键盘
-  - &number_height 60 #按键高度
-  - &number_bottom_switch 0 #底部空白开关
-  - &number_bottom 1 #底部空白
-  # 符号、颜文字键盘
-  - &sym_height 50 #按键高度
-  #- &menu_height 41 #菜单高度 见附文件 danjing.yaml
-  #- &sym_bottom 0 #底部空白 见附文件
-
 style:
   color_scheme: default #默认配色方案
   horizontal: true #水平模式。改变方向键的功能 （true：方向键适配横排候选；false：方向键适配竖排候选）
@@ -63,7 +45,7 @@ style:
   horizontal_gap: 0 #键水平间距
   vertical_gap: 0 #键盘行距
   ## 主按键
-  key_height: *sym_height #键高
+  key_height: { __include: conf/sym_height } #键高
   key_width: 10.0 #键宽，占屏幕宽的百分比
   round_corner: 1 #按键圆角半径
   shadow_radius: 0.0 #按键阴影半径
@@ -357,7 +339,7 @@ preset_color_schemes:
     # 键盘通用
     # keyboard_back_color: *ggw_back #键盘背景
     key_text_color: *ggw_key_text #按键文字
-    hilited_key_text_color: *ggw_on_key #高亮按键文字
+    hilited_key_text_color: *ggw_key_text #高亮按键文字
     key_symbol_color: *ggw_text #按键符号
     hilited_key_symbol_color: *ggw_text #高亮按键符号
 
@@ -396,15 +378,44 @@ preset_color_schemes:
     menu_text_color: *ggw_text #菜单文字 ※
     hilited_menu_text_color: *ggw_on_key #高亮菜单文字 ※
 
-vars_map:
-  styl_key:
-    key_back_color: main_back_color
-    hilited_key_back_color: hilited_main_back_color
-  styl_off_func:
-    key_back_color: off_sym_back_color
-    hilited_key_back_color: hilited_off_sym_back_color
-    key_text_color: off_sym_text_color
-    hilited_key_text_color: hilited_off_sym_text_color
+conf:
+  # 主键盘
+  key_height_last: 50 # 第4行 按键高度
+  main:
+    height: 52 #按键高度
+    horizontal_gap: 3 #按键水平间距
+    vertical_gap: 5 #按键行距
+    key_symbol_offset_x: 3
+    key_hint_offset_y: -1
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys/+:
+      - width: 100 #底部留白开关，0为关，1~100开
+        height: 6 #底部留白
+  # 数字、编辑、功能键盘配置
+  num:
+    height: 60 #按键高度
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys/+:
+      - width: 0 #底部留白开关
+        height: 1 #底部留白
+  # 符号、颜文字键盘
+  sym_height: 50 #按键高度
+  menu_height: 41 #菜单高度
+  sym_bottom_switch: 0 #底部留白开关
+  sym_bottom: 1 #底部留白
+  sym_long_text_size: 20 #长标签字号
+  # 按键样式
+  styl:
+    key:
+      key_back_color: main_back_color
+      hilited_key_back_color: hilited_main_back_color
+    off_func:
+      key_back_color: off_sym_back_color
+      hilited_key_back_color: hilited_off_sym_back_color
+      key_text_color: off_sym_text_color
+      hilited_key_text_color: hilited_off_sym_text_color
 
 preset_keyboards:
   __include: danjing:/kbs
@@ -425,115 +436,76 @@ preset_keyboards:
     label_transform: uppercase
     lock: true
     width: 10
-    height: *key_height
-    horizontal_gap: *key_horizontal_gap #键水平间距
-    vertical_gap: *key_vertical_gap #键盘行距
-    key_symbol_offset_x: 3
-    key_hint_offset_y: -1
-    key_press_offset_x: 2
-    key_press_offset_y: 2
+    __patch:
+      - conf/main
+      - 单静无障碍补丁:/main?
     keys:
       # 第 1 行
       - { width: 0 } #备用
-      - {
-          click: 'q',
-          long_click: '{',
-          swipe_down: 1,
-          __include: vars_map/styl_key,
-        }
-      - {
-          click: 'w',
-          long_click: '@',
-          swipe_down: 2,
-          __include: vars_map/styl_key,
-        }
-      - {
-          click: 'e',
-          long_click: '#',
-          swipe_down: 3,
-          __include: vars_map/styl_key,
-        }
+      - { click: 'q', long_click: '{', swipe_down: 1, __include: conf/styl/key }
+      - { click: 'w', long_click: '@', swipe_down: 2, __include: conf/styl/key }
+      - { click: 'e', long_click: '#', swipe_down: 3, __include: conf/styl/key }
       - {
           click: 'r',
           long_click: '$',
           swipe_down: 4,
           hint: 4,
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - {
-          click: 't',
-          long_click: '%',
-          swipe_down: 5,
-          __include: vars_map/styl_key,
-        }
-      - {
-          click: 'y',
-          long_click: '^',
-          swipe_down: 6,
-          __include: vars_map/styl_key,
-        }
+      - { click: 't', long_click: '%', swipe_down: 5, __include: conf/styl/key }
+      - { click: 'y', long_click: '^', swipe_down: 6, __include: conf/styl/key }
       - {
           click: 'u',
           long_click: '&',
           swipe_down: 7,
           hint: 7,
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - {
-          click: 'i',
-          long_click: '*',
-          swipe_down: 8,
-          __include: vars_map/styl_key,
-        }
+      - { click: 'i', long_click: '*', swipe_down: 8, __include: conf/styl/key }
       - {
           click: 'o',
           long_click: '(){Left}',
           swipe_left: '(',
           swipe_right: ')',
           swipe_down: 9,
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - {
-          click: 'p',
-          long_click: '}',
-          swipe_down: 0,
-          __include: vars_map/styl_key,
-        }
+      - { click: 'p', long_click: '}', swipe_down: 0, __include: conf/styl/key }
       # 第 2 行
       - { width: 5 }
-      - { click: 'a', long_click: select_all, __include: vars_map/styl_key }
-      - { click: 's', long_click: '-', __include: vars_map/styl_key }
-      - { click: 'd', long_click: '_', __include: vars_map/styl_key }
+      - { click: 'a', long_click: select_all, __include: conf/styl/key }
+      - { click: 's', long_click: '-', __include: conf/styl/key }
+      - { click: 'd', long_click: '_', __include: conf/styl/key }
       - {
           click: 'f',
           long_click: '+',
           swipe_down: '|',
           hint: '|',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
       - {
           click: 'g',
           long_click: '=',
           swipe_down: kb_edit,
           hint: '<ɪ>',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
       - {
           click: 'h',
           long_click: '[',
           swipe_down: '<',
           hint: '<',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
       - {
           click: 'j',
           long_click: ']',
           swipe_down: '>',
           hint: '>',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - { click: 'k', long_click: ':', __include: vars_map/styl_key }
-      - { click: 'l', long_click: ';', __include: vars_map/styl_key }
+      - { click: 'k', long_click: ':', __include: conf/styl/key }
+      - { click: 'l', long_click: ';', __include: conf/styl/key }
       - { width: 0 } #备用
       # 第 3 行
       - { click: Shift_L, composing: split_word, width: 15 }
@@ -542,17 +514,17 @@ preset_keyboards:
           long_click: '`',
           swipe_down: '~',
           hint: '~',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - { click: 'x', long_click: cut, __include: vars_map/styl_key }
-      - { click: 'c', long_click: copy, __include: vars_map/styl_key }
-      - { click: 'v', long_click: paste, __include: vars_map/styl_key }
+      - { click: 'x', long_click: cut, __include: conf/styl/key }
+      - { click: 'c', long_click: copy, __include: conf/styl/key }
+      - { click: 'v', long_click: paste, __include: conf/styl/key }
       - {
           click: 'b',
           long_click: '/',
           swipe_down: '\',
           hint: '\',
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
       - {
           click: 'n',
@@ -562,9 +534,9 @@ preset_keyboards:
           swipe_down: Down,
           swipe_left: Left,
           swipe_right: Right,
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
-      - { click: 'm', long_click: "'", __include: vars_map/styl_key }
+      - { click: 'm', long_click: "'", __include: conf/styl/key }
       - { click: BS, swipe_up: Escape, width: 15 }
       # 第 4 行
       - {
@@ -572,10 +544,10 @@ preset_keyboards:
           long_click: Menu,
           composing: Page_Up,
           width: 12,
-          height: *key_height_last,
+          height: { __include: conf/key_height_last },
           key_symbol_color: off_key_symbol_color,
           hilited_key_symbol_color: off_key_symbol_color,
-          key_symbol_offset_x: *off_key_symbol_offset_x,
+          key_symbol_offset_x: 0,
         }
       - {
           click: Keyboard_symbols,
@@ -584,9 +556,9 @@ preset_keyboards:
           width: 12,
           key_symbol_color: off_key_symbol_color,
           hilited_key_symbol_color: off_key_symbol_color,
-          key_symbol_offset_x: *off_key_symbol_offset_x,
+          key_symbol_offset_x: 0,
         }
-      - { click: ',', long_click: '!', width: 12, __include: vars_map/styl_key }
+      - { click: ',', long_click: '!', width: 12, __include: conf/styl/key }
       - {
           click: space,
           long_click: Keyboard_letter,
@@ -599,7 +571,7 @@ preset_keyboards:
           long_click: '?',
           composing: select_second,
           width: 12,
-          __include: vars_map/styl_key,
+          __include: conf/styl/key,
         }
       - {
           click: Return,
@@ -611,15 +583,14 @@ preset_keyboards:
           hilited_key_text_color: enter_text_color,
           key_symbol_color: enter_symbol_color,
           hilited_key_symbol_color: enter_symbol_color,
-          key_symbol_offset_x: *off_key_symbol_offset_x,
+          key_symbol_offset_x: 0,
         }
-      - { width: *height_bottom_switch, height: *height_bottom }
 
   letter:
     __include: preset_keyboards/default
+    ascii_mode: 1
+    lock: false
     __patch:
-      ascii_mode: 1
-      lock: false
       'keys/@34/long_click': Keyboard_default
 
   qwertys:
@@ -635,7 +606,7 @@ preset_keyboards:
         click: ';'
         long_click: ':'
         width: 10
-        __include: vars_map/styl_key
+        __include: conf/styl/key
 
   qwerty_:
     name: 默认30键
@@ -648,19 +619,19 @@ preset_keyboards:
       'keys/@after 29/':
         click: ','
         long_click: '!'
-        __include: vars_map/styl_key
+        __include: conf/styl/key
       'keys/@after 30/':
         click: '.'
         long_click: '?'
-        __include: vars_map/styl_key
+        __include: conf/styl/key
       'keys/@after 31/':
         click: '/'
         long_click: '\'
-        __include: vars_map/styl_key
+        __include: conf/styl/key
       'keys/@30/':
         click: Shift_L
         composing: split_word
-        height: *key_height_last
+        height: { __include: conf/key_height_last }
         width: 12
       'keys/@33/': { width: 0 }
       'keys/@35/':
@@ -673,9 +644,7 @@ preset_keyboards:
     author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 1
     width: 16.6
-    height: *number_height
-    key_press_offset_x: 2
-    key_press_offset_y: 2
+    __patch: conf/num
     keys:
       # 第一行
       - { click: '{}{Left}', long_click: '^' }
@@ -683,21 +652,21 @@ preset_keyboards:
       - { click: 1 }
       - { click: 2 }
       - { click: 3 }
-      - { click: Back, __include: vars_map/styl_off_func }
+      - { click: Back, __include: conf/styl/off_func }
       # 第二行
       - { click: '[]{Left}', long_click: '_' }
       - { click: '-', long_click: '±' }
       - { click: 4 }
       - { click: 5 }
       - { click: 6 }
-      - { click: Delete, __include: vars_map/styl_off_func }
+      - { click: Delete, __include: conf/styl/off_func }
       # 第三行
       - { click: '(){Left}', long_click: '!' }
       - { click: '*', long_click: '×' }
       - { click: 7 }
       - { click: 8 }
       - { click: 9 }
-      - { click: BackSpace, __include: vars_map/styl_off_func }
+      - { click: BackSpace, __include: conf/styl/off_func }
       # 第四行
       - { click: '=', long_click: '≠' }
       - { click: '/', long_click: '÷' }
@@ -711,66 +680,59 @@ preset_keyboards:
           key_text_color: enter_sym_text_color,
           hilited_key_text_color: enter_sym_text_color,
         }
-      - { width: *number_bottom_switch, height: *number_bottom }
 
   edit:
     name: 编辑
     author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     width: 25
-    height: *number_height
-    key_press_offset_x: 2
-    key_press_offset_y: 2
+    __patch: conf/num
     keys:
-      - { click: Home, __include: vars_map/styl_off_func }
-      - { click: Up, __include: vars_map/styl_off_func }
-      - { click: cut, __include: vars_map/styl_off_func }
-      - { click: Back, __include: vars_map/styl_off_func }
-      - { click: Left, __include: vars_map/styl_off_func }
+      - { click: Home, __include: conf/styl/off_func }
+      - { click: Up, __include: conf/styl/off_func }
+      - { click: cut, __include: conf/styl/off_func }
+      - { click: Back, __include: conf/styl/off_func }
+      - { click: Left, __include: conf/styl/off_func }
       - {
           click: Shift_L,
           label: 选择,
           key_back_color: off_sym_back_color,
           hilited_key_back_color: hilited_off_sym_back_color,
         }
-      - { click: Right, __include: vars_map/styl_off_func }
-      - { click: Delete, __include: vars_map/styl_off_func }
-      - { click: End, __include: vars_map/styl_off_func }
-      - { click: Down, __include: vars_map/styl_off_func }
-      - { click: Tab, __include: vars_map/styl_off_func }
-      - { click: BackSpace, __include: vars_map/styl_off_func }
-      - { click: select_all, __include: vars_map/styl_off_func }
-      - { click: copy, __include: vars_map/styl_off_func }
-      - { click: paste, __include: vars_map/styl_off_func }
-      - { click: Return, __include: vars_map/styl_off_func }
-      - { width: *number_bottom_switch, height: *number_bottom }
+      - { click: Right, __include: conf/styl/off_func }
+      - { click: Delete, __include: conf/styl/off_func }
+      - { click: End, __include: conf/styl/off_func }
+      - { click: Down, __include: conf/styl/off_func }
+      - { click: Tab, __include: conf/styl/off_func }
+      - { click: BackSpace, __include: conf/styl/off_func }
+      - { click: select_all, __include: conf/styl/off_func }
+      - { click: copy, __include: conf/styl/off_func }
+      - { click: paste, __include: conf/styl/off_func }
+      - { click: Return, __include: conf/styl/off_func }
 
   func:
     name: 功能
     author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     width: 25
-    height: *number_height
-    key_press_offset_x: 2
-    key_press_offset_y: 2
+    __patch: conf/num
     keys:
-      - { click: Candidate_switch, __include: vars_map/styl_off_func }
-      - { click: Comment_switch, __include: vars_map/styl_off_func }
-      - { click: Hint_switch, __include: vars_map/styl_off_func }
-      - { click: Back, __include: vars_map/styl_off_func }
-      - { click: Deploy, __include: vars_map/styl_off_func }
-      - { click: Schema_settings, __include: vars_map/styl_off_func }
-      - { click: Theme_settings, __include: vars_map/styl_off_func }
-      - { click: Settings, __include: vars_map/styl_off_func }
-      - { click: kb_qwerty, __include: vars_map/styl_off_func }
-      - { click: kb_qwertys, __include: vars_map/styl_off_func }
-      - { click: kb_qwerty_, __include: vars_map/styl_off_func }
-      - { click: kb_edit, __include: vars_map/styl_off_func }
-      - { click: Zdic, __include: vars_map/styl_off_func }
-      - { click: MoeDict, __include: vars_map/styl_off_func }
-      - { click: VOICE_ASSIST, __include: vars_map/styl_off_func }
-      - { click: '', __include: vars_map/styl_off_func }
-      - { width: *number_bottom_switch, height: *number_bottom }
+      - { click: Candidate_switch, __include: conf/styl/off_func }
+      - { click: Comment_switch, __include: conf/styl/off_func }
+      - { click: Hint_switch, __include: conf/styl/off_func }
+      - { click: Back, __include: conf/styl/off_func }
+      - { click: Deploy, __include: conf/styl/off_func }
+      - { click: Schema_settings, __include: conf/styl/off_func }
+      - { click: Theme_settings, __include: conf/styl/off_func }
+      - { click: Settings, __include: conf/styl/off_func }
+      - { click: kb_qwerty, __include: conf/styl/off_func }
+      - { click: kb_qwertys, __include: conf/styl/off_func }
+      - { click: kb_qwerty_, __include: conf/styl/off_func }
+      - { click: kb_edit, __include: conf/styl/off_func }
+      - { click: Zdic, __include: conf/styl/off_func }
+      - { click: MoeDict, __include: conf/styl/off_func }
+      - { click: VOICE_ASSIST, __include: conf/styl/off_func }
+      - { click: '', __include: conf/styl/off_func }
 
 android_keys:
   __include: trime:/android_keys

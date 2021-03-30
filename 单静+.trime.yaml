@@ -5,20 +5,34 @@ config_version: '2.1'
 name: 单静+ #方案名称
 author: '单单 <cxprcn@gmail.com>' #作者资讯
 
-vars:
-  # 其他在 单静.yaml修改
-  # 主键盘
-  - &num_height 39 #数字行按键高度
+conf:
+  # 其他参数在 单静.trime.yaml 修改
   # 数字、编辑、功能键盘
-  - &number_height 71 #按键高度
-  # 符号、颜文字键盘
-  - &sym_height 61 #按键高度
-  #- &menu_height 41 #菜单高度 见附文件 danjing.yaml
-  #- &sym_bottom 0 #底部空白 见附文件
+  num_height: 71 #按键高度
+  # 添加数字行
+  num_line:
+    height: 39 # 数字行按键高度
+  plus:
+    'keys/@4/hint': ' '
+    'keys/@7/hint': ' '
+    'keys/@0/':
+      click: num1
+      __patch:
+        - conf/num_line
+        - 单静无障碍补丁:/num_line?
+    'keys/@after 0/': { click: num2 }
+    'keys/@after 1/': { click: num3 }
+    'keys/@after 2/': { click: num4 }
+    'keys/@after 3/': { click: num5 }
+    'keys/@after 4/': { click: num6 }
+    'keys/@after 5/': { click: num7 }
+    'keys/@after 6/': { click: num8 }
+    'keys/@after 7/': { click: num9 }
+    'keys/@after 8/': { click: num0 }
 
 style:
   __include: 单静.trime:/style
-  key_height: *sym_height #键高
+  key_height: 61 #符号、颜文字键盘 按键高度
 
 fallback_colors:
   __include: 单静.trime:/fallback_colors
@@ -26,47 +40,36 @@ fallback_colors:
 preset_color_schemes:
   __include: 单静.trime:/preset_color_schemes
 
-patch_num:
-  'keys/@4/hint': ' '
-  'keys/@7/hint': ' '
-  'keys/@0/': { click: num1, height: *num_height }
-  'keys/@after 0/': { click: num2, height: *num_height }
-  'keys/@after 1/': { click: num3, height: *num_height }
-  'keys/@after 2/': { click: num4, height: *num_height }
-  'keys/@after 3/': { click: num5, height: *num_height }
-  'keys/@after 4/': { click: num6, height: *num_height }
-  'keys/@after 5/': { click: num7, height: *num_height }
-  'keys/@after 6/': { click: num8, height: *num_height }
-  'keys/@after 7/': { click: num9, height: *num_height }
-  'keys/@after 8/': { click: num0, height: *num_height }
-
 preset_keyboards:
   __include: danjing:/kbs
 
   default:
     __include: 单静.trime:/preset_keyboards/default
-    __patch: patch_num
+    __patch: conf/plus
+
   letter:
     __include: 单静.trime:/preset_keyboards/letter
-    __patch: patch_num
+    __patch: conf/plus
+
   qwertys:
     __include: 单静.trime:/preset_keyboards/qwertys
-    __patch: patch_num
+    __patch: conf/plus
+
   qwerty_:
     __include: 单静.trime:/preset_keyboards/qwerty_
-    __patch: patch_num
+    __patch: conf/plus
 
   number:
     __include: 单静.trime:/preset_keyboards/number
-    height: *number_height
+    height: { __include: conf/num_height }
 
   edit:
     __include: 单静.trime:/preset_keyboards/edit
-    height: *number_height
+    height: { __include: conf/num_height }
 
   func:
     __include: 单静.trime:/preset_keyboards/func
-    height: *number_height
+    height: { __include: conf/num_height }
 
 android_keys:
   __include: trime:/android_keys

@@ -80,28 +80,32 @@ preset_color_schemes:
     menu_text_color: *cherry_key_text #菜单文字 ※
     hilited_menu_text_color: *cherry_text #高亮菜单文字 ※
 
-patch_offset:
-  key_text_offset_y: -2
-  key_symbol_offset_y: -1
-  key_hint_offset_y: -4
-  key_press_offset_x: 0
-  key_press_offset_y: 21
+conf:
+  main:
+    key_text_offset_y: -2
+    key_symbol_offset_y: -1
+    key_hint_offset_y: -4
+    key_press_offset_x: 0
+    key_press_offset_y: 21
 
 preset_keyboards:
   __include: danjing:/kbs
 
   default:
     __include: 单静.trime:/preset_keyboards/default
-    __patch: patch_offset
+    __patch: conf/main
+
   letter:
     __include: 单静.trime:/preset_keyboards/letter
-    __patch: patch_offset
+    __patch: conf/main
+
   qwertys:
     __include: 单静.trime:/preset_keyboards/qwertys
-    __patch: patch_offset
+    __patch: conf/main
+
   qwerty_:
     __include: 单静.trime:/preset_keyboards/qwerty_
-    __patch: patch_offset
+    __patch: conf/main
 
   number:
     __include: 单静.trime:/preset_keyboards/number
