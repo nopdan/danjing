@@ -1,4 +1,4 @@
-**[单静][1] 一个简洁的 [同文输入法][2] 主题**
+**[单静][1] 可能是最精致的 [同文输入法][2] 主题**
 
 [1]: https://github.com/cxcn/danjing
 [2]: https://github.com/osfans/trime
@@ -51,54 +51,58 @@ preset_keyboards:
 
 ### 2. 怎么修改键盘高度？
 
-为了确保不同布局高度一致，请先修改 __数字__ 和 __符号__ 键盘高度  
-使其一致，最后修改 __主键盘__ 高度。
+为了确保不同布局高度一致，请先修改 **数字** 和 **符号** 键盘高度  
+使其一致，最后修改 **主键盘** 高度。
 
 ```yaml
 # 单静.trime.yaml
-# start line: 8
+# start line: 380
 
-vars:
+conf:
   # 主键盘
-  - &key_height 52 #按键高度
-  - &key_height_last 50 # 第4行 按键高度
-  - &height_bottom_switch 100 #底部空白开关，0为关，1~100开
-  - &height_bottom 6 #底部空白
-  - &key_horizontal_gap 3 #按键水平间距
-  - &key_vertical_gap 5 #按键行距
-  - &off_key_symbol_offset_x 0 #功能键符号偏移
-  # 数字、编辑、功能键盘
-  - &number_height 60 #按键高度
-  - &number_bottom_switch 0 #底部空白开关
-  - &number_bottom 1 #底部空白
+  key_height_last: 50 # 第4行 按键高度
+  main:
+    height: 52 #按键高度
+    horizontal_gap: 3 #按键水平间距
+    vertical_gap: 5 #按键行距
+    key_symbol_offset_x: 3
+    key_hint_offset_y: -1
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys/+:
+      - width: 100 #底部留白开关，0为关，1~100开
+        height: 6 #底部留白
+  # 数字、编辑、功能键盘配置
+  num:
+    height: 60 #按键高度
+    key_press_offset_x: 2
+    key_press_offset_y: 2
+    keys/+:
+      - width: 0 #底部留白开关
+        height: 1 #底部留白
   # 符号、颜文字键盘
-  - &sym_height 50 #按键高度
-```
-
-```yaml
-# danjing.yaml
-# start line: 5
-
-vars:
-  # ！不要修改宽度
-  #- &sym_height 50 #按键高度 移至 单静.trime.ymal
-  - &menu_height 41 #菜单高度
-  - &sym_bottom_switch 0 #底部空白开关
-  - &sym_bottom 1 #底部空白
+  sym_height: 50 #按键高度
+  menu_height: 41 #菜单高度
+  sym_bottom_switch: 0 #底部留白开关
+  sym_bottom: 1 #底部留白
+  sym_long_text_size: 20 #长标签字号
 ```
 
 ```yaml
 # 单静+.trime.yaml
 # start line: 8
 
-vars:
-  # 其他在 单静.trime.yaml修改
-  # 主键盘
-  - &num_height 39 #数字行按键高度
+conf:
+  # 其他参数在 单静.trime.yaml 修改
   # 数字、编辑、功能键盘
-  - &number_height 71 #按键高度
-  # 符号、颜文字键盘
-  - &sym_height 61 #按键高度
+  num_height: 71 #按键高度
+  # 添加数字行
+  num_line:
+    height: 39 # 数字行按键高度
 
-# `单静+` 的其他高度继承于 `单静`
+# line: 33
+
+style:
+  __include: 单静.trime:/style
+  key_height: 61 #符号、颜文字键盘 按键高度
 ```
