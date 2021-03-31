@@ -60,7 +60,6 @@ preset_keyboards:
 
 conf:
   # 主键盘
-  key_height_last: 50 # 第4行 按键高度
   main:
     height: 52 #按键高度
     horizontal_gap: 3 #按键水平间距
@@ -72,6 +71,9 @@ conf:
     keys/+:
       - width: 100 #底部留白开关，0为关，1~100开
         height: 6 #底部留白
+  key_height_last: # 第4行 按键高度
+    height: 50
+    __patch: 单静无障碍补丁:/key_height_last?
   # 数字、编辑、功能键盘配置
   num:
     height: 60 #按键高度
