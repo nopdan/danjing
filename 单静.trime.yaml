@@ -380,7 +380,6 @@ preset_color_schemes:
 
 conf:
   # 主键盘
-  key_height_last: 50 # 第4行 按键高度
   main:
     height: 52 #按键高度
     horizontal_gap: 3 #按键水平间距
@@ -392,6 +391,9 @@ conf:
     keys/+:
       - width: 100 #底部留白开关，0为关，1~100开
         height: 6 #底部留白
+  key_height_last: # 第4行 按键高度
+    height: 50
+    __patch: 单静无障碍补丁:/key_height_last?
   # 数字、编辑、功能键盘配置
   num:
     height: 60 #按键高度
@@ -411,6 +413,10 @@ conf:
     key:
       key_back_color: main_back_color
       hilited_key_back_color: hilited_main_back_color
+    off_key:
+      key_symbol_color: off_key_symbol_color
+      hilited_key_symbol_color: off_key_symbol_color
+      key_symbol_offset_x: 0
     off_func:
       key_back_color: off_sym_back_color
       hilited_key_back_color: hilited_off_sym_back_color
@@ -419,15 +425,6 @@ conf:
 
 preset_keyboards:
   __include: danjing:/kbs
-
-  xklbs:
-    __include: preset_keyboards/default
-    __patch:
-      'keys/@21/composing': select_second
-      'keys/@34/composing': '.'
-
-  xklbsdz:
-    __include: preset_keyboards/xklbs
 
   default:
     name: 默认26键
@@ -506,7 +503,6 @@ preset_keyboards:
         }
       - { click: 'k', long_click: ':', __include: conf/styl/key }
       - { click: 'l', long_click: ';', __include: conf/styl/key }
-      - { width: 0 } #备用
       # 第 3 行
       - { click: Shift_L, composing: split_word, width: 15 }
       - {
@@ -544,19 +540,15 @@ preset_keyboards:
           long_click: Menu,
           composing: Page_Up,
           width: 12,
-          height: { __include: conf/key_height_last },
-          key_symbol_color: off_key_symbol_color,
-          hilited_key_symbol_color: off_key_symbol_color,
-          key_symbol_offset_x: 0,
+          __include: conf/styl/off_key,
+          __patch: conf/key_height_last,
         }
       - {
           click: Keyboard_symbols,
           long_click: Color_switch,
           composing: Page_Down,
           width: 12,
-          key_symbol_color: off_key_symbol_color,
-          hilited_key_symbol_color: off_key_symbol_color,
-          key_symbol_offset_x: 0,
+          __include: conf/styl/off_key,
         }
       - { click: ',', long_click: '!', width: 12, __include: conf/styl/key }
       - {
@@ -591,7 +583,7 @@ preset_keyboards:
     ascii_mode: 1
     lock: false
     __patch:
-      'keys/@34/long_click': Keyboard_default
+      'keys/@33/long_click': Keyboard_default
 
   qwertys:
     name: 默认27键
@@ -602,7 +594,7 @@ preset_keyboards:
       'keys/@18/hint': ' '
       'keys/@19/long_click': '<'
       'keys/@20/long_click': '>'
-      'keys/@21/':
+      'keys/@after 20/':
         click: ';'
         long_click: ':'
         width: 10
@@ -631,8 +623,8 @@ preset_keyboards:
       'keys/@30/':
         click: Shift_L
         composing: split_word
-        height: { __include: conf/key_height_last }
         width: 12
+        __patch: conf/key_height_last
       'keys/@33/': { width: 0 }
       'keys/@35/':
         click: BS

@@ -4,7 +4,9 @@
 
 main:
   height: 59 #按键高度
-  'keys/@31/height': 57 # 第4行 按键高度
+
+key_height_last:
+  height: 57 # 第4行 按键高度
 
 num_line:
   height: 44 # 数字行按键高度
