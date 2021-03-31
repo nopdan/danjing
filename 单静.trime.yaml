@@ -391,9 +391,10 @@ conf:
     keys/+:
       - width: 100 #底部留白开关，0为关，1~100开
         height: 6 #底部留白
+    __patch: 单静.patch.无障碍:/main?
   key_height_last: # 第4行 按键高度
     height: 50
-    __patch: 单静无障碍补丁:/key_height_last?
+    __patch: 单静.patch.无障碍:/key_height_last?
   # 数字、编辑、功能键盘配置
   num:
     height: 60 #按键高度
@@ -433,9 +434,7 @@ preset_keyboards:
     label_transform: uppercase
     lock: true
     width: 10
-    __patch:
-      - conf/main
-      - 单静无障碍补丁:/main?
+    __patch: conf/main
     keys:
       # 第 1 行
       - { width: 0 } #备用

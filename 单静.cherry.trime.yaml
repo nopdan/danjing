@@ -89,32 +89,12 @@ conf:
     key_press_offset_y: 21
 
 preset_keyboards:
-  __include: danjing:/kbs
-
-  default:
-    __include: 单静.trime:/preset_keyboards/default
-    __patch: conf/main
-
-  letter:
-    __include: 单静.trime:/preset_keyboards/letter
-    __patch: conf/main
-
-  qwertys:
-    __include: 单静.trime:/preset_keyboards/qwertys
-    __patch: conf/main
-
-  qwerty_:
-    __include: 单静.trime:/preset_keyboards/qwerty_
-    __patch: conf/main
-
-  number:
-    __include: 单静.trime:/preset_keyboards/number
-
-  edit:
-    __include: 单静.trime:/preset_keyboards/edit
-
-  func:
-    __include: 单静.trime:/preset_keyboards/func
+  __include: 单静.trime:/preset_keyboards
+  __patch:
+    default/+: { __include: conf/main }
+    letter/+: { __include: conf/main }
+    qwertys/+: { __include: conf/main }
+    qwerty_/+: { __include: conf/main }
 
 android_keys:
   __include: trime:/android_keys

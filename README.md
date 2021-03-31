@@ -71,9 +71,10 @@ conf:
     keys/+:
       - width: 100 #底部留白开关，0为关，1~100开
         height: 6 #底部留白
+    __patch: 单静.patch.无障碍:/main?
   key_height_last: # 第4行 按键高度
     height: 50
-    __patch: 单静无障碍补丁:/key_height_last?
+    __patch: 单静.patch.无障碍:/key_height_last?
   # 数字、编辑、功能键盘配置
   num:
     height: 60 #按键高度
@@ -101,6 +102,7 @@ conf:
   # 添加数字行
   num_line:
     height: 39 # 数字行按键高度
+    __patch: 单静.patch.无障碍:/num_line?
 
 # line: 33
 
