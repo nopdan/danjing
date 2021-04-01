@@ -56,7 +56,7 @@ preset_keyboards:
 
 ```yaml
 # 单静.trime.yaml
-# start line: 380
+# start line: 8
 
 conf:
   # 主键盘

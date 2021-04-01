@@ -16,7 +16,7 @@ conf:
   plus:
     'keys/@4/hint': ' '
     'keys/@7/hint': ' '
-    'keys/@0/': {click: num1, __include: conf/num_line}
+    'keys/@0/': { click: num1, __include: conf/num_line }
     'keys/@after 0/': { click: num2 }
     'keys/@after 1/': { click: num3 }
     'keys/@after 2/': { click: num4 }
