@@ -483,6 +483,7 @@ styl:
 
 preset_keyboards:
   __include: danjing:/kbs
+  __patch: 单静.patch.星空助记:/preset_keyboards?
 
   default:
     name: 默认26键

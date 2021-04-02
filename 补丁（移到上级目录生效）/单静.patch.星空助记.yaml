@@ -1,0 +1,255 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '1.0'
+author: 'Rea <nmlixa@163.com>' #作者资讯
+
+preset_keyboards:
+  xkjd6: #星空键道6
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      #第一行上
+      'keys/@1/long_click': 'zh'
+      'keys/@2/long_click': 'ch'
+      'keys/@3/long_click': 'sh'
+      'keys/@4/long_click': '@'
+      'keys/@5/long_click': '#'
+      'keys/@6/long_click': 'ong'
+      'keys/@7/long_click': '丿'
+      'keys/@8/long_click': '丨'
+      'keys/@9/long_click': '丶'
+      'keys/@10/long_click': 'ang'
+      #第二行上
+      'keys/@12/long_click': '乛'
+      'keys/@13/long_click': ''
+      'keys/@14/long_click': ''
+      'keys/@15/long_click': 'zh'
+      'keys/@16/long_click': 'uai'
+      'keys/@17/long_click': ''
+      'keys/@18/long_click': 'ch'
+      'keys/@19/long_click': ''
+      'keys/@20/long_click': 'uo'
+      #第三行上
+      'keys/@22/long_click': '`'
+      'keys/@23/long_click': 'iang'
+      'keys/@25/long_click': '一'
+      'keys/@27/long_click': '✜'
+      'keys/@27/swipe_up': Up
+      'keys/@27/swipe_down': Down
+      'keys/@27/swipe_left': Left
+      'keys/@27/swipe_right': Right
+      'keys/@28/long_click': 'ian'
+      #第一行下
+      'keys/@1/hint': 'ua iu'
+      'keys/@2/hint': 'ei un'
+      'keys/@3/hint': 'e'
+      'keys/@4/hint': 'eng'
+      'keys/@5/hint': 'uan'
+      'keys/@6/hint': 'iong'
+      'keys/@7/hint': '月 十o'
+      'keys/@8/hint': '手草金'
+      'keys/@9/hint': '口 日i'
+      'keys/@10/hint': ''
+      #第二行下
+      'keys/@12/hint': '水 贝o'
+      'keys/@13/hint': 'a ia'
+      'keys/@14/hint': 'ou ie'
+      'keys/@15/hint': 'an'
+      'keys/@16/hint': 'ing'
+      'keys/@17/hint': 'ai ue'
+      'keys/@18/hint': 'u er'
+      'keys/@19/hint': 'i'
+      'keys/@20/hint': 'v o'
+      #第三行下
+      'keys/@22/hint': 'ao'
+      'keys/@23/hint': 'uang'
+      'keys/@24/hint': 'iao'
+      'keys/@25/hint': '木 土o'
+      'keys/@26/hint': 'in ui'
+      'keys/@27/hint': 'en'
+      'keys/@28/hint': 'uang'
+      #第四行下
+      'keys/@33/hint': '键道6'
+      'keys/@33/key_hint_offset_y': -19
+      #功能
+      'keys/@21/composing': select_second
+      'keys/@34/composing': '.'
+      'keys/@22/swipe_down': 'select_all'
+      'keys/@23/swipe_down': 'cut'
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
+
+  xkjd6dz: #星空键道6单字
+    __include: preset_keyboards/xkjd6
+    __patch:
+      #第四行下
+      'keys/@33/hint': '键道6单'
+
+  xklb: #星空两笔
+    __include: preset_keyboards/xkjd6
+    __patch:
+      #第一行上
+      'keys/@1/long_click': '丨丨'
+      'keys/@2/long_click': '丨丶'
+      'keys/@3/long_click': '丨乛'
+      'keys/@4/long_click': '丨一'
+      'keys/@5/long_click': '丨丿'
+      'keys/@6/long_click': '一丨'
+      'keys/@7/long_click': '一丶'
+      'keys/@8/long_click': '一乛'
+      'keys/@9/long_click': '一一'
+      'keys/@10/long_click': '一丿'
+      #第二行上
+      'keys/@12/long_click': '丶丨'
+      'keys/@13/long_click': '丶丶'
+      'keys/@14/long_click': '丶乛'
+      'keys/@15/long_click': '丶一'
+      'keys/@16/long_click': '丶丿'
+      'keys/@17/long_click': '丿丨'
+      'keys/@18/long_click': '丿丶'
+      'keys/@19/long_click': '丿乛'
+      'keys/@20/long_click': '丿一'
+      #第三行上
+      'keys/@22/long_click': '乛丨'
+      'keys/@23/long_click': '乛丶'
+      'keys/@24/long_click': '乛乛'
+      'keys/@25/long_click': "'"
+      'keys/@26/long_click': '乛一'
+      'keys/@27/long_click': '乛丿'
+      'keys/@28/long_click': '丿丿'
+      #第一行下
+      'keys/@1/hint': ''
+      'keys/@2/hint': '艹'
+      'keys/@3/hint': ''
+      'keys/@4/hint': '金'
+      'keys/@5/hint': '水'
+      'keys/@6/hint': ''
+      'keys/@7/hint': '手'
+      'keys/@8/hint': '日'
+      'keys/@9/hint': ''
+      'keys/@10/hint': ''
+      #第二行下
+      'keys/@12/hint': '乛'
+      'keys/@13/hint': ''
+      'keys/@14/hint': ''
+      'keys/@15/hint': ''
+      'keys/@16/hint': ''
+      'keys/@17/hint': '人'
+      'keys/@18/hint': '口'
+      'keys/@19/hint': ''
+      'keys/@20/hint': ''
+      #第三行下
+      'keys/@22/hint': ''
+      'keys/@23/hint': ''
+      'keys/@24/hint': '月'
+      'keys/@25/hint': ''
+      'keys/@26/hint': '木'
+      'keys/@27/hint': '土'
+      'keys/@28/hint': ''
+      #第四行下
+      'keys/@33/hint': '两笔'
+
+  xklbdz: #星空两笔单字
+    __include: preset_keyboards/xklb
+    __patch:
+      #第四行下
+      'keys/@33/hint': '两笔单'
+
+  xkyb: #星空一笔
+    __include: preset_keyboards/xkjd6
+    __patch:
+      #第一行上
+      'keys/@1/long_click': 'iu'
+      'keys/@2/long_click': 'ei'
+      'keys/@3/long_click': '一'
+      'keys/@4/long_click': 'ou'
+      'keys/@5/long_click': 'uan'
+      'keys/@6/long_click': 'un'
+      'keys/@7/long_click': '丿'
+      'keys/@8/long_click': '丨'
+      'keys/@9/long_click': '丶'
+      'keys/@10/long_click': 'ang'
+      #第二行上
+      'keys/@12/long_click': '乛'
+      'keys/@13/long_click': 'ia'
+      'keys/@14/long_click': 'iao'
+      'keys/@15/long_click': 'ian'
+      'keys/@16/long_click': 'uai'
+      'keys/@17/long_click': 'ai'
+      'keys/@18/long_click': 'an'
+      'keys/@19/long_click': 'ao'
+      'keys/@20/long_click': 'iong'
+      #第三行上
+      'keys/@22/long_click': 'üe'
+      'keys/@23/long_click': 'ie'
+      'keys/@24/long_click': 'iang'
+      'keys/@25/long_click': 'ui'
+      'keys/@26/long_click': 'in'
+      'keys/@27/long_click': 'en'
+      'keys/@28/long_click': 'eng'
+      #第一行下
+      'keys/@1/hint': ''
+      'keys/@2/hint': ''
+      'keys/@3/hint': 'e'
+      'keys/@4/hint': ''
+      'keys/@5/hint': ''
+      'keys/@6/hint': ''
+      'keys/@7/hint': 'u er'
+      'keys/@8/hint': 'i'
+      'keys/@9/hint': 'o uo'
+      'keys/@10/hint': ''
+      #第二行下
+      'keys/@12/hint': 'a'
+      'keys/@13/hint': 'ua'
+      'keys/@14/hint': ''
+      'keys/@15/hint': ''
+      'keys/@16/hint': 'ing'
+      'keys/@17/hint': 'ue'
+      'keys/@18/hint': ''
+      'keys/@19/hint': ''
+      'keys/@20/hint': 'ong'
+      #第三行下
+      'keys/@22/hint': ''
+      'keys/@24/hint': 'uang'
+      'keys/@25/hint': 'ü'
+      'keys/@26/hint': ''
+      'keys/@27/hint': ''
+      'keys/@28/hint': ''
+      #第四行下
+      'keys/@33/hint': '一笔'
+
+  xkybdz: #星空一笔单字
+    __include: preset_keyboards/xkyb
+    __patch:
+      #第四行下
+      'keys/@33/hint': '一笔单'
+
+  xklbs:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      #第四行下
+      'keys/@33/hint': '两笔S'
+      'keys/@33/key_hint_offset_y': -19
+      'keys/@21/composing': select_second
+      'keys/@34/composing': '.'
+
+  xklbsdz:
+    __include: preset_keyboards/xklbs
+    __patch:
+      #第四行下
+      'keys/@33/hint': '两笔S单'
+
+  xkyd:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      #第四行下
+      'keys/@33/hint': '一道'
+      'keys/@33/key_hint_offset_y': -19
+      'keys/@21/composing': select_second
+      'keys/@34/composing': '.'
+
+  xkyddz:
+    __include: preset_keyboards/xkyd
+    __patch:
+      #第四行下
+      'keys/@33/hint': '一道单'
