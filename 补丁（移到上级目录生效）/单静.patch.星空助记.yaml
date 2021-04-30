@@ -74,7 +74,7 @@ preset_keyboards:
       #功能
       'keys/@21/composing': select_second
       'keys/@34/composing': '.'
-      'keys/@22/swipe_down': 'select_all'
+      'keys/@12/swipe_down': 'select_all'
       'keys/@23/swipe_down': 'cut'
       'keys/@24/swipe_down': 'copy'
       'keys/@25/swipe_down': 'paste'
