@@ -6,7 +6,7 @@ author: 'Rea <nmlixa@163.com>' #作者资讯
 
 preset_keyboards:
   xkjd6: #星空键道6
-    __include: 单静.trime:/preset_keyboards/default
+    __include: 单静.trime:/preset_keyboards/flypy
     __patch:
       #第一行上
       'keys/@1/long_click': 'zh'
@@ -86,7 +86,7 @@ preset_keyboards:
       'keys/@33/hint': '键道6单'
 
   xklb: #星空两笔
-    __include: preset_keyboards/xkjd6
+    __include: preset_keyboards/flypy
     __patch:
       #第一行上
       'keys/@1/long_click': '丨丨'
@@ -156,7 +156,7 @@ preset_keyboards:
       'keys/@33/hint': '两笔单'
 
   xkyb: #星空一笔
-    __include: preset_keyboards/xkjd6
+    __include: preset_keyboards/flypy
     __patch:
       #第一行上
       'keys/@1/long_click': 'iu'
@@ -225,13 +225,11 @@ preset_keyboards:
       'keys/@33/hint': '一笔单'
 
   xklbs:
-    __include: 单静.trime:/preset_keyboards/default
+    __include: 单静.trime:/preset_keyboards/flypy
     __patch:
       #第四行下
       'keys/@33/hint': '两笔S'
       'keys/@33/key_hint_offset_y': -19
-      'keys/@21/composing': select_second
-      'keys/@34/composing': '.'
 
   xklbsdz:
     __include: preset_keyboards/xklbs
@@ -240,13 +238,11 @@ preset_keyboards:
       'keys/@33/hint': '两笔S单'
 
   xkyd:
-    __include: 单静.trime:/preset_keyboards/default
+    __include: 单静.trime:/preset_keyboards/flypy
     __patch:
       #第四行下
       'keys/@33/hint': '一道'
       'keys/@33/key_hint_offset_y': -19
-      'keys/@21/composing': select_second
-      'keys/@34/composing': '.'
 
   xkyddz:
     __include: preset_keyboards/xkyd

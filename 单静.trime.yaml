@@ -12,7 +12,7 @@ conf:
     horizontal_gap: 3 #按键水平间距
     vertical_gap: 5 #按键行距
     key_symbol_offset_x: 3
-    key_hint_offset_y: -1
+    key_hint_offset_y: -1.3
     key_press_offset_x: 2
     key_press_offset_y: 2
     keys/+:
@@ -496,7 +496,7 @@ preset_keyboards:
     keys:
       # 第 1 行
       - { width: 0 } #备用
-      - { click: 'q', long_click: '{', swipe_down: 1, __include: styl/key }
+      - { click: 'q', long_click: '!', swipe_down: 1, __include: styl/key }
       - { click: 'w', long_click: '@', swipe_down: 2, __include: styl/key }
       - { click: 'e', long_click: '#', swipe_down: 3, __include: styl/key }
       - {
@@ -516,25 +516,24 @@ preset_keyboards:
           __include: styl/key,
         }
       - { click: 'i', long_click: '*', swipe_down: 8, __include: styl/key }
-      - {
-          click: 'o',
-          long_click: '(){Left}',
-          swipe_left: '(',
-          swipe_right: ')',
-          swipe_down: 9,
-          __include: styl/key,
-        }
-      - { click: 'p', long_click: '}', swipe_down: 0, __include: styl/key }
+      - { click: 'o', long_click: '(', swipe_down: 9, __include: styl/key }
+      - { click: 'p', long_click: ')', swipe_down: 0, __include: styl/key }
       # 第 2 行
       - { width: 5 }
       - { click: 'a', long_click: select_all, __include: styl/key }
       - { click: 's', long_click: '-', __include: styl/key }
-      - { click: 'd', long_click: '_', __include: styl/key }
+      - {
+          click: 'd',
+          long_click: '_',
+          swipe_down: '<',
+          hint: '<',
+          __include: styl/key,
+        }
       - {
           click: 'f',
           long_click: '+',
-          swipe_down: '|',
-          hint: '|',
+          swipe_down: '>',
+          hint: '>',
           __include: styl/key,
         }
       - {
@@ -547,15 +546,15 @@ preset_keyboards:
       - {
           click: 'h',
           long_click: '[',
-          swipe_down: '<',
-          hint: '<',
+          swipe_down: '{',
+          hint: '{',
           __include: styl/key,
         }
       - {
           click: 'j',
           long_click: ']',
-          swipe_down: '>',
-          hint: '>',
+          swipe_down: '}',
+          hint: '}',
           __include: styl/key,
         }
       - { click: 'k', long_click: ':', __include: styl/key }
@@ -574,9 +573,9 @@ preset_keyboards:
       - { click: 'v', long_click: paste, __include: styl/key }
       - {
           click: 'b',
-          long_click: '/',
-          swipe_down: '\',
-          hint: '\',
+          long_click: '\',
+          swipe_down: '|',
+          hint: '|',
           __include: styl/key,
         }
       - {
@@ -607,7 +606,7 @@ preset_keyboards:
           width: 12,
           __include: styl/off_key,
         }
-      - { click: ',', long_click: '!', width: 12, __include: styl/key }
+      - { click: ',', long_click: '/', width: 12, __include: styl/key }
       - {
           click: space,
           long_click: Keyboard_letter,
@@ -642,6 +641,13 @@ preset_keyboards:
     __patch:
       'keys/@33/long_click': Keyboard_default
 
+  flypy:
+    name: 二重
+    __include: preset_keyboards/default
+    __patch:
+      'keys/@21/composing': select_second
+      'keys/@34/composing': '.'
+
   qwertys:
     name: 默认27键
     __include: preset_keyboards/default
@@ -649,8 +655,8 @@ preset_keyboards:
       'keys/@11/width': 0
       'keys/@17/hint': ' '
       'keys/@18/hint': ' '
-      'keys/@19/long_click': '<'
-      'keys/@20/long_click': '>'
+      'keys/@19/long_click': '{'
+      'keys/@20/long_click': '}'
       'keys/@after 20/':
         click: ';'
         long_click: ':'
@@ -661,21 +667,20 @@ preset_keyboards:
     name: 默认30键
     __include: preset_keyboards/qwertys
     __patch:
+      'keys/@14/hint': ' '
       'keys/@15/hint': ' '
       'keys/@22/': { width: 0 }
-      'keys/@27/hint': ' '
-      'keys/@27/long_click': '|'
       'keys/@after 29/':
         click: ','
-        long_click: '!'
+        long_click: '<'
         __include: styl/key
       'keys/@after 30/':
         click: '.'
-        long_click: '?'
+        long_click: '>'
         __include: styl/key
       'keys/@after 31/':
         click: '/'
-        long_click: '\'
+        long_click: '?'
         __include: styl/key
       'keys/@30/':
         click: Shift_L
@@ -926,3 +931,4 @@ preset_keys:
   select_second: { label: '②', send: 2 }
   split_word: { label: "'分词", send: apostrophe }
   __include: danjing:/keys
+  __patch: 单静.patch.星空助记:/keys?
