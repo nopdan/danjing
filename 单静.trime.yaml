@@ -18,10 +18,8 @@ conf:
     keys/+:
       - width: 100 #底部留白开关，0为关，1~100开
         height: 6 #底部留白
-    __patch: 单静.patch.无障碍:/main?
   key_height_last: # 第4行 按键高度
     height: 50
-    __patch: 单静.patch.无障碍:/key_height_last?
   # 数字、编辑、功能键盘配置
   num:
     height: 60 #按键高度
@@ -36,6 +34,8 @@ conf:
   sym_bottom_switch: 0 #底部留白开关
   sym_bottom: 1 #底部留白
   sym_long_text_size: 20 #长标签字号
+  __patch:
+    - 单静.patch.无障碍:/main?
 
 style:
   color_scheme: default #默认配色方案
@@ -56,6 +56,9 @@ style:
       - number
       - func
       - edit
+      - xkjd6zj
+      - xklbzj
+      - xkybzj
 
   # 候选区
   ## 候选
@@ -482,11 +485,15 @@ styl:
     hilited_key_text_color: hilited_off_sym_text_color
 
 preset_keyboards:
-  __include: danjing:/kbs
-  __patch: 单静.patch.星空助记:/preset_keyboards?
+  __include: danjing:/preset_keyboards
+  __patch:
+    - 单静.patch.星空助记:/preset_keyboards?
 
-  default:
-    name: 默认26键
+  flypy:
+    __include: preset_keyboards/default
+
+  pinyin_simp:
+    name: 拼音
     author: '单单 <cxprcn@gmail.com>'
     ascii_mode: 0
     label_transform: uppercase
@@ -641,9 +648,9 @@ preset_keyboards:
     __patch:
       'keys/@33/long_click': Keyboard_default
 
-  flypy:
-    name: 二重
-    __include: preset_keyboards/default
+  default:
+    name: 默认26键
+    __include: preset_keyboards/pinyin_simp
     __patch:
       'keys/@21/composing': select_second
       'keys/@34/composing': '.'
@@ -662,6 +669,7 @@ preset_keyboards:
         long_click: ':'
         width: 10
         __include: styl/key
+      'keys/@21/composing': split_word
 
   qwerty_:
     name: 默认30键
@@ -930,5 +938,6 @@ preset_keys:
   BS: { label: '⌫', repeatable: true, send: BackSpace }
   select_second: { label: '②', send: 2 }
   split_word: { label: "'分词", send: apostrophe }
-  __include: danjing:/keys
-  __patch: 单静.patch.星空助记:/keys?
+  __include: danjing:/preset_keys
+  __patch:
+    - 单静.patch.星空助记:/preset_keys?

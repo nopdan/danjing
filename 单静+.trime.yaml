@@ -12,7 +12,6 @@ conf:
   # 添加数字行
   num_line:
     height: 39 # 数字行按键高度
-    __patch: 单静.patch.无障碍:/num_line?
   plus:
     'keys/@4/hint': ' '
     'keys/@7/hint': ' '
@@ -26,6 +25,8 @@ conf:
     'keys/@after 6/': { click: num8 }
     'keys/@after 7/': { click: num9 }
     'keys/@after 8/': { click: num0 }
+  __patch: 
+    - 单静.patch.无障碍:/num?
 
 style:
   __include: 单静.trime:/style

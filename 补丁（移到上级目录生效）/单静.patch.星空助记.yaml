@@ -4,9 +4,26 @@
 config_version: '1.0'
 author: 'Rea <nmlixa@163.com>' #作者资讯
 
+preset_keys:
+  kb_xkjd6zj: { label: '助记', send: Eisu_toggle, select: xkjd6zj }
+  kb_xklbzj: { label: '助记', send: Eisu_toggle, select: xklbzj }
+  kb_xkybzj: { label: '助记', send: Eisu_toggle, select: xkybzj }
+
 preset_keyboards:
   xkjd6: #星空键道6
-    __include: 单静.trime:/preset_keyboards/flypy
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      'keys/@33/hint': '键道6'
+      'keys/@33/swipe_up': kb_xkjd6zj
+      'keys/@33/key_hint_offset_y': -19
+
+  xkjd6dz: #星空键道6单字
+    __include: preset_keyboards/xkjd6
+    __patch:
+      'keys/@33/hint': '键道6单'
+
+  xkjd6zj: #星空键道6助记
+    __include: preset_keyboards/xkjd6
     __patch:
       #第一行上
       'keys/@1/long_click': 'zh'
@@ -70,23 +87,26 @@ preset_keyboards:
       'keys/@28/hint': 'uang'
       #第四行下
       'keys/@33/hint': '键道6'
-      'keys/@33/key_hint_offset_y': -19
+      'keys/@33/swipe_up': Back
       #功能
-      'keys/@21/composing': select_second
-      'keys/@34/composing': '.'
       'keys/@12/swipe_down': 'select_all'
       'keys/@23/swipe_down': 'cut'
       'keys/@24/swipe_down': 'copy'
       'keys/@25/swipe_down': 'paste'
 
-  xkjd6dz: #星空键道6单字
+  xklb: #星空两笔
     __include: preset_keyboards/xkjd6
     __patch:
-      #第四行下
-      'keys/@33/hint': '键道6单'
+      'keys/@33/hint': '两笔'
+      'keys/@33/swipe_up': kb_xklbzj
 
-  xklb: #星空两笔
-    __include: preset_keyboards/flypy
+  xklbdz: #星空两笔单字
+    __include: preset_keyboards/xklb
+    __patch:
+      'keys/@33/hint': '两笔单'
+
+  xklbzj: #星空两笔助记
+    __include: preset_keyboards/xklb
     __patch:
       #第一行上
       'keys/@1/long_click': '丨丨'
@@ -148,15 +168,21 @@ preset_keyboards:
       'keys/@28/hint': ''
       #第四行下
       'keys/@33/hint': '两笔'
-
-  xklbdz: #星空两笔单字
-    __include: preset_keyboards/xklb
-    __patch:
-      #第四行下
-      'keys/@33/hint': '两笔单'
+      'keys/@33/swipe_up': Back
 
   xkyb: #星空一笔
-    __include: preset_keyboards/flypy
+    __include: preset_keyboards/xkjd6
+    __patch:
+      'keys/@33/hint': '一笔'
+      'keys/@33/swipe_up': kb_xkybzj
+
+  xkybdz: #星空一笔单字
+    __include: preset_keyboards/xkyb
+    __patch:
+      'keys/@33/hint': '一笔单'
+
+  xkybzj: #星空一笔助记
+    __include: preset_keyboards/xkyb
     __patch:
       #第一行上
       'keys/@1/long_click': 'iu'
@@ -217,35 +243,25 @@ preset_keyboards:
       'keys/@28/hint': ''
       #第四行下
       'keys/@33/hint': '一笔'
-
-  xkybdz: #星空一笔单字
-    __include: preset_keyboards/xkyb
-    __patch:
-      #第四行下
-      'keys/@33/hint': '一笔单'
+      'keys/@33/swipe_up': Back
 
   xklbs:
-    __include: 单静.trime:/preset_keyboards/flypy
+    __include: 单静.trime:/preset_keyboards/default
     __patch:
-      #第四行下
       'keys/@33/hint': '两笔S'
       'keys/@33/key_hint_offset_y': -19
 
   xklbsdz:
     __include: preset_keyboards/xklbs
     __patch:
-      #第四行下
       'keys/@33/hint': '两笔S单'
 
   xkyd:
-    __include: 单静.trime:/preset_keyboards/flypy
+    __include: preset_keyboards/xklbs
     __patch:
-      #第四行下
       'keys/@33/hint': '一道'
-      'keys/@33/key_hint_offset_y': -19
 
   xkyddz:
     __include: preset_keyboards/xkyd
     __patch:
-      #第四行下
       'keys/@33/hint': '一道单'

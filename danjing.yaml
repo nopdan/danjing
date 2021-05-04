@@ -62,7 +62,7 @@ styl:
   ywz_double_width:
     width: 56 #颜文字键盘2键宽度
 
-kbs:
+preset_keyboards:
   symbols:
     name: 中文1
     __include: conf/sym
@@ -2526,7 +2526,7 @@ keyboards:
   - ywz61
   - ywz62
 
-keys:
+preset_keys:
   kb_sym1: { label: '◀', send: Eisu_toggle, select: symbols }
   kb_sym2: { label: '▶', send: Eisu_toggle, select: sym211 }
 
