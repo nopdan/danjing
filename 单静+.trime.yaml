@@ -31,6 +31,8 @@ conf:
 style:
   __include: 单静.trime:/style
   key_height: 61 #符号、颜文字键盘 按键高度
+  __patch: 
+    - 单静+.patch.声笔系列码:/style?
 
 fallback_colors:
   __include: 单静.trime:/fallback_colors
@@ -39,7 +41,7 @@ preset_color_schemes:
   __include: 单静.trime:/preset_color_schemes
 
 preset_keyboards:
-  __include: danjing:/kbs
+  __include: danjing:/preset_keyboards
 
   default:
     __include: 单静.trime:/preset_keyboards/default
