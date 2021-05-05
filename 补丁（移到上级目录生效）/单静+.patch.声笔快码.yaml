@@ -2,10 +2,10 @@
 style:
   # 候选区
   ## 候选
-  candidate_view_height: 24 #候选区高度
+  candidate_view_height: 28 #候选区高度
   candidate_text_size: 18 #候选字号
   ## 编码
-  comment_on_top: true #编码提示在上方或右侧
+  comment_on_top: false #编码提示在上方或右侧
   comment_height: 16 #编码提示区高度
   comment_text_size: 15 #编码提示字号
   
@@ -28,7 +28,7 @@ style:
     # 整体样式
     position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
     movable: false #是否可移动窗口，或仅移动一次 true|false|once
-    spacing: -43 #与预编辑或边缘的距离
+    spacing: -1 #与预编辑或边缘的距离
     margin_x: 5 #水平边距
     margin_y: 1 #竖直边距
     border: 0 #边框宽度
@@ -41,8 +41,8 @@ style:
     min_length: 0 #最小词长
     max_length: 80 #超过字数则换行
     sticky_lines: 1 #固顶行数
-    max_entries: 6 #最大词条数
-    max_width: 330 #最大宽度，超过则自动换行
+    max_entries: 1 #最大词条数
+    max_width: 350 #最大宽度，超过则自动换行
     max_height: 400 #最大高度
     min_width: 0 #最小宽度
     min_height: 0 #最小高度

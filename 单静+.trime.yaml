@@ -32,7 +32,8 @@ style:
   __include: 单静.trime:/style
   key_height: 61 #符号、颜文字键盘 按键高度
   __patch: 
-    - 单静+.patch.声笔系列码:/style?
+    - 单静+.patch.声笔快码:/style?
+    - 单静+.patch.声笔拼音:/style?
 
 fallback_colors:
   __include: 单静.trime:/fallback_colors

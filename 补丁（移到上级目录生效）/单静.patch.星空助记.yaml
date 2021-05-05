@@ -11,7 +11,7 @@ preset_keys:
 
 preset_keyboards:
   xkjd6: #星空键道6
-    __include: 单静.trime:/preset_keyboards/default
+    __include: 单静.trime:/preset_keyboards/flypy
     __patch:
       'keys/@33/hint': '键道6'
       'keys/@33/swipe_up': kb_xkjd6zj
@@ -246,7 +246,7 @@ preset_keyboards:
       'keys/@33/swipe_up': Back
 
   xklbs:
-    __include: 单静.trime:/preset_keyboards/default
+    __include: 单静.trime:/preset_keyboards/flypy
     __patch:
       'keys/@33/hint': '两笔S'
       'keys/@33/key_hint_offset_y': -19
