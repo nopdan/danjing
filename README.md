@@ -5,9 +5,9 @@
 
 ## 预览
 
-![](./preview/default_without_hint.png)
+![](./预览/default_without_hint.png)
 
-更多图片在 `preview` 文件夹下查看
+更多图片在 `预览` 文件夹下查看
 
 ## 按键功能
 
