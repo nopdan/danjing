@@ -3,6 +3,8 @@
 [1]: https://github.com/cxcn/danjing
 [2]: https://github.com/osfans/trime
 
+**请勿使用 v3.2.2-20210918** 之后的版本
+
 ## 预览
 
 ![](./预览/default_without_hint.png)
