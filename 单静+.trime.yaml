@@ -25,25 +25,28 @@ conf:
     'keys/@after 6/': { click: num8 }
     'keys/@after 7/': { click: num9 }
     'keys/@after 8/': { click: num0 }
-  __patch: 
+  __patch:
     - 单静.patch.无障碍:/num?
 
-style:
-  __include: 单静.trime:/style
-  key_height: 61 #符号、颜文字键盘 按键高度
-  __patch: 
-    - 单静+.patch.声笔快码:/style?
-    - 单静+.patch.声笔拼音:/style?
-
-fallback_colors:
-  __include: 单静.trime:/fallback_colors
-
-preset_color_schemes:
-  __include: 单静.trime:/preset_color_schemes
+__include: 单静.trime:/
+__patch:
+  style/key_height: 61 #符号、颜文字键盘 按键高度
+  preset_keys/+:
+    num1: { label: 1, send: 1 }
+    num2: { label: 2, send: 2 }
+    num3: { label: 3, send: 3 }
+    num4: { label: 4, send: 4 }
+    num5: { label: 5, send: 5 }
+    num6: { label: 6, send: 6 }
+    num7: { label: 7, send: 7 }
+    num8: { label: 8, send: 8 }
+    num9: { label: 9, send: 9 }
+    num0: { label: 0, send: 0 }
+    kb_qwerty: { label: '36键', send: Eisu_toggle, select: default }
+    kb_qwertys: { label: '37键', send: Eisu_toggle, select: qwertys }
+    kb_qwerty_: { label: '40键', send: Eisu_toggle, select: qwerty_ }
 
 preset_keyboards:
-  __include: danjing:/preset_keyboards
-
   default:
     __include: 单静.trime:/preset_keyboards/default
     __patch: conf/plus
@@ -71,22 +74,3 @@ preset_keyboards:
   func:
     __include: 单静.trime:/preset_keyboards/func
     height: { __include: conf/num_height }
-
-android_keys:
-  __include: trime:/android_keys
-
-preset_keys:
-  __include: 单静.trime:/preset_keys
-  num1: { label: 1, send: 1 }
-  num2: { label: 2, send: 2 }
-  num3: { label: 3, send: 3 }
-  num4: { label: 4, send: 4 }
-  num5: { label: 5, send: 5 }
-  num6: { label: 6, send: 6 }
-  num7: { label: 7, send: 7 }
-  num8: { label: 8, send: 8 }
-  num9: { label: 9, send: 9 }
-  num0: { label: 0, send: 0 }
-  kb_qwerty: { label: '36键', send: Eisu_toggle, select: default }
-  kb_qwertys: { label: '37键', send: Eisu_toggle, select: qwertys }
-  kb_qwerty_: { label: '40键', send: Eisu_toggle, select: qwerty_ }

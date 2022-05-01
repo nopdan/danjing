@@ -1,0 +1,136 @@
+# Trime style settings
+# encoding: utf-8
+
+__include: 单静+.trime:/
+__patch:
+  preset_keys/space:
+    preview: ' '
+    repeatable: false
+    functional: false
+    send: space
+  style/keyboards/+:
+    - sbpy
+    - sbjm
+    - sbjz
+    - sbdp
+    - sbdz
+    - sbkm
+    - sbkx
+    - sbks
+    - sbkj
+    - sbkz
+    - sbfm
+    - sbfx
+    - sbfs
+    - sbfj
+    - sbfd
+    - sbfz
+    - sbxh
+    - sbhs
+    - sbhj
+    - sbhz
+    - sbzr
+    - sbzs
+    - sbzj
+    - sbzz
+style:
+  __include: 单静+.trime:/style
+  # 候选区
+  ## 候选
+  candidate_view_height: 28 #候选区高度
+  candidate_text_size: 18 #候选字号
+  ## 编码
+  comment_on_top: false #编码提示在上方或右侧
+  comment_height: 16 #编码提示区高度
+  comment_text_size: 15 #编码提示字号
+
+  # 悬浮窗口
+  label_text_size: 16 #标签字号
+  text_size: 16 #编码区字号
+
+  window: #悬浮窗口组件
+    #- {start: "", move: 'ㄓ ', end: ""}
+    - { start: ' ', composition: '%s', end: ' ', letter_spacing: 0 } #letter_spacing需要>=Android5.0。TODO: 不为0时，会导致不换行的问题
+    - {
+        start: '',
+        label: '%s',
+        candidate: '%s',
+        comment: '%s',
+        end: '',
+        sep: ' ',
+      }
+  layout: #悬浮窗口设置
+    # 整体样式
+    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    movable: false #是否可移动窗口，或仅移动一次 true|false|once
+    spacing: -29 #与预编辑或边缘的距离
+    margin_x: 5 #水平边距
+    margin_y: 1 #竖直边距
+    border: 0 #边框宽度
+    round_corner: 2 #窗口圆角
+    elevation: 0 #阴影(>=Android5.0)
+    alpha: 0xff #透明度(0-255)
+    #background: background.png #颜色或者backgrounds目录下的图片文件名
+    # 样式
+    all_phrases: false #所有满足条件的词语都显示在窗口
+    min_length: 0 #最小词长
+    max_length: 80 #超过字数则换行
+    sticky_lines: 0 #固顶行数
+    max_entries: 6 #最大词条数
+    max_width: 350 #最大宽度，超过则自动换行
+    max_height: 400 #最大高度
+    min_width: 0 #最小宽度
+    min_height: 0 #最小高度
+    line_spacing: 0 #候选词的行间距(px)
+    line_spacing_multiplier: 1 #候选词的行间距(倍数)
+
+preset_keyboards:
+  __include: 单静+.trime:/preset_keyboards
+  sbpy: #声笔拼音
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbjm: #声笔简码
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbjz: #声笔简整
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbdp: #声笔拼音
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbdz: #声笔顶整
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbkm: #声笔快码
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbkx: #声笔快讯
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbks: #声笔快速
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbkj: #声笔快简
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbkz: #声笔快整
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfm: #声笔飞码
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfx: #声笔飞讯
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfs: #声笔飞速
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfj: #声笔飞简
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfd: #声笔飞单
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbfz: #声笔飞整
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbxh: #声笔小鹤
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbhs: #声笔鹤速
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbhj: #声笔鹤简
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbhz: #声笔鹤整
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbzr: #声笔自然
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbzs: #声笔自速
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbzj: #声笔自简
+    __include: 单静+.trime:/preset_keyboards/qwertys
+  sbzz: #声笔自整
+    __include: 单静+.trime:/preset_keyboards/qwertys

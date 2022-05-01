@@ -57,9 +57,6 @@ style:
       - number
       - func
       - edit
-      - xkjd6zj
-      - xklbzj
-      - xkybzj
 
   # 候选区
   ## 候选
@@ -488,8 +485,6 @@ styl:
 
 preset_keyboards:
   __include: danjing:/preset_keyboards
-  __patch:
-    - 单静.patch.星空助记:/preset_keyboards?
 
   default:
     name: 默认26键
@@ -921,6 +916,7 @@ preset_keys:
   Color_settings: { label: 配色, send: SETTINGS, option: 'color' }
   Theme_settings: { label: 主题, send: SETTINGS, option: 'theme' }
   Schema_settings: { label: 方案, send: SETTINGS, option: 'schema' }
+
   # trime键盘
   Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
   Back: { label: 返回, send: Eisu_toggle, select: .default }
@@ -938,5 +934,3 @@ preset_keys:
   select_second: { label: '②', send: 2 }
   split_word: { label: "'分词", send: apostrophe }
   __include: danjing:/preset_keys
-  __patch:
-    - 单静.patch.星空助记:/preset_keys?

@@ -2,7 +2,6 @@
 # 由于无障碍版本的高度计算与原版不一样
 # 需要在这里进行调整
 
-
 main:
   main/height: 59 #按键高度
   key_height_last/height: 57 # 第4行 按键高度

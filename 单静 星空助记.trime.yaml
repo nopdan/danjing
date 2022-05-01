@@ -4,12 +4,19 @@
 config_version: '1.0'
 author: 'Rea <nmlixa@163.com>' #作者资讯
 
-preset_keys:
-  kb_xkjd6zj: { label: '助记', send: Eisu_toggle, select: xkjd6zj }
-  kb_xklbzj: { label: '助记', send: Eisu_toggle, select: xklbzj }
-  kb_xkybzj: { label: '助记', send: Eisu_toggle, select: xkybzj }
+__include: 单静.trime:/
+__patch:
+  style/keyboards/+:
+    - xkjd6zj
+    - xklbzj
+    - xkybzj
+  preset_keys/+:
+    kb_xkjd6zj: { label: '助记', send: Eisu_toggle, select: xkjd6zj }
+    kb_xklbzj: { label: '助记', send: Eisu_toggle, select: xklbzj }
+    kb_xkybzj: { label: '助记', send: Eisu_toggle, select: xkybzj }
 
 preset_keyboards:
+  __include: 单静.trime:/preset_keyboards
   xkjd6: #星空键道6
     __include: 单静.trime:/preset_keyboards/flypy
     __patch:

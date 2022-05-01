@@ -3,8 +3,6 @@
 [1]: https://github.com/cxcn/danjing
 [2]: https://github.com/osfans/trime
 
-**请勿使用 v3.2.2-20210918** 之后的版本
-
 ## 预览
 
 ![](./预览/default_without_hint.png)
@@ -33,7 +31,7 @@
 
 ```yaml
 preset_keyboards:
-  __include: danjing:/kbs
+  __include: danjing:/preset_keyboards
 ```
 
 像下面这样添加一段代码
@@ -107,8 +105,6 @@ conf:
     __patch: 单静.patch.无障碍:/num_line?
 
 # line: 33
-
-style:
-  __include: 单静.trime:/style
-  key_height: 61 #符号、颜文字键盘 按键高度
+__patch:
+  style/key_height: 61 #符号、颜文字键盘 按键高度
 ```
