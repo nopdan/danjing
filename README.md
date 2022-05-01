@@ -60,7 +60,7 @@ preset_keyboards:
 | ----- | ---------- |
 | 26 键 | `default`  |
 | 27 键 | `qwertys`  |
-| 30 键 | `qwerty\_` |
+| 30 键 | `qwerty_` |
 
 ### 2. 怎么修改键盘高度？
 
