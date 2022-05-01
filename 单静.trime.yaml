@@ -38,6 +38,7 @@ conf:
     - 单静.patch.无障碍:/main?
 
 style:
+  __include: trime:/style
   color_scheme: default #默认配色方案
   horizontal: true #水平模式。改变方向键的功能 （true：方向键适配横排候选；false：方向键适配竖排候选）
   reset_ascii_mode: false #显示键盘时重置为中文状态
@@ -141,6 +142,7 @@ style:
     line_spacing_multiplier: 1.1 #候选词的行间距(倍数)
 
 fallback_colors:
+  __include: trime:/fallback_colors
   # 悬浮窗
   border_color: back_color #悬浮窗边框
   label_color: hilited_text_color #标签（候选序号）
