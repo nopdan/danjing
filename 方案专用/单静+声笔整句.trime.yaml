@@ -33,8 +33,8 @@ __patch:
     - sbzs
     - sbzj
     - sbzz
+
 style:
-  __include: 单静+.trime:/style
   # 候选区
   ## 候选
   candidate_view_height: 28 #候选区高度
@@ -85,7 +85,6 @@ style:
     line_spacing_multiplier: 1 #候选词的行间距(倍数)
 
 preset_keyboards:
-  __include: 单静+.trime:/preset_keyboards
   sbpy: #声笔拼音
     __include: 单静+.trime:/preset_keyboards/qwertys
   sbjm: #声笔简码

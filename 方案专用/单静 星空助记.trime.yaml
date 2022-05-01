@@ -16,7 +16,6 @@ __patch:
     kb_xkybzj: { label: '助记', send: Eisu_toggle, select: xkybzj }
 
 preset_keyboards:
-  __include: 单静.trime:/preset_keyboards
   xkjd6: #星空键道6
     __include: 单静.trime:/preset_keyboards/flypy
     __patch:
