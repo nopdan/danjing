@@ -117,7 +117,8 @@ style:
     # 整体样式
     position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
     movable: false #是否可移动窗口，或仅移动一次 true|false|once
-    spacing: -1 #与预编辑或边缘的距离
+    real_margin: 0 #屏幕左右边缘和悬浮窗之间的距离
+    spacing: -1 #屏幕上下边缘或预编辑上下边缘和悬浮窗之间的距离
     margin_x: 5 #水平边距
     margin_y: 1 #竖直边距
     border: 0 #边框宽度
