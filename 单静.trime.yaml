@@ -220,7 +220,7 @@ preset_color_schemes:
     # candidate_separator_color: back_color #候选分割线
     back_color: 0xD7D9DD #候选栏背景 灰
     # candidate_text_color: hilited_text_color #候选文字
-    comment_text_color: gray #提示
+    comment_text_color: 0x808080 #提示
     # hilited_candidate_back_color: back_color #高亮候选背景
     # hilited_candidate_text_color: text_color #高亮候选文字
     # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
@@ -256,7 +256,7 @@ preset_color_schemes:
     hilited_enter_back_color: danjing.default/hilited_enter.png #高亮enter背景 ※
 
     # 附键盘
-    key_back_color: white #按键背景
+    key_back_color: 0xFFFFFF #按键背景
     # hilited_key_back_color: back_color #高亮按键背景
     # off_sym_back_color: back_color #功能键背景 ※
     # off_sym_text_color: off_key_text_color #功能键文字 ※
@@ -299,7 +299,7 @@ preset_color_schemes:
     # preview_text_color: key_text_color #按键提示文字
     # key_text_color: candidate_text_color #按键文字
     # key_symbol_color: comment_text_color #按键符号
-    hilited_key_text_color: white #高亮按键文字
+    hilited_key_text_color: 0xFFFFFF #高亮按键文字
     # hilited_key_symbol_color: key_symbol_color #高亮按键符号
 
     # 主键盘
@@ -352,7 +352,7 @@ preset_color_schemes:
     # candidate_separator_color: back_color #候选分割线
     back_color: 0xECEFF1 #候选栏背景
     # candidate_text_color: hilited_text_color #候选文字
-    comment_text_color: gray #提示
+    comment_text_color: 0x808080 #提示
     # hilited_candidate_back_color: back_color #高亮候选背景
     hilited_candidate_text_color: 0x333333 #高亮候选文字
     # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
@@ -416,9 +416,9 @@ preset_color_schemes:
 
     # 候选栏
     # candidate_separator_color: back_color #候选分割线
-    back_color: 0xfbe3d7 #候选栏背景
+    back_color: 0xFBE3D7 #候选栏背景
     # candidate_text_color: hilited_text_color #候选文字
-    comment_text_color: gray #提示
+    comment_text_color: 0x808080 #提示
     # hilited_candidate_back_color: back_color #高亮候选背景
     hilited_candidate_text_color: 0x333333 #高亮候选文字
     # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
@@ -463,7 +463,7 @@ preset_color_schemes:
     # hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
     enter_sym_back_color: 0x249DD6 # enter背景 ※
     # enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
-    hilited_enter_sym_back_color: 0xeebfac #高亮enter背景 ※
+    hilited_enter_sym_back_color: 0xEEBFAC #高亮enter背景 ※
     # menu_back_color: off_sym_back_color #菜单背景 ※
     # menu_text_color: off_sym_text_color #菜单文字 ※
     # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
