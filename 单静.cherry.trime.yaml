@@ -1,0 +1,118 @@
+# Trime style settings
+# encoding: utf-8
+
+name: 单静.cherry #方案名称
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+
+__include: 单静.trime:/
+
+preset_color_schemes/=:
+  default:
+    name: cherry
+    author: '单单 <cxprcn@gmail.com>'
+    colors:
+      # 谷歌黑
+      - &cherry_key_text 0xDDDDDD #白
+      - &cherry_key_symbol 0xBBBBBB #白偏灰
+      - &cherry_text 0xFF7C4D #橙
+      - &cherry_back 0x000000
+      - &cherry_key 0x222222
+      - &cherry_hilited_key 0x333333
+      - &cherry_on_key 0xB7224A #红
+      - &cherry_hilited_on_key 0xA7123A
+
+    # 悬浮窗
+    # border_color: back_color #悬浮窗边框
+    # label_color: hilited_text_color #标签（候选序号）
+    # text_back_color: back_color #编码区背景
+    text_color: *cherry_text #编码
+    # hilited_back_color: back_color #高亮编码背景
+    hilited_text_color: *cherry_key_text #高亮编码
+
+    # 候选栏
+    # candidate_separator_color: back_color #候选分割线
+    back_color: *cherry_hilited_key #候选栏背景
+    candidate_text_color: *cherry_key_text #候选文字
+    comment_text_color: *cherry_key_symbol #提示
+    # hilited_candidate_back_color: back_color #高亮候选背景
+    hilited_candidate_text_color: *cherry_text #高亮候选文字
+    # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
+
+    # 键盘通用
+    keyboard_back_color: *cherry_back #键盘背景
+    # key_border_color: back_color #按键边框
+    # shadow_color: back_color #按键文字阴影
+    # preview_back_color: back_color #按键提示背景
+    # preview_text_color: key_text_color #按键提示文字
+    # key_text_color: candidate_text_color #按键文字
+    key_symbol_color: *cherry_key_symbol #按键符号
+    hilited_key_text_color: *cherry_key_text #高亮按键文字
+    # hilited_key_symbol_color: key_symbol_color #高亮按键符号
+
+    # 主键盘
+    main_back_color: danjing.cherry/key.png #按键背景 ※
+    hilited_main_back_color: danjing.cherry/hilited_key.png #高亮按键背景 ※
+    space_back_color: danjing.cherry/space.png #空格背景 ※
+    hilited_space_back_color: danjing.cherry/hilited_space.png #高亮空格背景 ※
+    off_key_back_color: danjing.cherry/key.png #功能键背景
+    # off_key_text_color: key_text_color #功能键文字
+    # off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
+    hilited_off_key_back_color: danjing.cherry/hilited_key.png #高亮功能键背景
+    # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
+    on_key_back_color: danjing.cherry/shift.png #shift锁定时背景
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
+    hilited_on_key_back_color: danjing.cherry/hilited_shift.png #高亮shift锁定时背景
+    # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
+    # enter_back_color: on_key_back_color #enter背景 ※
+    enter_text_color: *cherry_key_text #enter文字 高亮enter文字※
+    # enter_symbol_color: enter_text_color #enter符号 高亮enter符号※
+    # hilited_enter_back_color: hilited_on_key_back_color #高亮enter背景 ※
+
+    # 附键盘
+    key_back_color: *cherry_key #按键背景
+    hilited_key_back_color: *cherry_hilited_key #高亮按键背景
+    off_sym_back_color: *cherry_hilited_key #功能键背景 ※
+    # off_sym_text_color: off_key_text_color #功能键文字 ※
+    # off_sym_fy_text_color: hilited_off_sym_back_color #翻页停止箭头文字 高亮※
+    hilited_off_sym_back_color: *cherry_key #高亮功能键背景 ※
+    # hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
+    enter_sym_back_color: *cherry_on_key # enter背景 ※
+    # enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
+    hilited_enter_sym_back_color: *cherry_hilited_on_key #高亮enter背景 ※
+    # menu_back_color: off_sym_back_color #菜单背景 ※
+    # menu_text_color: off_sym_text_color #菜单文字 ※
+    # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
+    # hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+
+patch_offset:
+  key_text_offset_y: -2
+  key_symbol_offset_y: 0
+  key_hint_offset_y: -4
+  key_press_offset_x: 0
+  key_press_offset_y: 21
+
+preset_keyboards:
+  default:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch: patch_offset
+
+  letter:
+    __include: 单静.trime:/preset_keyboards/letter
+    __patch: patch_offset
+
+  qwertys:
+    __include: 单静.trime:/preset_keyboards/qwertys
+    __patch: patch_offset
+
+  qwerty_:
+    __include: 单静.trime:/preset_keyboards/qwerty_
+    __patch: patch_offset
+
+  number:
+    __include: 单静.trime:/preset_keyboards/number
+
+  edit:
+    __include: 单静.trime:/preset_keyboards/edit
+
+  func:
+    __include: 单静.trime:/preset_keyboards/func
