@@ -1,0 +1,109 @@
+# Trime style settings
+# encoding: utf-8
+
+name: 单纯 #方案名称
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+__include: 单静.trime:/
+
+pure:
+  plus:
+    height: 47 #按键高度
+    horizontal_gap: 6 #按键水平间距
+    vertical_gap: 8 #按键行距
+    key_hint_offset_y: 0
+  key_height_last: 46
+
+style:
+  round_corner: 10 #按键圆角半径
+
+preset_color_schemes/=:
+  default:
+    name: 单纯 #方案名称
+    author: '单单 <cxprcn@gmail.com>' #作者资讯
+    # 悬浮窗
+    # border_color: back_color #悬浮窗边框
+    # label_color: hilited_text_color #标签（候选序号）
+    # text_back_color: back_color #编码区背景
+    text_color: 0xFF6699 #编码 粉
+    # hilited_back_color: back_color #高亮编码背景
+    hilited_text_color: 0x333333 #高亮编码 黑
+
+    # 候选栏
+    # candidate_separator_color: back_color #候选分割线
+    back_color: 0xD7D9DD #候选栏背景 灰
+    # candidate_text_color: hilited_text_color #候选文字
+    comment_text_color: 0x808080 #提示
+    # hilited_candidate_back_color: back_color #高亮候选背景
+    # hilited_candidate_text_color: text_color #高亮候选文字
+    # hilited_comment_text_color: hilited_candidate_text_color #高亮提示
+
+    # 键盘通用
+    # keyboard_back_color: back_color #键盘背景
+    # key_border_color: border_color #按键边框
+    # shadow_color: border_color #按键文字阴影
+    # preview_back_color: back_color #按键提示背景
+    # preview_text_color: key_text_color #按键提示文字
+    # key_text_color: candidate_text_color #按键文字
+    # key_symbol_color: comment_text_color #按键符号
+    # hilited_key_text_color: key_text_color #高亮按键文字
+    # hilited_key_symbol_color: key_symbol_color #高亮按键符号
+
+    # 主键盘
+    main_back_color: 0xFAFAFA #按键背景 ※
+    hilited_main_back_color: 0xC1C4CD #高亮按键背景 ※
+    # space_back_color: 0xFAFAFA #空格背景 ※
+    # hilited_space_back_color: 0xD7D9DD #高亮空格背景 ※
+    off_key_back_color: 0xC1C4CD #功能键背景
+    # off_key_text_color: key_text_color #功能键文字
+    # off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
+    hilited_off_key_back_color: 0xB1B4BD #高亮功能键背景
+    # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
+    on_key_back_color: 0x2090FF #shift锁定时背景
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
+    hilited_on_key_back_color: 0x047BD8 #高亮shift锁定时背景
+    # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
+    enter_back_color: 0x2090FF #enter背景 ※
+    enter_text_color: 0xfafafa #enter文字 高亮enter文字※
+    enter_symbol_color: 0xFFFFFF #enter符号 高亮enter符号※
+    hilited_enter_back_color: 0x047BD8 #高亮enter背景 ※
+
+    # 附键盘
+    key_back_color: 0xFAFAFA #按键背景
+    # hilited_key_back_color: back_color #高亮按键背景
+    # off_sym_back_color: back_color #功能键背景 ※
+    # off_sym_text_color: off_key_text_color #功能键文字 ※
+    # off_sym_fy_text_color: hilited_off_sym_back_color #翻页停止箭头文字 高亮※
+    hilited_off_sym_back_color: 0xC1C4CD #高亮功能键背景 ※
+    # hilited_off_sym_text_color: hilited_off_key_text_color #高亮功能键文字 ※
+    enter_sym_back_color: 0x2090FF # enter背景 ※
+    # enter_sym_text_color: on_key_text_color #enter文字 高亮enter文字※
+    hilited_enter_sym_back_color: 0x047BD8 ##高亮enter背景 ※
+    # menu_back_color: off_sym_back_color #菜单背景 ※
+    # menu_text_color: off_sym_text_color #菜单文字 ※
+    # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
+    # hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+
+preset_keyboards:
+  default:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      - pure/plus
+      - 'keys/@30/height': { __include: pure/key_height_last }
+
+  letter:
+    __include: 单静.trime:/preset_keyboards/letter
+    __patch:
+      - pure/plus
+      - 'keys/@30/height': { __include: pure/key_height_last }
+
+  qwertys:
+    __include: 单静.trime:/preset_keyboards/qwertys
+    __patch:
+      - pure/plus
+      - 'keys/@31/height': { __include: pure/key_height_last }
+
+  qwerty_:
+    __include: 单静.trime:/preset_keyboards/qwerty_
+    __patch:
+      - pure/plus
+      - 'keys/@33/height': { __include: pure/key_height_last }

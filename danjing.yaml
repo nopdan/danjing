@@ -10,6 +10,7 @@ conf:
     width: 12 #按键宽度
     key_press_offset_x: 2
     key_press_offset_y: 2
+    round_corner: 0
   # 颜文字键盘配置
   ywz:
     __include: conf/sym

@@ -1,0 +1,45 @@
+# Trime style settings
+# encoding: utf-8
+
+name: 单纯+ #方案名称
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+__include: 单静+.trime:/
+
+pure:
+  plus:
+    height: 47 #按键高度
+    horizontal_gap: 6 #按键水平间距
+    vertical_gap: 7 #按键行距
+    key_hint_offset_y: 0
+  key_height_last: 46
+
+style:
+  round_corner: 10 #按键圆角半径
+
+preset_color_schemes/=:
+  __include: 单纯.trime:/preset_color_schemes
+
+preset_keyboards:
+  default:
+    __include: 单静+.trime:/preset_keyboards/default
+    __patch:
+      - pure/plus
+      - 'keys/@40/height': { __include: pure/key_height_last }
+
+  letter:
+    __include: 单静+.trime:/preset_keyboards/letter
+    __patch:
+      - pure/plus
+      - 'keys/@40/height': { __include: pure/key_height_last }
+
+  qwertys:
+    __include: 单静+.trime:/preset_keyboards/qwertys
+    __patch:
+      - pure/plus
+      - 'keys/@41/height': { __include: pure/key_height_last }
+
+  qwerty_:
+    __include: 单静+.trime:/preset_keyboards/qwerty_
+    __patch:
+      - pure/plus
+      - 'keys/@43/height': { __include: pure/key_height_last }

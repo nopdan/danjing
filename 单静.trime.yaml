@@ -25,6 +25,7 @@ conf:
     height: 60 #按键高度
     key_press_offset_x: 2
     key_press_offset_y: 2
+    round_corner: 0
     keys/+:
       - width: 0 #底部留白开关
         height: 1 #底部留白
@@ -247,12 +248,12 @@ preset_color_schemes:
     hilited_off_key_back_color: danjing.default/hilited_off_key.png #高亮功能键背景
     # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
     on_key_back_color: danjing.default/shift.png #shift锁定时背景
-    on_key_text_color: white #shift锁定时文字
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
     hilited_on_key_back_color: danjing.default/hilited_shift.png #高亮shift锁定时背景
     # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
     enter_back_color: danjing.default/enter.png #enter背景 ※
     enter_text_color: 0x00 #enter文字 高亮enter文字※
-    enter_symbol_color: white #enter符号 高亮enter符号※
+    enter_symbol_color: 0xFFFFFF #enter符号 高亮enter符号※
     hilited_enter_back_color: danjing.default/hilited_enter.png #高亮enter背景 ※
 
     # 附键盘
@@ -311,7 +312,7 @@ preset_color_schemes:
     # off_key_text_color: key_text_color #功能键文字
     # off_key_symbol_color: off_key_text_color #功能键符号 高亮功能键符号※
     hilited_off_key_back_color: danjing.google_black/hilited_off_key.png #高亮功能键背景
-    hilited_off_key_text_color: white #高亮功能键文字
+    hilited_off_key_text_color: 0xFFFFFF #高亮功能键文字
     on_key_back_color: danjing.google_black/shift.png #shift锁定时背景
     # on_key_text_color: hilited_key_text_color #shift锁定时文字
     hilited_on_key_back_color: danjing.google_black/hilited_shift.png #高亮shift锁定时背景
@@ -379,7 +380,7 @@ preset_color_schemes:
     hilited_off_key_back_color: danjing.google_white/hilited_off_key.png #高亮功能键背景
     # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
     on_key_back_color: danjing.google_white/shift.png #shift锁定时背景
-    on_key_text_color: white #shift锁定时文字
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
     hilited_on_key_back_color: danjing.google_white/hilited_shift.png #高亮shift锁定时背景
     # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
     # enter_back_color: on_key_back_color #enter背景 ※
@@ -445,7 +446,7 @@ preset_color_schemes:
     hilited_off_key_back_color: danjing.pink_blue/hilited_off_key.png #高亮功能键背景
     # hilited_off_key_text_color: off_key_text_color #高亮功能键文字
     on_key_back_color: danjing.pink_blue/shift.png #shift锁定时背景
-    on_key_text_color: white #shift锁定时文字
+    on_key_text_color: 0xFFFFFF #shift锁定时文字
     hilited_on_key_back_color: danjing.pink_blue/hilited_shift.png #高亮shift锁定时背景
     # hilited_on_key_text_color: on_key_text_color #高亮shift锁定时文字
     # enter_back_color: on_key_back_color #enter背景 ※
@@ -468,6 +469,7 @@ preset_color_schemes:
     # menu_text_color: off_sym_text_color #菜单文字 ※
     # hilited_menu_back_color: key_back_color #高亮菜单背景 ※
     # hilited_menu_text_color: enter_sym_back_color #高亮菜单文字 ※
+    # sub_keyboard_background: key_back_color #键盘背景 ※
 
 # 按键样式
 styl:
@@ -644,16 +646,9 @@ preset_keyboards:
     __patch:
       'keys/@33/long_click': Keyboard_default
 
-  flypy:
-    name: 二重
-    __include: preset_keyboards/default
-    __patch:
-      'keys/@21/composing': select_second
-      'keys/@34/composing': '.'
-
   qwertys:
     name: 默认27键
-    __include: preset_keyboards/flypy
+    __include: preset_keyboards/default
     __patch:
       'keys/@11/width': 0
       'keys/@17/hint': ' '
@@ -666,6 +661,7 @@ preset_keyboards:
         width: 10
         __include: styl/key
       'keys/@21/composing': split_word
+      'keys/@34/composing': '.'
 
   qwerty_:
     name: 默认30键

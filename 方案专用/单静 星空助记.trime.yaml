@@ -16,8 +16,9 @@ __patch:
     kb_xkybzj: { label: '助记', send: Eisu_toggle, select: xkybzj }
 
 preset_keyboards:
+
   xkjd6: #星空键道6
-    __include: 单静.trime:/preset_keyboards/flypy
+    __include: preset_keyboards/xklbs
     __patch:
       'keys/@22/swipe_down': kb_xkjd6zj
       'keys/@22/hint': '助记'
@@ -265,10 +266,12 @@ preset_keyboards:
       'keys/@25/swipe_down': 'paste'
 
   xklbs:
-    __include: 单静.trime:/preset_keyboards/flypy
+    __include: 单静.trime:/preset_keyboards/default
     __patch:
+      'keys/@21/composing': select_second
       'keys/@33/hint': '两笔S'
       'keys/@33/key_hint_offset_y': -19
+      'keys/@34/composing': '.'
 
   xklbsdz:
     __include: preset_keyboards/xklbs

@@ -3,6 +3,7 @@
 
 name: 单静+ #方案名称
 author: '单单 <cxprcn@gmail.com>' #作者资讯
+__include: 单静.trime:/
 
 conf:
   # 其他参数在 单静.trime.yaml 修改
@@ -27,7 +28,6 @@ conf:
   __patch:
     - 单静.patch.无障碍:/num?
 
-__include: 单静.trime:/
 __patch:
   style/key_height: 61 #符号、颜文字键盘 按键高度
   preset_keys/+:
