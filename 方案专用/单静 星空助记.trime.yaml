@@ -19,8 +19,9 @@ preset_keyboards:
   xkjd6: #星空键道6
     __include: 单静.trime:/preset_keyboards/flypy
     __patch:
+      'keys/@22/swipe_down': kb_xkjd6zj
+      'keys/@22/hint': '助记'
       'keys/@33/hint': '键道6'
-      'keys/@33/swipe_up': kb_xkjd6zj
       'keys/@33/key_hint_offset_y': -19
 
   xkjd6dz: #星空键道6单字
@@ -93,9 +94,9 @@ preset_keyboards:
       'keys/@28/hint': 'uang'
       #第四行下
       'keys/@33/hint': '键道6'
-      'keys/@33/swipe_up': Back
       #功能
       'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
       'keys/@23/swipe_down': 'cut'
       'keys/@24/swipe_down': 'copy'
       'keys/@25/swipe_down': 'paste'
@@ -103,8 +104,9 @@ preset_keyboards:
   xklb: #星空两笔
     __include: preset_keyboards/xkjd6
     __patch:
+      'keys/@22/swipe_down': kb_xklbzj
+      'keys/@22/hint': '助记'
       'keys/@33/hint': '两笔'
-      'keys/@33/swipe_up': kb_xklbzj
 
   xklbdz: #星空两笔单字
     __include: preset_keyboards/xklb
@@ -174,13 +176,19 @@ preset_keyboards:
       'keys/@28/hint': ''
       #第四行下
       'keys/@33/hint': '两笔'
-      'keys/@33/swipe_up': Back
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': 'cut'
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
 
   xkyb: #星空一笔
     __include: preset_keyboards/xkjd6
     __patch:
+      'keys/@22/swipe_down': kb_xkybzj
+      'keys/@22/hint': '助记'
       'keys/@33/hint': '一笔'
-      'keys/@33/swipe_up': kb_xkybzj
 
   xkybdz: #星空一笔单字
     __include: preset_keyboards/xkyb
@@ -249,7 +257,12 @@ preset_keyboards:
       'keys/@28/hint': ''
       #第四行下
       'keys/@33/hint': '一笔'
-      'keys/@33/swipe_up': Back
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': 'cut'
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
 
   xklbs:
     __include: 单静.trime:/preset_keyboards/flypy

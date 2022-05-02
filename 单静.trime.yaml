@@ -523,7 +523,13 @@ preset_keyboards:
       # 第 2 行
       - { width: 5 }
       - { click: 'a', long_click: select_all, __include: styl/key }
-      - { click: 's', long_click: '-', __include: styl/key }
+      - {
+          click: 's',
+          long_click: '-',
+          swipe_down: '~',
+          hint: '~',
+          __include: styl/key,
+        }
       - {
           click: 'd',
           long_click: '_',
@@ -563,13 +569,7 @@ preset_keyboards:
       - { click: 'l', long_click: ';', __include: styl/key }
       # 第 3 行
       - { click: Shift_L, composing: split_word, width: 15 }
-      - {
-          click: 'z',
-          long_click: '`',
-          swipe_down: '~',
-          hint: '~',
-          __include: styl/key,
-        }
+      - { click: 'z', long_click: '`', __include: styl/key }
       - { click: 'x', long_click: cut, __include: styl/key }
       - { click: 'c', long_click: copy, __include: styl/key }
       - { click: 'v', long_click: paste, __include: styl/key }
@@ -790,7 +790,7 @@ preset_keyboards:
       - { click: Zdic, __include: styl/off_func }
       - { click: MoeDict, __include: styl/off_func }
       - { click: VOICE_ASSIST, __include: styl/off_func }
-      - { click: '', __include: styl/off_func }
+      - { click: IME_switch, __include: styl/off_func }
 
 android_keys:
   __include: trime:/android_keys
@@ -906,7 +906,7 @@ preset_keys:
   Hint_switch:
     { toggle: _hide_key_hint, send: Mode_switch, states: [关闭助记, 开启助记] }
   # trime设定
-  IME_switch: { label: 选择输入法, send: LANGUAGE_SWITCH } #弹出对话框选择输入法
+  IME_switch: { label: 输入法, send: LANGUAGE_SWITCH } #弹出对话框选择输入法
   IME_last: { label: 上一输入法, send: LANGUAGE_SWITCH, select: .last } #直接切换到上一输入法
   IME_next: { label: 下一输入法, send: LANGUAGE_SWITCH, select: .next } #直接切换到下一输入法
   Schema_switch: { label: 下一方案, send: Control+Shift+1 }
@@ -920,7 +920,8 @@ preset_keys:
   Schema_settings: { label: 方案, send: SETTINGS, option: 'schema' }
 
   # trime键盘
-  Mode_switch_space: { toggle: ascii_mode, send: Mode_switch, states: [' ', 'ascii'] }
+  Mode_switch_space:
+    { toggle: ascii_mode, send: Mode_switch, states: [' ', 'ascii'] }
   Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
   Back: { label: 返回, send: Eisu_toggle, select: .default }
   Keyboard_default: { label: ' ', send: Eisu_toggle, select: .default }
