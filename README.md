@@ -53,9 +53,9 @@ preset_keyboards:
 
 ```yaml
 preset_keyboards:
-  __include: danjing:/kbs
+  __include: danjing:/preset_keyboards
   <你的方案id>:
-    __include: /preset_keyboards/<布局id>
+    __include: preset_keyboards/<布局id>
 ```
 
 | 布局  | id        |
