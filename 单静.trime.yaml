@@ -611,7 +611,8 @@ preset_keyboards:
       - { click: ',', long_click: '/', width: 12, __include: styl/key }
       - {
           click: space,
-          long_click: Keyboard_letter,
+          long_click: Mode_switch_space,
+          key_symbol_offset_x: 0,
           width: 37,
           key_back_color: space_back_color,
           hilited_key_back_color: hilited_space_back_color,
@@ -919,6 +920,7 @@ preset_keys:
   Schema_settings: { label: 方案, send: SETTINGS, option: 'schema' }
 
   # trime键盘
+  Mode_switch_space: { toggle: ascii_mode, send: Mode_switch, states: [' ', 'ascii'] }
   Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
   Back: { label: 返回, send: Eisu_toggle, select: .default }
   Keyboard_default: { label: ' ', send: Eisu_toggle, select: .default }
