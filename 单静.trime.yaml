@@ -779,14 +779,14 @@ preset_keyboards:
       - { click: Schema_settings, __include: styl/off_func }
       - { click: Theme_settings, __include: styl/off_func }
       - { click: Settings, __include: styl/off_func }
-      - { click: kb_qwerty, __include: styl/off_func }
-      - { click: kb_qwertys, __include: styl/off_func }
-      - { click: kb_qwerty_, __include: styl/off_func }
       - { click: kb_edit, __include: styl/off_func }
       - { click: Zdic, __include: styl/off_func }
       - { click: MoeDict, __include: styl/off_func }
       - { click: VOICE_ASSIST, __include: styl/off_func }
       - { click: IME_switch, __include: styl/off_func }
+      - { click: kb_qwerty, __include: styl/off_func }
+      - { click: kb_qwertys, __include: styl/off_func }
+      - { click: kb_qwerty_, __include: styl/off_func }
 
 android_keys:
   __include: trime:/android_keys
@@ -921,10 +921,10 @@ preset_keys:
   Keyboard_switch: { label: 键盘, send: Eisu_toggle, select: .next }
   Back: { label: 返回, send: Eisu_toggle, select: .default }
   Keyboard_default: { label: ' ', send: Eisu_toggle, select: .default }
-  kb_qwerty: { label: '26键', send: Eisu_toggle, select: default }
+  kb_qwerty: { label: ' ', send: Eisu_toggle, select: default }
   Keyboard_letter: { label: ' ', send: Eisu_toggle, select: letter }
-  kb_qwertys: { label: '27键', send: Eisu_toggle, select: qwertys }
-  kb_qwerty_: { label: '30键', send: Eisu_toggle, select: qwerty_ }
+  kb_qwertys: { label: ' ', send: Eisu_toggle, select: qwertys }
+  kb_qwerty_: { label: ' ', send: Eisu_toggle, select: qwerty_ }
   Keyboard_number: { label: '123', send: Eisu_toggle, select: number }
   Keyboard_symbols: { label: '۞', send: Eisu_toggle, select: symbols }
   kb_edit: { label: '编辑', send: Eisu_toggle, select: edit }

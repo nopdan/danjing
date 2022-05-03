@@ -41,9 +41,6 @@ __patch:
     num8: { label: 8, send: 8 }
     num9: { label: 9, send: 9 }
     num0: { label: 0, send: 0 }
-    kb_qwerty: { label: '36键', send: Eisu_toggle, select: default }
-    kb_qwertys: { label: '37键', send: Eisu_toggle, select: qwertys }
-    kb_qwerty_: { label: '40键', send: Eisu_toggle, select: qwerty_ }
 
 preset_keyboards:
   default:
