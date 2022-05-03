@@ -8,25 +8,27 @@ __include: 单静.trime:/
 conf:
   # 其他参数在 单静.trime.yaml 修改
   # 数字、编辑、功能键盘
-  num_height: 71 #按键高度
+  num_height:
+    height: 71 #按键高度
   # 添加数字行
   num_line:
     height: 39 # 数字行按键高度
-  plus:
-    'keys/@4/hint': ' '
-    'keys/@7/hint': ' '
-    'keys/@0/': { click: num1, __include: conf/num_line }
-    'keys/@after 0/': { click: num2 }
-    'keys/@after 1/': { click: num3 }
-    'keys/@after 2/': { click: num4 }
-    'keys/@after 3/': { click: num5 }
-    'keys/@after 4/': { click: num6 }
-    'keys/@after 5/': { click: num7 }
-    'keys/@after 6/': { click: num8 }
-    'keys/@after 7/': { click: num9 }
-    'keys/@after 8/': { click: num0 }
   __patch:
     - 单静.patch.无障碍:/num?
+
+plus:
+  'keys/@4/hint': ' '
+  'keys/@7/hint': ' '
+  'keys/@0/': { click: num1, __include: conf/num_line }
+  'keys/@after 0/': { click: num2 }
+  'keys/@after 1/': { click: num3 }
+  'keys/@after 2/': { click: num4 }
+  'keys/@after 3/': { click: num5 }
+  'keys/@after 4/': { click: num6 }
+  'keys/@after 5/': { click: num7 }
+  'keys/@after 6/': { click: num8 }
+  'keys/@after 7/': { click: num9 }
+  'keys/@after 8/': { click: num0 }
 
 __patch:
   style/key_height: 61 #符号、颜文字键盘 按键高度
@@ -45,28 +47,28 @@ __patch:
 preset_keyboards:
   default:
     __include: 单静.trime:/preset_keyboards/default
-    __patch: conf/plus
+    __patch: plus
 
   letter:
     __include: 单静.trime:/preset_keyboards/letter
-    __patch: conf/plus
+    __patch: plus
 
   qwertys:
     __include: 单静.trime:/preset_keyboards/qwertys
-    __patch: conf/plus
+    __patch: plus
 
   qwerty_:
     __include: 单静.trime:/preset_keyboards/qwerty_
-    __patch: conf/plus
+    __patch: plus
 
   number:
     __include: 单静.trime:/preset_keyboards/number
-    height: { __include: conf/num_height }
+    __patch: conf/num_height
 
   edit:
     __include: 单静.trime:/preset_keyboards/edit
-    height: { __include: conf/num_height }
+    __patch: conf/num_height
 
   func:
     __include: 单静.trime:/preset_keyboards/func
-    height: { __include: conf/num_height }
+    __patch: conf/num_height
