@@ -1,0 +1,110 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '1.0'
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+
+__include: 单静.trime:/
+__patch:
+  style/keyboards/+:
+    - wubi86zj
+  preset_keys/+:
+    kb_wubi86zj: { label: '助记', send: Eisu_toggle, select: wubi86zj }
+
+preset_keyboards:
+  wubi86:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      key_symbol_offset_x: 0
+      'keys/@22/swipe_down': kb_wubi86zj
+      'keys/@22/hint': '助记'
+  wubi86zj:
+    __include: preset_keyboards/wubi86
+    name: 'wubi86助记'
+    __patch:
+      'keys/@1/key_symbol_color': 0x00
+      'keys/@2/key_symbol_color': 0x00
+      'keys/@3/key_symbol_color': 0x00
+      'keys/@4/key_symbol_color': 0x00
+      'keys/@5/key_symbol_color': 0x00
+      'keys/@6/key_symbol_color': 0x00
+      'keys/@7/key_symbol_color': 0x00
+      'keys/@8/key_symbol_color': 0x00
+      'keys/@9/key_symbol_color': 0x00
+      'keys/@10/key_symbol_color': 0x00
+      'keys/@12/key_symbol_color': 0x00
+      'keys/@13/key_symbol_color': 0x00
+      'keys/@14/key_symbol_color': 0x00
+      'keys/@15/key_symbol_color': 0x00
+      'keys/@16/key_symbol_color': 0x00
+      'keys/@17/key_symbol_color': 0x00
+      'keys/@18/key_symbol_color': 0x00
+      'keys/@19/key_symbol_color': 0x00
+      'keys/@20/key_symbol_color': 0x00
+      'keys/@22/key_symbol_color': 0x00
+      'keys/@23/key_symbol_color': 0x00
+      'keys/@24/key_symbol_color': 0x00
+      'keys/@25/key_symbol_color': 0x00
+      'keys/@26/key_symbol_color': 0x00
+      'keys/@27/key_symbol_color': 0x00
+      'keys/@28/key_symbol_color': 0x00
+
+      'keys/@1/key_text_color': 0x00
+      'keys/@2/key_text_color': 0x00
+      'keys/@3/key_text_color': 0x00
+      'keys/@4/key_text_color': 0x00
+      'keys/@5/key_text_color': 0x00
+      'keys/@6/key_text_color': 0x00
+      'keys/@7/key_text_color': 0x00
+      'keys/@8/key_text_color': 0x00
+      'keys/@9/key_text_color': 0x00
+      'keys/@10/key_text_color': 0x00
+      'keys/@12/key_text_color': 0x00
+      'keys/@13/key_text_color': 0x00
+      'keys/@14/key_text_color': 0x00
+      'keys/@15/key_text_color': 0x00
+      'keys/@16/key_text_color': 0x00
+      'keys/@17/key_text_color': 0x00
+      'keys/@18/key_text_color': 0x00
+      'keys/@19/key_text_color': 0x00
+      'keys/@20/key_text_color': 0x00
+      'keys/@22/key_text_color': 0x00
+      'keys/@23/key_text_color': 0x00
+      'keys/@24/key_text_color': 0x00
+      'keys/@25/key_text_color': 0x00
+      'keys/@26/key_text_color': 0x00
+      'keys/@27/key_text_color': 0x00
+      'keys/@28/key_text_color': 0x00
+
+      'keys/@1/key_back_color': 86wb/Q.png
+      'keys/@2/key_back_color': 86wb/W.png
+      'keys/@3/key_back_color': 86wb/E.png
+      'keys/@4/key_back_color': 86wb/R.png
+      'keys/@5/key_back_color': 86wb/T.png
+      'keys/@6/key_back_color': 86wb/Y.png
+      'keys/@7/key_back_color': 86wb/U.png
+      'keys/@8/key_back_color': 86wb/I.png
+      'keys/@9/key_back_color': 86wb/O.png
+      'keys/@10/key_back_color': 86wb/P.png
+      'keys/@12/key_back_color': 86wb/A.png
+      'keys/@13/key_back_color': 86wb/S.png
+      'keys/@14/key_back_color': 86wb/D.png
+      'keys/@15/key_back_color': 86wb/F.png
+      'keys/@16/key_back_color': 86wb/G.png
+      'keys/@17/key_back_color': 86wb/H.png
+      'keys/@18/key_back_color': 86wb/J.png
+      'keys/@19/key_back_color': 86wb/K.png
+      'keys/@20/key_back_color': 86wb/L.png
+      'keys/@22/key_back_color': 86wb/Z.png
+      'keys/@24/key_back_color': 86wb/X.png
+      'keys/@23/key_back_color': 86wb/C.png
+      'keys/@25/key_back_color': 86wb/V.png
+      'keys/@26/key_back_color': 86wb/B.png
+      'keys/@27/key_back_color': 86wb/N.png
+      'keys/@28/key_back_color': 86wb/M.png
+
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': 'cut'
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
