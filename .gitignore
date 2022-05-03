@@ -1,3 +1,5 @@
 .prettierrc.js
 
 others/
+
+*.zip

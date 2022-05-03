@@ -488,6 +488,8 @@ styl:
 
 preset_keyboards:
   __include: danjing:/preset_keyboards
+  flypy:
+    import_preset: preset_keyboards/default
 
   default:
     name: 默认26键
@@ -896,11 +898,11 @@ preset_keys:
     { toggle: extended_charset, send: Mode_switch, states: [常用, 增广] }
   Punct_switch: { toggle: ascii_punct, send: Mode_switch, states: [。，, ．，] }
   Candidate_switch:
-    { toggle: _hide_candidate, send: Mode_switch, states: [关闭候选, 开启候选] }
+    { toggle: _hide_candidate, send: Mode_switch, states: [有候选, 无候选] }
   Comment_switch:
-    { toggle: _hide_comment, send: Mode_switch, states: [关闭注释, 开启注释] }
+    { toggle: _hide_comment, send: Mode_switch, states: [有注释, 无注释] }
   Hint_switch:
-    { toggle: _hide_key_hint, send: Mode_switch, states: [关闭助记, 开启助记] }
+    { toggle: _hide_key_hint, send: Mode_switch, states: [有下标, 无下标] }
   # trime设定
   IME_switch: { label: 输入法, send: LANGUAGE_SWITCH } #弹出对话框选择输入法
   IME_last: { label: 上一输入法, send: LANGUAGE_SWITCH, select: .last } #直接切换到上一输入法

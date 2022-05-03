@@ -55,7 +55,18 @@ preset_keyboards:
 preset_keyboards:
   __include: danjing:/preset_keyboards
   <你的方案id>:
-    __include: preset_keyboards/<布局id>
+    import_preset: preset_keyboards/<布局id>
+```
+
+一个例子 
+
+```yaml
+preset_keyboards:
+  __include: danjing:/preset_keyboards
+  flypy:
+    import_preset: preset_keyboards/default
+  xlkb:
+    import_preset: preset_keyboards/qwertys
 ```
 
 | 布局  | id        |
