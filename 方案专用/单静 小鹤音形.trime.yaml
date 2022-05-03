@@ -1,0 +1,129 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '1.0'
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+
+__include: 单静.trime:/
+__patch:
+  style/keyboards/+:
+    - flypyzj
+    - flypyzg
+  preset_keys/+:
+    kb_flypyzj: { label: '韵母', send: Eisu_toggle, select: flypyzj }
+    kb_flypyzg: { label: '字根', send: Eisu_toggle, select: flypyzg }
+
+preset_keyboards:
+  flypy:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      key_symbol_offset_x: 0
+      'keys/@21/composing': Esc
+      'keys/@22/swipe_down': kb_flypyzj
+      'keys/@22/hint': '韵母'
+      'keys/@23/swipe_down': kb_flypyzg
+      'keys/@23/hint': '字根'
+  flypyzj:
+    __include: preset_keyboards/flypy
+    __patch:
+      #第一行上
+      #第二行上
+      'keys/@13/long_click': 'ong'
+      'keys/@19/long_click': 'uai'
+      'keys/@20/long_click': 'uang'
+      #第三行上
+      'keys/@23/long_click': 'ua'
+      #第一行下
+      'keys/@1/hint': 'iu'
+      'keys/@2/hint': 'ei'
+      'keys/@3/hint': 'e'
+      'keys/@4/hint': 'uan'
+      'keys/@5/hint': 'ue'
+      'keys/@6/hint': 'un'
+      'keys/@7/hint': ''
+      'keys/@8/hint': ''
+      'keys/@9/hint': 'uo'
+      'keys/@10/hint': 'ie'
+      #第二行下
+      'keys/@12/hint': ''
+      'keys/@13/hint': 'iong'
+      'keys/@14/hint': 'ai'
+      'keys/@15/hint': 'en'
+      'keys/@16/hint': 'eng'
+      'keys/@17/hint': 'ang'
+      'keys/@18/hint': 'an'
+      'keys/@19/hint': 'ing'
+      'keys/@20/hint': 'iang'
+      #第三行下
+      'keys/@22/hint': 'ou'
+      'keys/@23/hint': 'ia'
+      'keys/@24/hint': 'ao'
+      'keys/@25/hint': 'ui'
+      'keys/@26/hint': 'in'
+      'keys/@27/hint': 'uai'
+      'keys/@28/hint': 'ian'
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': Back
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
+  flypyzg:
+    __include: preset_keyboards/flypy
+    __patch:
+      #第一行上
+      'keys/@1/long_click': '犭求'
+      'keys/@2/long_click': 亠
+      'keys/@3/long_click': '彐山'
+      'keys/@4/long_click': 亻
+      'keys/@5/long_click': 田
+      'keys/@6/long_click': '⺷⺶羊'
+      'keys/@7/long_click': '饣石'
+      'keys/@8/long_click': '彳亍'
+      'keys/@9/long_click': '日月'
+      'keys/@10/long_click': '礻衤'
+      #第二行上
+      'keys/@13/long_click': 罒
+      'keys/@14/long_click': '冫氵'
+      'keys/@15/long_click': '扌龶缶'
+      'keys/@16/long_click': '鬼骨革'
+      'keys/@17/long_click': '灬虍黑'
+      'keys/@19/long_click': '囗㠯'
+      #第三行上
+      'keys/@23/long_click': '忄乂'
+      'keys/@26/long_click': '宀冖丷勹'
+      #第一行下
+      'keys/@1/hint': '具其上'
+      'keys/@2/hint': '夂攵文'
+      'keys/@3/hint': '卩阝见下'
+      'keys/@4/hint': ''
+      'keys/@5/hint': ''
+      'keys/@6/hint': '讠𧘇'
+      'keys/@7/hint': '龵𠂇氺'
+      'keys/@8/hint': 虫
+      'keys/@9/hint': 目
+      'keys/@10/hint': ''
+      #第二行下
+      "keys/@12/hint": 鱼
+      "keys/@13/hint": "纟厶龴"
+      "keys/@14/hint": "⺈刂"
+      "keys/@15/hint": "寿带上"
+      "keys/@16/hint": "艮 既左"
+      "keys/@17/hint": "余下"
+      "keys/@18/hint": "龹钅金"
+      "keys/@19/hint": "匚冂凵"
+      "keys/@20/hint": "耂立龙"
+      #第三行下
+      "keys/@22/hint": "⻊廴辶"
+      "keys/@23/hint": "⺍⺌⺗"
+      "keys/@24/hint": "艹廾"
+      "keys/@25/hint": "⺮豸"
+      "keys/@26/hint": "疒 比左"
+      "keys/@27/hint": "⺧牜"
+      "keys/@28/hint": 朩
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': Back
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'

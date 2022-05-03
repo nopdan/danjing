@@ -488,8 +488,6 @@ styl:
 
 preset_keyboards:
   __include: danjing:/preset_keyboards
-  flypy:
-    import_preset: preset_keyboards/default
 
   default:
     name: 默认26键
