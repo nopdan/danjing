@@ -8,3 +8,7 @@ main:
 
 num:
   num_line/height: 44 # 数字行按键高度
+
+pure:
+  plus/height: 59
+  key_height_last: 57

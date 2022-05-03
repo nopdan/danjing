@@ -12,6 +12,8 @@ pure:
     vertical_gap: 7 #按键行距
     key_hint_offset_y: 0
   key_height_last: 46
+  __patch:
+    - 单静.patch.无障碍:/pure?
 
 style:
   round_corner: 10 #按键圆角半径
