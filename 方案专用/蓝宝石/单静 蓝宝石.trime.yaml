@@ -7,24 +7,24 @@ author: '单单 <cxprcn@gmail.com>' #作者资讯
 __include: 单静.trime:/
 __patch:
   style/keyboards/+:
-    - xcxbzj
-    - xcxbzj2
+    - Sapphirezj
+    - Sapphirezj2
   preset_keys/+:
-    kb_xcxbzj: { label: '助记', send: Eisu_toggle, select: xcxbzj }
-    kb_xcxbzj2: { label: '助记2', send: Eisu_toggle, select: xcxbzj2 }
+    kb_Sapphirezj: { label: '助记', send: Eisu_toggle, select: Sapphirezj }
+    kb_Sapphirezj2: { label: '助记2', send: Eisu_toggle, select: Sapphirezj2 }
 
 preset_keyboards:
-  xcxb:
+  Sapphire:
     __include: 单静.trime:/preset_keyboards/default
     __patch:
       key_symbol_offset_x: 0
-      'keys/@22/swipe_down': kb_xcxbzj
+      'keys/@22/swipe_down': kb_Sapphirezj
       'keys/@22/hint': '助记'
-      'keys/@23/swipe_down': kb_xcxbzj2
+      'keys/@23/swipe_down': kb_Sapphirezj2
       'keys/@23/hint': '助记2'
-  xcxbzj:
-    __include: preset_keyboards/xcxb
-    name: 'xcxb助记'
+  Sapphirezj:
+    __include: preset_keyboards/Sapphire
+    name: 'Sapphire助记'
     __patch:
       'keys/@1/key_symbol_color': 0x00
       'keys/@2/key_symbol_color': 0x00
@@ -113,8 +113,8 @@ preset_keyboards:
       'keys/@24/swipe_down': 'copy'
       'keys/@25/swipe_down': 'paste'
 
-  xcxbzj2:
-    __include: preset_keyboards/xcxbzj
+  Sapphirezj2:
+    __include: preset_keyboards/Sapphirezj
     __patch:
       'keys/@1/key_back_color': lanbaoshi2/Q.png
       'keys/@2/key_back_color': lanbaoshi2/W.png
