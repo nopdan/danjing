@@ -75,6 +75,7 @@ preset_keyboards:
       'keys/@1/long_click': '犭求'
       'keys/@2/long_click': 亠
       'keys/@3/long_click': '彐山'
+      'keys/@3/symbol_text_size': 8
       'keys/@4/long_click': 亻
       'keys/@5/long_click': 田
       'keys/@6/long_click': '⺷⺶羊'
@@ -92,6 +93,7 @@ preset_keyboards:
       #第三行上
       'keys/@23/long_click': '忄乂'
       'keys/@26/long_click': '宀冖丷勹'
+      'keys/@26/symbol_text_size': 8
       #第一行下
       'keys/@1/hint': '具其上'
       'keys/@2/hint': '夂攵文'
