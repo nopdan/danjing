@@ -1,0 +1,138 @@
+# Trime style settings
+# encoding: utf-8
+
+__include: 单静+.trime:/
+__patch:
+  style/layout/+:
+    min_length: 0 #最小词长
+    sticky_lines: 1 #固顶行数
+    max_entries: 1 #最大词条数
+    max_width: 350 #最大宽度，超过则自动换行
+    min_width: 0 #最小宽度
+    line_spacing_multiplier: 1.1 #候选词的行间距(倍数)
+  preset_keys/space:
+    preview: ' '
+    repeatable: false
+    functional: false
+    send: space
+  style/keyboards/+:
+    - xf
+    - xfzj
+  preset_keys/+:
+    kb_xfzj: { label: '助记', send: Eisu_toggle, select: xfzj }
+
+style:
+  # 候选区
+  ## 候选
+  candidate_view_height: 28 #候选区高度
+  candidate_text_size: 18 #候选字号
+  ## 编码
+  comment_on_top: false #编码提示在上方或右侧
+  comment_height: 16 #编码提示区高度
+  comment_text_size: 15 #编码提示字号
+  # 悬浮窗口
+  label_text_size: 16 #标签字号
+  text_size: 16 #编码区字号
+  # 悬浮窗口组件
+  window:
+    #- {start: "", move: 'ㄓ ', end: ""}
+    - { start: ' ', composition: '%s', end: ' ', letter_spacing: 0 } #letter_spacing需要>=Android5.0。TODO: 不为0时，会导致不换行的问题
+    - {
+        start: '',
+        label: '%s',
+        candidate: '%s',
+        comment: '%s',
+        end: '',
+        sep: ' ',
+      }
+
+preset_keyboards:
+  xf:
+    __include: 单静+.trime:/preset_keyboards/qwerty_
+    __patch: 
+      'keys/@32/swipe_down': kb_xfzj
+      'keys/@32/hint': '助记'
+  xfzj:
+    __include: preset_keyboards/xf
+    name: '西风瘦码Soaring助记'
+    __patch:
+      'keys/@10/key_symbol_color': 0x00
+      'keys/@11/key_symbol_color': 0x00
+      'keys/@12/key_symbol_color': 0x00
+      'keys/@13/key_symbol_color': 0x00
+      'keys/@14/key_symbol_color': 0x00
+      'keys/@15/key_symbol_color': 0x00
+      'keys/@16/key_symbol_color': 0x00
+      'keys/@17/key_symbol_color': 0x00
+      'keys/@18/key_symbol_color': 0x00
+      'keys/@19/key_symbol_color': 0x00
+      'keys/@21/key_symbol_color': 0x00
+      'keys/@22/key_symbol_color': 0x00
+      'keys/@23/key_symbol_color': 0x00
+      'keys/@24/key_symbol_color': 0x00
+      'keys/@25/key_symbol_color': 0x00
+      'keys/@26/key_symbol_color': 0x00
+      'keys/@27/key_symbol_color': 0x00
+      'keys/@28/key_symbol_color': 0x00
+      'keys/@29/key_symbol_color': 0x00
+      'keys/@32/key_symbol_color': 0x00
+      'keys/@33/key_symbol_color': 0x00
+      'keys/@34/key_symbol_color': 0x00
+      'keys/@35/key_symbol_color': 0x00
+      'keys/@36/key_symbol_color': 0x00
+      'keys/@37/key_symbol_color': 0x00
+      'keys/@38/key_symbol_color': 0x00
+      'keys/@10/key_text_color': 0x00
+      'keys/@11/key_text_color': 0x00
+      'keys/@12/key_text_color': 0x00
+      'keys/@13/key_text_color': 0x00
+      'keys/@14/key_text_color': 0x00
+      'keys/@15/key_text_color': 0x00
+      'keys/@16/key_text_color': 0x00
+      'keys/@17/key_text_color': 0x00
+      'keys/@18/key_text_color': 0x00
+      'keys/@19/key_text_color': 0x00
+      'keys/@21/key_text_color': 0x00
+      'keys/@22/key_text_color': 0x00
+      'keys/@23/key_text_color': 0x00
+      'keys/@24/key_text_color': 0x00
+      'keys/@25/key_text_color': 0x00
+      'keys/@26/key_text_color': 0x00
+      'keys/@27/key_text_color': 0x00
+      'keys/@28/key_text_color': 0x00
+      'keys/@29/key_text_color': 0x00
+      'keys/@32/key_text_color': 0x00
+      'keys/@33/key_text_color': 0x00
+      'keys/@34/key_text_color': 0x00
+      'keys/@35/key_text_color': 0x00
+      'keys/@36/key_text_color': 0x00
+      'keys/@37/key_text_color': 0x00
+      'keys/@38/key_text_color': 0x00
+      'keys/@10/key_back_color': xfzj/q.png
+      'keys/@11/key_back_color': xfzj/w.png
+      'keys/@12/key_back_color': xfzj/e.png
+      'keys/@13/key_back_color': xfzj/r.png
+      'keys/@14/key_back_color': xfzj/t.png
+      'keys/@15/key_back_color': xfzj/y.png
+      'keys/@16/key_back_color': xfzj/u.png
+      'keys/@17/key_back_color': xfzj/i.png
+      'keys/@18/key_back_color': xfzj/o.png
+      'keys/@19/key_back_color': xfzj/p.png
+      'keys/@21/key_back_color': xfzj/a.png
+      'keys/@22/key_back_color': xfzj/s.png
+      'keys/@23/key_back_color': xfzj/d.png
+      'keys/@24/key_back_color': xfzj/f.png
+      'keys/@25/key_back_color': xfzj/g.png
+      'keys/@26/key_back_color': xfzj/h.png
+      'keys/@27/key_back_color': xfzj/j.png
+      'keys/@28/key_back_color': xfzj/k.png
+      'keys/@29/key_back_color': xfzj/l.png
+      'keys/@32/key_back_color': xfzj/z.png
+      'keys/@33/key_back_color': xfzj/x.png
+      'keys/@34/key_back_color': xfzj/c.png
+      'keys/@35/key_back_color': xfzj/v.png
+      'keys/@36/key_back_color': xfzj/b.png
+      'keys/@37/key_back_color': xfzj/n.png
+      'keys/@38/key_back_color': xfzj/m.png
+      'keys/@32/swipe_down': Back
+      'keys/@32/hint': '返回'
