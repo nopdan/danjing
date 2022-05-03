@@ -1,0 +1,91 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '1.0'
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+
+__include: 单静.trime:/
+__patch:
+  style/keyboards/+:
+    - zzdyxzj
+  preset_keys/+:
+    kb_zzdyxzj: { label: '助记', send: Eisu_toggle, select: zzdyxzj }
+
+preset_keyboards:
+  zzdyx_perfect:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      key_symbol_offset_x: 0
+      'keys/@22/swipe_down': kb_zzdyxzj
+      'keys/@22/hint': '助记'
+  zzdyx_mofast:
+    import_preset: zzdyx_perfect
+  zzdyx_single:
+    import_preset: zzdyx_perfect
+  zzdyxzj:
+    __include: preset_keyboards/zzdyx_perfect
+    __patch:
+      #第一行上
+      'keys/@1/long_click': '丿丿'
+      'keys/@2/long_click': '丿𠃌'
+      'keys/@3/long_click': '丿'
+      'keys/@4/long_click': '丿丨'
+      'keys/@5/long_click': '丿一'
+      'keys/@6/long_click': '丨一'
+      'keys/@7/long_click': '丨丨'
+      'keys/@8/long_click': '丨'
+      'keys/@9/long_click': '丨𠃌'
+      'keys/@10/long_click': '丨丿'
+      #第二行上
+      'keys/@12/long_click': '一丿'
+      'keys/@13/long_click': '一𠃌'
+      'keys/@14/long_click': '一'
+      'keys/@15/long_click': '一丨'
+      'keys/@16/long_click': '一一'
+      'keys/@17/long_click': '[丶一]'
+      'keys/@18/long_click': '[丶丨]'
+      'keys/@19/long_click': '丶'
+      'keys/@20/long_click': '[丶𠃌]'
+      #第三行上
+      'keys/@22/long_click': '𠃌丿'
+      'keys/@23/long_click': '𠃌𠃌'
+      'keys/@24/long_click': '𠃌'
+      'keys/@25/long_click': '𠃌丨'
+      'keys/@26/long_click': '𠃌一'
+      'keys/@27/long_click': '丶丶'
+      'keys/@28/long_click': '[丶丿]'
+      #第一行下
+      'keys/@1/hint': ''
+      'keys/@2/hint': ''
+      'keys/@3/hint': '艹'
+      'keys/@4/hint': '日'
+      'keys/@5/hint': ''
+      'keys/@6/hint': '钅'
+      'keys/@7/hint': '土'
+      'keys/@8/hint': '口'
+      'keys/@9/hint': ''
+      'keys/@10/hint': ''
+      #第二行下
+      'keys/@12/hint': ''
+      'keys/@13/hint': '女'
+      'keys/@14/hint': '氵'
+      'keys/@15/hint': ''
+      'keys/@16/hint': ''
+      'keys/@17/hint': ''
+      'keys/@18/hint': '亻'
+      'keys/@19/hint': '彳扌'
+      'keys/@20/hint': ''
+      #第三行下
+      'keys/@22/hint': ''
+      'keys/@23/hint': ''
+      'keys/@24/hint': '木'
+      'keys/@25/hint': '月'
+      'keys/@26/hint': ''
+      'keys/@27/hint': '辶'
+      'keys/@28/hint': '火'
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': 'cut'
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
