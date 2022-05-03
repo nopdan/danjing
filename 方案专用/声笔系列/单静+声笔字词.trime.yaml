@@ -1,0 +1,265 @@
+# Trime style settings
+# encoding: utf-8
+
+__include: 单静+.trime:/
+__patch:
+  style/layout/+:
+    min_length: 0 #最小词长
+    sticky_lines: 1 #固顶行数
+    max_entries: 1 #最大词条数
+    max_width: 350 #最大宽度，超过则自动换行
+    min_width: 0 #最小宽度
+    line_spacing_multiplier: 1.1 #候选词的行间距(倍数)
+  preset_keys/space:
+    preview: ' '
+    repeatable: false
+    functional: false
+    send: space
+  style/keyboards/+:
+    - sbpy
+    - sbjm
+    - sbjz
+    - sbdp
+    - sbdz
+    - sbkm
+    - sbkx
+    - sbks
+    - sbkj
+    - sbkz
+    - sbfm
+    - sbfx
+    - sbfs
+    - sbfj
+    - sbfd
+    - sbfz
+    - sbxh
+    - sbhs
+    - sbhj
+    - sbhz
+    - sbzr
+    - sbzs
+    - sbzj
+    - sbzz
+    - sbxlzj
+    - sbkmzj
+    - sbfmzj
+  preset_keys/+:
+    kb_sbxlzj: { label: '助记', send: Eisu_toggle, select: sbxlzj }
+    kb_sbkmzj: { label: '助记', send: Eisu_toggle, select: sbkmzj }
+    kb_sbfmzj: { label: '助记', send: Eisu_toggle, select: sbfmzj }
+
+style:
+  # 候选区
+  ## 候选
+  candidate_view_height: 28 #候选区高度
+  candidate_text_size: 18 #候选字号
+  ## 编码
+  comment_on_top: false #编码提示在上方或右侧
+  comment_height: 16 #编码提示区高度
+  comment_text_size: 15 #编码提示字号
+  # 悬浮窗口
+  label_text_size: 16 #标签字号
+  text_size: 16 #编码区字号
+  # 悬浮窗口组件
+  window:
+    #- {start: "", move: 'ㄓ ', end: ""}
+    - { start: ' ', composition: '%s', end: ' ', letter_spacing: 0 } #letter_spacing需要>=Android5.0。TODO: 不为0时，会导致不换行的问题
+    - {
+        start: '',
+        label: '%s',
+        candidate: '%s',
+        comment: '%s',
+        end: '',
+        sep: ' ',
+      }
+
+preset_keyboards:
+  sbpy: #声笔拼音
+    __include: 单静+.trime:/preset_keyboards/qwertys
+    __patch:
+      'keys/@31/composing': Esc
+      'keys/@32/swipe_down': kb_sbxlzj
+      'keys/@32/hint': '助记'
+      'keys/@41/composing': Tab
+  sbjm: #声笔简码
+    import_preset: sbpy
+  sbjz: #声笔简整
+    import_preset: sbpy
+  sbdp: #声笔拼音
+    import_preset: sbpy
+  sbdz: #声笔顶整
+    import_preset: sbpy
+  sbkm: #声笔快码
+    __include: preset_keyboards/sbpy
+    __patch:
+      'keys/@32/swipe_down': kb_sbkmzj
+  sbkx: #声笔快讯
+    import_preset: sbkm
+  sbks: #声笔快速
+    import_preset: sbkm
+  sbkj: #声笔快简
+    import_preset: sbkm
+  sbkz: #声笔快整
+    import_preset: sbkm
+  sbfm: #声笔飞码
+    __include: preset_keyboards/sbpy
+    __patch:
+      'keys/@32/swipe_down': kb_sbfmzj
+  sbfx: #声笔飞讯
+    import_preset: sbfm
+  sbfs: #声笔飞速
+    import_preset: sbfm
+  sbfj: #声笔飞简
+    import_preset: sbfm
+  sbfd: #声笔飞单
+    import_preset: sbfm
+  sbfz: #声笔飞整
+    import_preset: sbfm
+  sbxh: #声笔小鹤
+    __include: preset_keyboards/sbpy
+    __patch:
+      'keys/@32/hint': ''
+  sbhs: #声笔鹤速
+    import_preset: sbxh
+  sbhj: #声笔鹤简
+    import_preset: sbxh
+  sbhz: #声笔鹤整
+    import_preset: sbxh
+  sbzr: #声笔自然
+    import_preset: sbxh
+  sbzs: #声笔自速
+    import_preset: sbxh
+  sbzj: #声笔自简
+    import_preset: sbxh
+  sbzz: #声笔自整
+    import_preset: sbxh
+
+  sbxlzj:
+    __include: preset_keyboards/sbpy
+    name: '声笔系列助记'
+    __patch:
+      'keys/@12/hint': '一'
+      'keys/@16/hint': '丿'
+      'keys/@17/hint': '丨'
+      'keys/@18/hint': '丶'
+      'keys/@21/hint': '乛'
+      'keys/@35/hint': '零'
+      'keys/@32/swipe_down': Back
+      'keys/@32/hint': '返回'
+
+  sbfmzj:
+    __include: preset_keyboards/sbpy
+    name: '声笔飞码助记'
+    __patch:
+      'keys/@10/key_symbol_color': 0x00
+      'keys/@11/key_symbol_color': 0x00
+      'keys/@12/key_symbol_color': 0x00
+      'keys/@13/key_symbol_color': 0x00
+      'keys/@14/key_symbol_color': 0x00
+      'keys/@15/key_symbol_color': 0x00
+      'keys/@16/key_symbol_color': 0x00
+      'keys/@17/key_symbol_color': 0x00
+      'keys/@18/key_symbol_color': 0x00
+      'keys/@19/key_symbol_color': 0x00
+      'keys/@21/key_symbol_color': 0x00
+      'keys/@22/key_symbol_color': 0x00
+      'keys/@23/key_symbol_color': 0x00
+      'keys/@24/key_symbol_color': 0x00
+      'keys/@25/key_symbol_color': 0x00
+      'keys/@26/key_symbol_color': 0x00
+      'keys/@27/key_symbol_color': 0x00
+      'keys/@28/key_symbol_color': 0x00
+      'keys/@29/key_symbol_color': 0x00
+      'keys/@32/key_symbol_color': 0x00
+      'keys/@33/key_symbol_color': 0x00
+      'keys/@34/key_symbol_color': 0x00
+      'keys/@35/key_symbol_color': 0x00
+      'keys/@36/key_symbol_color': 0x00
+      'keys/@37/key_symbol_color': 0x00
+      'keys/@38/key_symbol_color': 0x00
+      'keys/@10/key_text_color': 0x00
+      'keys/@11/key_text_color': 0x00
+      'keys/@12/key_text_color': 0x00
+      'keys/@13/key_text_color': 0x00
+      'keys/@14/key_text_color': 0x00
+      'keys/@15/key_text_color': 0x00
+      'keys/@16/key_text_color': 0x00
+      'keys/@17/key_text_color': 0x00
+      'keys/@18/key_text_color': 0x00
+      'keys/@19/key_text_color': 0x00
+      'keys/@21/key_text_color': 0x00
+      'keys/@22/key_text_color': 0x00
+      'keys/@23/key_text_color': 0x00
+      'keys/@24/key_text_color': 0x00
+      'keys/@25/key_text_color': 0x00
+      'keys/@26/key_text_color': 0x00
+      'keys/@27/key_text_color': 0x00
+      'keys/@28/key_text_color': 0x00
+      'keys/@29/key_text_color': 0x00
+      'keys/@32/key_text_color': 0x00
+      'keys/@33/key_text_color': 0x00
+      'keys/@34/key_text_color': 0x00
+      'keys/@35/key_text_color': 0x00
+      'keys/@36/key_text_color': 0x00
+      'keys/@37/key_text_color': 0x00
+      'keys/@38/key_text_color': 0x00
+      'keys/@10/key_back_color': sbfmzj/q.png
+      'keys/@11/key_back_color': sbfmzj/w.png
+      'keys/@12/key_back_color': sbfmzj/e.png
+      'keys/@13/key_back_color': sbfmzj/r.png
+      'keys/@14/key_back_color': sbfmzj/t.png
+      'keys/@15/key_back_color': sbfmzj/y.png
+      'keys/@16/key_back_color': sbfmzj/u.png
+      'keys/@17/key_back_color': sbfmzj/i.png
+      'keys/@18/key_back_color': sbfmzj/o.png
+      'keys/@19/key_back_color': sbfmzj/p.png
+      'keys/@21/key_back_color': sbfmzj/a.png
+      'keys/@22/key_back_color': sbfmzj/s.png
+      'keys/@23/key_back_color': sbfmzj/d.png
+      'keys/@24/key_back_color': sbfmzj/f.png
+      'keys/@25/key_back_color': sbfmzj/g.png
+      'keys/@26/key_back_color': sbfmzj/h.png
+      'keys/@27/key_back_color': sbfmzj/j.png
+      'keys/@28/key_back_color': sbfmzj/k.png
+      'keys/@29/key_back_color': sbfmzj/l.png
+      'keys/@32/key_back_color': sbfmzj/z.png
+      'keys/@33/key_back_color': sbfmzj/x.png
+      'keys/@34/key_back_color': sbfmzj/c.png
+      'keys/@35/key_back_color': sbfmzj/v.png
+      'keys/@36/key_back_color': sbfmzj/b.png
+      'keys/@37/key_back_color': sbfmzj/n.png
+      'keys/@38/key_back_color': sbfmzj/m.png
+      'keys/@32/swipe_down': Back
+      'keys/@32/hint': '返回'
+
+  sbkmzj:
+    __include: preset_keyboards/sbpy
+    name: '声笔快码助记'
+    __patch:
+      'keys/@10/hint': iao uai
+      'keys/@11/hint': o uo
+      'keys/@12/hint': '一'
+      'keys/@13/hint': '(i)ong'
+      'keys/@14/hint': 'ao'
+      'keys/@15/hint': 'i'
+      'keys/@16/hint': '丿'
+      'keys/@17/hint': '丨'
+      'keys/@18/hint': '丶'
+      'keys/@19/hint': e ue
+      'keys/@21/hint': '乛'
+      'keys/@22/hint': 'ui in'
+      'keys/@23/hint': eng
+      'keys/@24/hint': ei
+      'keys/@25/hint': en iu
+      'keys/@26/hint': ai
+      'keys/@27/hint': ie ua
+      'keys/@28/hint': '(i)ang'
+      'keys/@29/hint': 'an er'
+      'keys/@32/hint': uan
+      'keys/@33/hint': 'ian uang'
+      'keys/@34/hint': un
+      'keys/@35/hint': 'u零'
+      'keys/@36/hint': a ia
+      'keys/@37/hint': ing
+      'keys/@38/hint': ou
+      'keys/@32/swipe_down': Back

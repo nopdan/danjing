@@ -1,0 +1,10 @@
+# Trime style settings
+# encoding: utf-8
+
+__include: 单静+声笔字词.trime:/
+__patch:
+  style/layout/+:
+    spacing: -29 #与预编辑或边缘的距离
+    sticky_lines: 0 #固顶行数
+    max_entries: 6 #最大词条数
+    line_spacing_multiplier: 1 #候选词的行间距(倍数)
