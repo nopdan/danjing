@@ -22,6 +22,7 @@ preset_color_schemes/=:
   default:
     name: 单纯 #方案名称
     author: '单单 <cxprcn@gmail.com>' #作者资讯
+    dark_scheme: google_black
     # 悬浮窗
     # border_color: back_color #悬浮窗边框
     # label_color: hilited_text_color #标签（候选序号）
@@ -88,6 +89,7 @@ preset_color_schemes/=:
   google_black:
     name: 谷歌黑 #方案名称
     author: '单单 <cxprcn@gmail.com>' #作者资讯
+    light_scheme: default
     # 悬浮窗
     # border_color: back_color #悬浮窗边框
     # label_color: hilited_text_color #标签（候选序号）
@@ -154,6 +156,7 @@ preset_color_schemes/=:
   google_white:
     name: 谷歌白
     author: '单单 <cxprcn@gmail.com>'
+    dark_scheme: google_black
     # 悬浮窗
     # border_color: back_color #悬浮窗边框
     # label_color: hilited_text_color #标签（候选序号）
