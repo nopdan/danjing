@@ -49,9 +49,13 @@ style:
 preset_keyboards:
   xf:
     __include: 单静+.trime:/preset_keyboards/qwerty_
-    __patch: 
+    __patch:
       'keys/@32/swipe_down': kb_xfzj
       'keys/@32/hint': '助记'
+      'keys/@42/composing': Page_Up
+      'keys/@43/composing': Page_Down
+      'keys/@44/composing': split_word
+
   xfzj:
     __include: preset_keyboards/xf
     name: '西风瘦码Soaring助记'
