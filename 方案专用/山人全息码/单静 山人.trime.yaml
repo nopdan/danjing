@@ -96,8 +96,8 @@ preset_keyboards:
       'keys/@19/key_back_color': sr/sr17.png
       'keys/@20/key_back_color': sr/sr18.png
       'keys/@22/key_back_color': sr/sr19.png
-      'keys/@24/key_back_color': sr/sr20.png
-      'keys/@23/key_back_color': sr/sr21.png
+      'keys/@23/key_back_color': sr/sr20.png
+      'keys/@24/key_back_color': sr/sr21.png
       'keys/@25/key_back_color': sr/sr22.png
       'keys/@26/key_back_color': sr/sr23.png
       'keys/@27/key_back_color': sr/sr24.png

@@ -96,8 +96,8 @@ preset_keyboards:
       'keys/@19/key_back_color': xuma/K.png
       'keys/@20/key_back_color': xuma/L.png
       'keys/@22/key_back_color': xuma/Z.png
-      'keys/@24/key_back_color': xuma/X.png
-      'keys/@23/key_back_color': xuma/C.png
+      'keys/@23/key_back_color': xuma/X.png
+      'keys/@24/key_back_color': xuma/C.png
       'keys/@25/key_back_color': xuma/V.png
       'keys/@26/key_back_color': xuma/B.png
       'keys/@27/key_back_color': xuma/N.png

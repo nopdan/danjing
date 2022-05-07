@@ -96,8 +96,8 @@ preset_keyboards:
       'keys/@19/key_back_color': yima/K.png
       'keys/@20/key_back_color': yima/L.png
       'keys/@22/key_back_color': yima/Z.png
-      'keys/@24/key_back_color': yima/X.png
-      'keys/@23/key_back_color': yima/C.png
+      'keys/@23/key_back_color': yima/X.png
+      'keys/@24/key_back_color': yima/C.png
       'keys/@25/key_back_color': yima/V.png
       'keys/@26/key_back_color': yima/B.png
       'keys/@27/key_back_color': yima/N.png

@@ -96,8 +96,8 @@ preset_keyboards:
       'keys/@19/key_back_color': 86wb/K.png
       'keys/@20/key_back_color': 86wb/L.png
       'keys/@22/key_back_color': 86wb/Z.png
-      'keys/@24/key_back_color': 86wb/X.png
-      'keys/@23/key_back_color': 86wb/C.png
+      'keys/@23/key_back_color': 86wb/X.png
+      'keys/@24/key_back_color': 86wb/C.png
       'keys/@25/key_back_color': 86wb/V.png
       'keys/@26/key_back_color': 86wb/B.png
       'keys/@27/key_back_color': 86wb/N.png

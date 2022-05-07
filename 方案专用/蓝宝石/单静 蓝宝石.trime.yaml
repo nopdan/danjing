@@ -100,8 +100,8 @@ preset_keyboards:
       'keys/@19/key_back_color': lanbaoshi/K.png
       'keys/@20/key_back_color': lanbaoshi/L.png
       'keys/@22/key_back_color': lanbaoshi/Z.png
-      'keys/@24/key_back_color': lanbaoshi/X.png
-      'keys/@23/key_back_color': lanbaoshi/C.png
+      'keys/@23/key_back_color': lanbaoshi/X.png
+      'keys/@24/key_back_color': lanbaoshi/C.png
       'keys/@25/key_back_color': lanbaoshi/V.png
       'keys/@26/key_back_color': lanbaoshi/B.png
       'keys/@27/key_back_color': lanbaoshi/N.png
@@ -136,8 +136,8 @@ preset_keyboards:
       'keys/@19/key_back_color': lanbaoshi2/K.png
       'keys/@20/key_back_color': lanbaoshi2/L.png
       'keys/@22/key_back_color': lanbaoshi2/Z.png
-      'keys/@24/key_back_color': lanbaoshi2/X.png
-      'keys/@23/key_back_color': lanbaoshi2/C.png
+      'keys/@23/key_back_color': lanbaoshi2/X.png
+      'keys/@24/key_back_color': lanbaoshi2/C.png
       'keys/@25/key_back_color': lanbaoshi2/V.png
       'keys/@26/key_back_color': lanbaoshi2/B.png
       'keys/@27/key_back_color': lanbaoshi2/N.png
