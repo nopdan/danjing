@@ -1,0 +1,215 @@
+# Trime style settings
+# encoding: utf-8
+
+config_version: '1.0'
+author: '单单 <cxprcn@gmail.com>' #作者资讯
+
+__include: 单静.trime:/
+__patch:
+  style/keyboards/+:
+    - xcspzj
+    - xcxbzj
+  preset_keys/+:
+    kb_xcspzj: { label: '星辰', send: Eisu_toggle, select: xcspzj }
+    kb_xcxbzj: { label: '星笔', send: Eisu_toggle, select: xcxbzj }
+    xc_Q: { label: ' ', send: q }
+    xc_W: { label: 'W', send: w }
+    xc_E: { label: 'Zh', send: e }
+    xc_R: { label: 'K', send: r }
+    xc_T: { label: 'S', send: t }
+    xc_Y: { label: 'Q', send: y }
+    xc_U: { label: 'J', send: u }
+    xc_I: { label: 'L', send: i }
+    xc_O: { label: 'N', send: o }
+    xc_P: { label: 'P', send: p }
+    xc_A: { label: 'R', send: a }
+    xc_S: { label: 'Ch', send: s }
+    xc_D: { label: 'Sh', send: d }
+    xc_F: { label: 'H', send: f }
+    xc_G: { label: 'G', send: g }
+    xc_H: { label: 'X', send: h }
+    xc_J: { label: 'Y', send: j }
+    xc_K: { label: 'D', send: k }
+    xc_L: { label: 'T', send: l }
+    xc_Z: { label: '#', send: z }
+    xc_X: { label: 'F', send: x }
+    xc_C: { label: 'C', send: c }
+    xc_V: { label: 'Z', send: v }
+    xc_B: { label: ' ', send: b }
+    xc_N: { label: 'B', send: n }
+    xc_M: { label: 'M', send: m }
+
+preset_keyboards:
+  xcsp:
+    __include: 单静.trime:/preset_keyboards/default
+    __patch:
+      key_symbol_offset_x: 0
+      'keys/@22/swipe_down': kb_xcspzj
+      'keys/@22/hint': '星辰'
+  xcxb:
+    __include: preset_keyboards/xcsp
+    __patch:
+      'keys/@23/swipe_down': kb_xcxbzj
+      'keys/@23/hint': '星笔'
+  xcxbdz:
+    import_preset: xcxb
+  xcspzj:
+    __include: preset_keyboards/xcxb
+    __patch:
+      'keys/@1/click': xc_Q
+      'keys/@2/click': xc_W
+      'keys/@3/click': xc_E
+      'keys/@4/click': xc_R
+      'keys/@5/click': xc_T
+      'keys/@6/click': xc_Y
+      'keys/@7/click': xc_U
+      'keys/@8/click': xc_I
+      'keys/@9/click': xc_O
+      'keys/@10/click': xc_P
+      'keys/@12/click': xc_A
+      'keys/@13/click': xc_S
+      'keys/@14/click': xc_D
+      'keys/@15/click': xc_F
+      'keys/@16/click': xc_G
+      'keys/@17/click': xc_H
+      'keys/@18/click': xc_J
+      'keys/@19/click': xc_K
+      'keys/@20/click': xc_L
+      'keys/@22/click': xc_Z
+      'keys/@23/click': xc_X
+      'keys/@24/click': xc_C
+      'keys/@25/click': xc_V
+      'keys/@26/click': xc_B
+      'keys/@27/click': xc_N
+      'keys/@28/click': xc_M
+      #第一行上
+      'keys/@1/long_click': ' '
+      'keys/@2/long_click': 'en'
+      'keys/@3/long_click': 'ua'
+      'keys/@4/long_click': ' u '
+      'keys/@5/long_click': ' '
+      'keys/@6/long_click': ' '
+      'keys/@7/long_click': ' '
+      'keys/@8/long_click': 'er'
+      'keys/@9/long_click': ' '
+      'keys/@10/long_click': ' '
+      #第二行上
+      'keys/@12/long_click': 'ui'
+      'keys/@13/long_click': 'iong'
+      'keys/@14/long_click': ' i '
+      'keys/@15/long_click': 'ia'
+      'keys/@16/long_click': ' '
+      'keys/@17/long_click': ' '
+      'keys/@18/long_click': ' e '
+      'keys/@19/long_click': ' '
+      'keys/@20/long_click': ' '
+      #第三行上
+      'keys/@22/long_click': ' '
+      'keys/@23/long_click': ' '
+      'keys/@24/long_click': ' '
+      'keys/@25/long_click': ' '
+      'keys/@26/long_click': ' '
+      'keys/@27/long_click': ' o '
+      'keys/@28/long_click': ' '
+      #第一行下
+      'keys/@1/hint': 'un'
+      'keys/@2/hint': 'uan'
+      'keys/@3/hint': 'ue'
+      'keys/@4/hint': 'uai'
+      'keys/@5/hint': 'ie'
+      'keys/@6/hint': 'ou'
+      'keys/@7/hint': 'v'
+      'keys/@8/hint': 'ei'
+      'keys/@9/hint': 'eng'
+      'keys/@10/hint': 'ai'
+      #第二行下
+      'keys/@12/hint': 'in'
+      'keys/@13/hint': 'ao'
+      'keys/@14/hint': 'uang'
+      'keys/@15/hint': 'a'
+      'keys/@16/hint': 'iu'
+      'keys/@17/hint': 'ong'
+      'keys/@18/hint': 've'
+      'keys/@19/hint': 'an'
+      'keys/@20/hint': 'ang'
+      #第三行下
+      'keys/@22/hint': 'ai'
+      'keys/@23/hint': 'ing'
+      'keys/@24/hint': 'ian'
+      'keys/@25/hint': 'iang'
+      'keys/@26/hint': 'iao'
+      'keys/@27/hint': 'uo'
+      'keys/@28/hint': 'en'
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': Back
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
+  xcxbzj:
+    __include: preset_keyboards/xcxb
+    __patch:
+      #第一行上
+      'keys/@1/long_click': '丿一'
+      'keys/@2/long_click': '丿丨'
+      'keys/@3/long_click': '丿丿'
+      'keys/@4/long_click': '丿丶'
+      'keys/@5/long_click': '丿乛'
+      'keys/@6/long_click': '丶一'
+      'keys/@7/long_click': '丶丨'
+      'keys/@8/long_click': '丶丿'
+      'keys/@9/long_click': '丶丶'
+      'keys/@10/long_click': '丶乛'
+      #第二行上
+      'keys/@12/long_click': '丨一'
+      'keys/@13/long_click': '丨丨'
+      'keys/@14/long_click': '丨丿'
+      'keys/@15/long_click': '丨丶'
+      'keys/@16/long_click': '丨乛'
+      'keys/@17/long_click': '一一'
+      'keys/@18/long_click': '一丨'
+      'keys/@19/long_click': '一丿'
+      'keys/@20/long_click': '一丶'
+      #第三行上
+      'keys/@22/long_click': '乛一'
+      'keys/@23/long_click': '乛丨'
+      'keys/@24/long_click': '乛丿'
+      'keys/@25/long_click': '乛丶'
+      'keys/@26/long_click': '乛乛'
+      'keys/@27/long_click': ''
+      'keys/@28/long_click': '一乛'
+      #第一行下
+      'keys/@1/hint': ''
+      'keys/@2/hint': '日'
+      'keys/@3/hint': '土一'
+      'keys/@4/hint': ''
+      'keys/@5/hint': ''
+      'keys/@6/hint': ''
+      'keys/@7/hint': '艹丿'
+      'keys/@8/hint': '丨'
+      'keys/@9/hint': '丶'
+      'keys/@10/hint': ''
+      #第二行下
+      'keys/@12/hint': '月乛'
+      'keys/@13/hint': '人'
+      'keys/@14/hint': '水'
+      'keys/@15/hint': '口'
+      'keys/@16/hint': ''
+      'keys/@17/hint': ''
+      'keys/@18/hint': ''
+      'keys/@19/hint': ''
+      'keys/@20/hint': '手'
+      #第三行下
+      'keys/@22/hint': ''
+      'keys/@23/hint': ''
+      'keys/@24/hint': ''
+      'keys/@25/hint': '金'
+      'keys/@26/hint': ''
+      'keys/@27/hint': '木'
+      'keys/@28/hint': ''
+      #功能
+      'keys/@12/swipe_down': 'select_all'
+      'keys/@22/swipe_down': Back
+      'keys/@23/swipe_down': Back
+      'keys/@24/swipe_down': 'copy'
+      'keys/@25/swipe_down': 'paste'
