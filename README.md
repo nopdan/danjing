@@ -10,6 +10,7 @@ TODO:
 - 配色中加入主要按键的文字颜色，对字根图形式的助记更方便（0x00）
 - 空格显示方案名，字要小点，下移，颜色可能取 symbol 的
 - 助记有无更好实现方式，分主题还是不分，做成配色又怎样
+- 助记键盘用默认id：default
 
 [1]: https://github.com/cxcn/danjing
 [2]: https://github.com/osfans/trime
