@@ -1,0 +1,44 @@
+## 已适配
+
+- 星空系列
+  - 星空键道（xkjd6、xkjd6dz）
+  - 星空两笔（xklb、xklbdz）
+  - 星空一笔（xkyb、xkybdz）
+  - 星空两笔 s（xklbs、xklbsdz）：无助记
+  - 星空一道（xkjd、xkyddz）：无助记
+- 声笔系列
+  - 声笔系列
+    - 声笔拼音（sbpy）
+    - 声笔简码（sbjm）
+    - 声笔简整（sbjz）
+    - 声笔双拼（sbdp）
+    - 声笔顶整（sbpy）
+    - 声笔拼音（sbdz）
+  - 快码
+    - 声笔快码（sbkm）
+    - 声笔快讯（sbkx）
+    - 声笔快速（sbks）
+    - 声笔快简（sbkj）
+    - 声笔快整（sbkz）
+  - 飞码
+    - 声笔飞码（sbfm）
+    - 声笔飞讯（sbfx）
+    - 声笔飞速（sbfs）
+    - 声笔飞简（sbfj）
+    - 声笔飞单（sbfd）
+    - 声笔飞整（sbfz）
+  - 其他（sbhs、sbhj、sbhz、sbzr、sbzs、sbzj、sbzz）：无助记
+- 哲豆音形（zzdyxdz、zzdyx_perfect、zzdyx_mofast）
+- 小鹤音形（flypy）
+- 西风瘦码 Soaring（xf）
+- 091 五笔（091wb）
+- 092 五笔（092wubi）
+- 山人全息码（sr）
+- 新世纪五笔（wubi06）
+- 郑码（zhengma）
+- 蓝宝石（Sapphire）
+- 牛码（niumawb）
+- 86 五笔（wubi86）
+- 虎码（tiger）
+- 逸码（yima）
+- 星辰双拼（xcsp、xcxb、xcxbdz）
