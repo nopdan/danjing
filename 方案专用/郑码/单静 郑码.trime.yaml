@@ -12,14 +12,16 @@ __patch:
     kb_zhengmazj: { label: '助记', send: Eisu_toggle, select: zhengmazj }
 
 preset_keyboards:
-  zhengma:
+  default:
     __include: 单静.trime:/preset_keyboards/default
     __patch:
       key_symbol_offset_x: 0
       'keys/@22/swipe_down': kb_zhengmazj
       'keys/@22/hint': '助记'
+  zhengma:
+    import_preset: default
   zhengmazj:
-    __include: preset_keyboards/zhengma
+    __include: preset_keyboards/default
     name: 'zhengma助记'
     __patch:
       'keys/@1/key_symbol_color': 0x00

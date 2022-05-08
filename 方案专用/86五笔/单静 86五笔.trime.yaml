@@ -12,14 +12,16 @@ __patch:
     kb_wubi86zj: { label: '助记', send: Eisu_toggle, select: wubi86zj }
 
 preset_keyboards:
-  wubi86:
+  default:
     __include: 单静.trime:/preset_keyboards/default
     __patch:
       key_symbol_offset_x: 0
       'keys/@22/swipe_down': kb_wubi86zj
       'keys/@22/hint': '助记'
+  wubi86:
+    import_preset: default
   wubi86zj:
-    __include: preset_keyboards/wubi86
+    __include: preset_keyboards/default
     name: 'wubi86助记'
     __patch:
       'keys/@1/key_symbol_color': 0x00

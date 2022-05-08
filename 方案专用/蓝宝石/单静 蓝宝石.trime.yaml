@@ -14,7 +14,7 @@ __patch:
     kb_Sapphirezj2: { label: '助记2', send: Eisu_toggle, select: Sapphirezj2 }
 
 preset_keyboards:
-  Sapphire:
+  default:
     __include: 单静.trime:/preset_keyboards/default
     __patch:
       key_symbol_offset_x: 0
@@ -22,8 +22,10 @@ preset_keyboards:
       'keys/@22/hint': '助记'
       'keys/@23/swipe_down': kb_Sapphirezj2
       'keys/@23/hint': '助记2'
+  Sapphire:
+    import_preset: default
   Sapphirezj:
-    __include: preset_keyboards/Sapphire
+    __include: preset_keyboards/default
     name: 'Sapphire助记'
     __patch:
       'keys/@1/key_symbol_color': 0x00

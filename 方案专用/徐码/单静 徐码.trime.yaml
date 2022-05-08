@@ -12,14 +12,16 @@ __patch:
     kb_xumazj: { label: '助记', send: Eisu_toggle, select: xumazj }
 
 preset_keyboards:
-  xuma:
+  default:
     __include: 单静.trime:/preset_keyboards/default
     __patch:
       key_symbol_offset_x: 0
       'keys/@22/swipe_down': kb_xumazj
       'keys/@22/hint': '助记'
+  xuma:
+    import_preset: default
   xumazj:
-    __include: preset_keyboards/xuma
+    __include: preset_keyboards/default
     name: 'xuma助记'
     __patch:
       'keys/@1/key_symbol_color': 0x00
