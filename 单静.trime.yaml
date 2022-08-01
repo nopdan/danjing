@@ -728,7 +728,7 @@ preset_keyboards:
       # 第四行
       - { click: '=', long_click: '≠' }
       - { click: '/', long_click: '÷' }
-      - { click: space }
+      - { click: space, long_click: paste}
       - { click: 0 }
       - { click: '.' }
       - {
