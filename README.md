@@ -1,6 +1,12 @@
-**[单静][1] 可能是最精致的 [同文输入法][2] 主题**
+# [单静][1]
 
-**最新版本: v2.5，更新时间：2022/5/7**
+[![GitHub Repo stars](https://img.shields.io/github/stars/cxcn/danjing)](https://github.com/cxcn/danjing/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/cxcn/danjing)](https://github.com/cxcn/danjing/network/members)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/cxcn/danjing)](https://github.com/cxcn/danjing/releases)
+![GitHub repo size](https://img.shields.io/github/repo-size/cxcn/danjing)
+![GitHub](https://img.shields.io/github/license/cxcn/danjing)
+
+**可能是最精致的 [同文输入法][2] 主题**
 
 **如果有需要适配的方案，提 issue**
 
@@ -9,8 +15,8 @@ TODO:
 - 助记大键展示：字根太不显示不清楚，用 tyghb 几个键以大图展示各分区字根，2 行 5 列
 - 配色中加入主要按键的文字颜色，对字根图形式的助记更方便（0x00）
 - 空格显示方案名，字要小点，下移，颜色可能取 symbol 的
-- 助记有无更好实现方式，分主题还是不分，做成配色又怎样
-- 助记键盘用默认id：default
+- 助记有无更好实现方式，分不分主题，要不要做成配色
+- 助记键盘用默认 id：default
 
 [1]: https://github.com/cxcn/danjing
 [2]: https://github.com/osfans/trime
